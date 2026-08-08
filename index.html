@@ -836,24 +836,24 @@
             <div class="form-grid">
               <div class="form-group">
                 <label>Full Name *</label>
-                <input type="text" class="form-control" placeholder="Enter your name" required>
+                <input type="text" id="contactName" class="form-control" placeholder="Enter your name" required>
               </div>
 
               <div class="form-group">
                 <label>Phone Number *</label>
-                <input type="tel" class="form-control" placeholder="+91 XXXXX XXXXX" required>
+                <input type="tel" id="contactPhone" class="form-control" placeholder="+91 XXXXX XXXXX" required>
               </div>
             </div>
 
             <div class="form-grid">
               <div class="form-group">
                 <label>Email Address</label>
-                <input type="email" class="form-control" placeholder="name@example.com">
+                <input type="email" id="contactEmail" class="form-control" placeholder="name@example.com">
               </div>
 
               <div class="form-group">
                 <label>Interested Vertical *</label>
-                <select class="form-control" required>
+                <select id="contactVertical" class="form-control" required>
                   <option value="">Select Property Type</option>
                   <option value="Plots">Residential Plots</option>
                   <option value="Apartments">Luxury Apartments</option>
@@ -866,22 +866,19 @@
             <div class="form-group" style="margin-bottom: 1.2rem;">
               <div class="form-group">
                 <label>Preferred Project Location</label>
-                <select class="form-control">
-                  <option value="Maheshwaram">Maheshwaram</option>
+                <select id="contactLocation" class="form-control">
+                  <option value="Maheshwaram / Tukkuguda Exit 14">Maheshwaram / Tukkuguda Exit 14</option>
+                  <option value="Mall Town / Sagar Highway">Mall Town / Sagar Highway</option>
                   <option value="Amangal">Amangal</option>
-                  <option value="Mall Town">Mall Town</option>
-                  <option value="Warangal Highway">Warangal Highway</option>
-                  <option value="Sagar Highway">Sagar Highway</option>
                   <option value="Srisailam Highway">Srisailam Highway</option>
-                  <option value="Alwal">Alwal</option>
-                  <option value="Shamirpet">Shamirpet</option>
+                  <option value="Warangal Highway">Warangal Highway</option>
                 </select>
               </div>
             </div>
 
             <div class="form-group" style="margin-bottom: 1.5rem;">
               <label>Your Message / Requirements</label>
-              <textarea class="form-control" rows="4" placeholder="Tell us about your budget, preferred size or investment timeframe..."></textarea>
+              <textarea id="contactMessage" class="form-control" rows="4" placeholder="Tell us about your budget, preferred size or investment timeframe..."></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary" style="width: 100%;">
@@ -977,18 +974,18 @@
       <form onsubmit="handleModalSubmit(event)">
         <div class="form-group" style="margin-bottom: 1rem;">
           <label>Full Name *</label>
-          <input type="text" class="form-control" placeholder="Your Name" required>
+          <input type="text" id="enquiryName" class="form-control" placeholder="Your Name" required>
         </div>
         <div class="form-group" style="margin-bottom: 1rem;">
           <label>Phone Number *</label>
-          <input type="tel" class="form-control" placeholder="+91 Phone Number" required>
+          <input type="tel" id="enquiryPhone" class="form-control" placeholder="+91 Phone Number" required>
         </div>
         <div class="form-group" style="margin-bottom: 1.5rem;">
           <label>Email Address</label>
-          <input type="email" class="form-control" placeholder="name@domain.com">
+          <input type="email" id="enquiryEmail" class="form-control" placeholder="name@domain.com">
         </div>
         <button type="submit" class="btn btn-primary" style="width: 100%;">
-          Send Enquiry & Request Call Back
+          <i class="fa-brands fa-whatsapp"></i> Send Enquiry via WhatsApp (+91 7207128384)
         </button>
       </form>
     </div>
@@ -1006,6 +1003,10 @@
 
       <form onsubmit="handleSiteVisitSubmit(event)">
         <div class="form-group" style="margin-bottom: 1rem;">
+          <label>Full Name *</label>
+          <input type="text" id="siteVisitName" class="form-control" placeholder="Enter your full name" required>
+        </div>
+        <div class="form-group" style="margin-bottom: 1rem;">
           <label>Select Project Site *</label>
           <select class="form-control" id="siteVisitProjectSelect" required>
             <option value="" disabled selected>-- Select Your Preferred Project Site --</option>
@@ -1016,23 +1017,23 @@
         <div class="form-grid">
           <div class="form-group">
             <label>Preferred Date</label>
-            <input type="date" class="form-control" required>
+            <input type="date" id="siteVisitDate" class="form-control" required>
           </div>
           <div class="form-group">
             <label>Time Slot</label>
-            <select class="form-control">
-              <option value="10am">10:00 AM - 12:00 PM</option>
-              <option value="2pm">02:00 PM - 04:00 PM</option>
-              <option value="5pm">05:00 PM - 07:00 PM</option>
+            <select id="siteVisitTime" class="form-control">
+              <option value="10:00 AM - 12:00 PM">10:00 AM - 12:00 PM</option>
+              <option value="02:00 PM - 04:00 PM">02:00 PM - 04:00 PM</option>
+              <option value="05:00 PM - 07:00 PM">05:00 PM - 07:00 PM</option>
             </select>
           </div>
         </div>
         <div class="form-group" style="margin-bottom: 1rem;">
           <label>Contact Phone Number *</label>
-          <input type="tel" class="form-control" placeholder="+91 XXXXX XXXXX" required>
+          <input type="tel" id="siteVisitPhone" class="form-control" placeholder="+91 XXXXX XXXXX" required>
         </div>
         <button type="submit" class="btn btn-primary" style="width: 100%;">
-          Confirm Site Visit Reservation
+          <i class="fa-brands fa-whatsapp"></i> Confirm Site Visit & Notify VVR GROUPS (+91 7207128384)
         </button>
       </form>
     </div>

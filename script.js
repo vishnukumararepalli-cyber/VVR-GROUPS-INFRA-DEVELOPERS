@@ -337,25 +337,86 @@ function closeModal(modalId) {
   }
 }
 
-/* Form Submit Handlers */
+/* Form Submit Handlers - Direct WhatsApp Helpline Integration (+91 7207128384) */
+const VVR_HELPLINE_WA = "917207128384";
+
 function handleFormSubmit(event) {
   event.preventDefault();
-  alert("Thank you for contacting VVR GROUPS — Telangana’s No. 1 Marketing Company! Your enquiry has been received. Our sales executive will call you within 30 minutes.");
+  const name = document.getElementById('contactName')?.value || 'Valued Customer';
+  const phone = document.getElementById('contactPhone')?.value || 'Not provided';
+  const email = document.getElementById('contactEmail')?.value || 'N/A';
+  const vertical = document.getElementById('contactVertical')?.value || 'General Real Estate';
+  const location = document.getElementById('contactLocation')?.value || 'Preferred Corridor';
+  const message = document.getElementById('contactMessage')?.value || 'No extra notes.';
+
+  const text = `🚨 *NEW WEBSITE CONSULTATION ENQUIRY — VVR GROUPS* 🚨\n\n` +
+               `👤 *Name:* ${name}\n` +
+               `📞 *Phone:* ${phone}\n` +
+               `📧 *Email:* ${email}\n` +
+               `🏡 *Interested Property:* ${vertical}\n` +
+               `📍 *Location:* ${location}\n` +
+               `💬 *Message:* ${message}\n\n` +
+               `Please send site layout map, price details & arrange call back.`;
+
+  const waUrl = `https://wa.me/${VVR_HELPLINE_WA}?text=${encodeURIComponent(text)}`;
+
+  showNotification(`Enquiry formatted for ${name}! Opening WhatsApp to connect with VVR Helpline (+91 7207128384)...`);
+  setTimeout(() => {
+    window.open(waUrl, '_blank');
+  }, 600);
+
   event.target.reset();
 }
 
 function handleModalSubmit(event) {
   event.preventDefault();
-  alert("Thank you! Your enquiry for VVR GROUPS — Telangana’s No. 1 Marketing Company has been submitted. Brochure and price sheet will be sent to your phone/email.");
+  const name = document.getElementById('enquiryName')?.value || 'Valued Customer';
+  const phone = document.getElementById('enquiryPhone')?.value || 'Not provided';
+  const email = document.getElementById('enquiryEmail')?.value || 'N/A';
+  const title = document.getElementById('modalProjectTitle')?.textContent || 'Project Quick Enquiry';
+
+  const text = `🚨 *NEW QUICK PROJECT ENQUIRY — VVR GROUPS* 🚨\n\n` +
+               `👤 *Name:* ${name}\n` +
+               `📞 *Phone:* ${phone}\n` +
+               `📧 *Email:* ${email}\n` +
+               `📋 *Project / Topic:* ${title}\n\n` +
+               `Please send complete layout brochure, price list & available plot numbers.`;
+
+  const waUrl = `https://wa.me/${VVR_HELPLINE_WA}?text=${encodeURIComponent(text)}`;
+
+  showNotification(`Enquiry received for ${name}! Opening WhatsApp to send directly to VVR Helpline (+91 7207128384)...`);
+  setTimeout(() => {
+    window.open(waUrl, '_blank');
+  }, 600);
+
   closeModal('enquiry-modal');
   event.target.reset();
 }
 
 function handleSiteVisitSubmit(event) {
   event.preventDefault();
+  const name = document.getElementById('siteVisitName')?.value || 'Valued Customer';
+  const phone = document.getElementById('siteVisitPhone')?.value || 'Not provided';
   const selectEl = document.getElementById('siteVisitProjectSelect');
-  const selectedSite = selectEl ? selectEl.value : 'your selected site';
-  alert(`Site Visit Confirmed for ${selectedSite}!\n\nOur sales representative will contact you to arrange complimentary pick-up & guided site tour.`);
+  const site = selectEl ? selectEl.value : 'VVR Project Site';
+  const date = document.getElementById('siteVisitDate')?.value || 'Earliest available date';
+  const time = document.getElementById('siteVisitTime')?.value || 'Morning slot';
+
+  const text = `🚨 *NEW SITE VISIT RESERVATION — VVR GROUPS* 🚨\n\n` +
+               `👤 *Customer Name:* ${name}\n` +
+               `📞 *Phone Number:* ${phone}\n` +
+               `📍 *Project Site:* ${site}\n` +
+               `📅 *Preferred Date:* ${date}\n` +
+               `⏰ *Time Slot:* ${time}\n\n` +
+               `Please confirm complimentary pickup & guided site layout tour reservation.`;
+
+  const waUrl = `https://wa.me/${VVR_HELPLINE_WA}?text=${encodeURIComponent(text)}`;
+
+  showNotification(`Site visit reserved for ${name}! Opening WhatsApp to notify VVR Helpline (+91 7207128384)...`);
+  setTimeout(() => {
+    window.open(waUrl, '_blank');
+  }, 600);
+
   closeModal('site-visit-modal');
   event.target.reset();
 }
