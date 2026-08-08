@@ -369,6 +369,128 @@ h1, h2, h3, h4, h5, h6 {
   width: 60%;
 }
 
+/* Navigation Dropdown Menu Styling */
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+
+.dropdown-trigger i {
+  font-size: 0.7rem;
+  transition: transform 0.25s ease;
+  color: var(--text-muted);
+}
+
+.nav-dropdown:hover .dropdown-trigger i {
+  transform: rotate(180deg);
+  color: var(--primary-gold);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 250px;
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-gold);
+  box-shadow: 0 12px 35px rgba(12, 25, 46, 0.2);
+  padding: 0.5rem 0;
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1100;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu li {
+  width: 100%;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  border-radius: 0;
+  transition: all 0.2s ease;
+}
+
+.dropdown-menu a::after {
+  display: none !important;
+}
+
+.dropdown-menu a:hover {
+  background: var(--bg-secondary);
+  color: var(--primary-gold);
+  padding-left: 1.5rem;
+}
+
+/* FAQ Accordion Styling */
+.faq-item {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+  transition: var(--transition-fast);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  text-align: left;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  transition: var(--transition-fast);
+}
+
+.faq-question i {
+  font-size: 0.9rem;
+  color: var(--primary-gold);
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question i {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0 1.5rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 250px;
+  padding: 0 1.5rem 1.25rem 1.5rem;
+}
+
 .nav-actions {
   display: flex;
   align-items: center;

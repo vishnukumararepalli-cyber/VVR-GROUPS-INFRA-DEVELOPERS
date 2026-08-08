@@ -476,3 +476,17 @@ function handleReviewSubmit(event) {
   closeModal('write-review-modal');
   event.target.reset();
 }
+
+/* FAQ Accordion Toggle */
+function toggleFaq(btn) {
+  const faqItem = btn.parentElement;
+  const isActive = faqItem.classList.contains('active');
+  
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.classList.remove('active');
+  });
+  
+  if (!isActive) {
+    faqItem.classList.add('active');
+  }
+}
