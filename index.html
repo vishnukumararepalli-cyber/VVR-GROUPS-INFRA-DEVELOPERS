@@ -52,6 +52,7 @@
           <li><a href="#prime-locations">Locations</a></li>
           <li><a href="#chairman">Chairman</a></li>
           <li><a href="#why-vvr">Why Us</a></li>
+          <li><a href="#reviews">Reviews</a></li>
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -577,6 +578,86 @@
           <div class="gallery-caption">5-Star Clubhouse Lounge</div>
         </div>
       </div>
+  <!-- Customer Reviews & Testimonials Section -->
+  <section id="reviews" class="section-padding">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag">Client Feedback & Trust</span>
+        <h2 class="section-title">What Our Property Owners Say</h2>
+        <p class="section-subtitle">Real experiences from plot buyers and investors who chose VVR GROUPS for transparent, high-appreciation real estate investments.</p>
+      </div>
+
+      <div class="reviews-grid">
+        <!-- Review Card 1 -->
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-avatar">RR</div>
+            <div>
+              <h4 class="reviewer-name">Rajeshwar Reddy</h4>
+              <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Owner • VVR Adhiran Sancha</span>
+            </div>
+          </div>
+          <div class="review-rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">
+            “Buying a plot at VVR Adhiran Sancha in Tukkuguda Exit 14 was smooth and transparent. The location beside EMC, Samsung, and Airport corridor has incredible growth potential. Titles were 100% clear with spot registration!”
+          </p>
+        </div>
+
+        <!-- Review Card 2 -->
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-avatar">KV</div>
+            <div>
+              <h4 class="reviewer-name">K. Venkat Rao</h4>
+              <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Owner • VVR Adhiran Varahi County</span>
+            </div>
+          </div>
+          <div class="review-rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">
+            “VVR GROUPS truly stands by their motto ‘WE SELL. WE SECURE.’ They provided complete DTCP & RERA documentation for Varahi County near Sagar Highway. Excellent customer service and peaceful investment.”
+          </p>
+        </div>
+
+        <!-- Review Card 3 -->
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-avatar">SC</div>
+            <div>
+              <h4 class="reviewer-name">Srinivas & Latha Chintala</h4>
+              <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Owner • VVR Adhiran Sancha</span>
+            </div>
+          </div>
+          <div class="review-rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">
+            “Chairman Vishnu Rao's vision and direct approach gave us total trust. The 33ft blacktop roads, underground drainage, and fast connectivity to ORR Exit 14 are top notch. Highly recommended!”
+          </p>
+        </div>
+      </div>
+
+      <!-- Write a Review Callout -->
+      <div style="margin-top: 2.5rem; text-align: center;">
+        <button class="btn btn-outline" onclick="openModal('write-review-modal')">
+          <i class="fa-solid fa-pen-to-square"></i> Share Your Feedback / Write A Review
+        </button>
+      </div>
     </div>
   </section>
 
@@ -899,12 +980,43 @@
     </div>
   </div>
 
-  <!-- Modal 5: Lightbox Gallery View -->
-  <div class="modal-backdrop" id="lightbox-modal">
-    <div class="modal-container" style="background: transparent; border: none; max-width: 900px; text-align: center; box-shadow: none;">
-      <button class="modal-close" style="background: rgba(255,255,255,0.8);" onclick="closeModal('lightbox-modal')">&times;</button>
-      <img id="lightboxImg" src="" alt="Full View" style="max-height: 80vh; margin: 0 auto; border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
-      <p id="lightboxCaption" style="color: #fff; margin-top: 1rem; font-size: 1.1rem; font-weight: 600;"></p>
+  <!-- Modal 6: Write a Review Modal -->
+  <div class="modal-backdrop" id="write-review-modal">
+    <div class="modal-container">
+      <button class="modal-close" onclick="closeModal('write-review-modal')">&times;</button>
+      <div class="text-center" style="margin-bottom: 1.5rem;">
+        <span class="section-tag">Customer Voice</span>
+        <h3 style="font-size: 1.6rem;">Share Your Experience</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">We value your feedback! Tell us about your journey with VVR GROUPS.</p>
+      </div>
+
+      <form onsubmit="handleReviewSubmit(event)">
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label>Your Full Name *</label>
+          <input type="text" id="reviewAuthor" class="form-control" placeholder="e.g. Ramesh Kumar" required>
+        </div>
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label>Purchased Project Site *</label>
+          <select id="reviewProject" class="form-control" required>
+            <option value="VVR Adhiran Sancha">VVR Adhiran Sancha (Tukkuguda Exit 14 , Maheshwaram)</option>
+            <option value="VVR Adhiran Varahi County">VVR Adhiran Varahi County (Mall Town / Sagar Highway - Narsaipally)</option>
+          </select>
+        </div>
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label>Star Rating *</label>
+          <select id="reviewRating" class="form-control" required>
+            <option value="5">⭐⭐⭐⭐⭐ (5 / 5 Excellent)</option>
+            <option value="4">⭐⭐⭐⭐ (4 / 5 Very Good)</option>
+          </select>
+        </div>
+        <div class="form-group" style="margin-bottom: 1.5rem;">
+          <label>Your Review / Feedback *</label>
+          <textarea id="reviewText" class="form-control" rows="4" placeholder="Share your experience about project location, legal security, site visit or support..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">
+          Submit Review
+        </button>
+      </form>
     </div>
   </div>
 

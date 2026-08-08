@@ -440,3 +440,39 @@ function initScrollSpy() {
     });
   });
 }
+
+function handleReviewSubmit(event) {
+  event.preventDefault();
+  const name = document.getElementById('reviewAuthor').value;
+  const project = document.getElementById('reviewProject').value;
+  const reviewText = document.getElementById('reviewText').value;
+
+  const grid = document.querySelector('.reviews-grid');
+  if (grid) {
+    const initials = name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase() || 'VVR';
+    const card = document.createElement('div');
+    card.className = 'review-card';
+    card.innerHTML = `
+      <div class="review-header">
+        <div class="reviewer-avatar">${initials}</div>
+        <div>
+          <h4 class="reviewer-name">${name}</h4>
+          <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Buyer • ${project}</span>
+        </div>
+      </div>
+      <div class="review-rating">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+      </div>
+      <p class="review-text">“${reviewText}”</p>
+    `;
+    grid.prepend(card);
+  }
+
+  alert("Thank you for your review! Your feedback has been published successfully.");
+  closeModal('write-review-modal');
+  event.target.reset();
+}
