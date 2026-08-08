@@ -3,10 +3,10 @@
    Building Landmarks. Creating Legacies.
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Outfit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=DM+Serif+Display:ital@0;1&family=Onest:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Color Palette - Classic Royal Navy & Metallic Gold Theme */
+  /* Color Palette - Classic Royal Navy & Metallic Gold Theme (Inspired by Adhiran Group) */
   --primary-navy: #0c192e;
   --primary-navy-hover: #162c4e;
   --primary-gold: #c6a052;
@@ -42,8 +42,8 @@
   --transition-fast: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-normal: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 
-  --font-serif: 'Cinzel', Georgia, serif;
-  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'DM Serif Display', 'Cinzel', Georgia, serif;
+  --font-sans: 'Onest', 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 [data-theme="dark"] {
@@ -594,9 +594,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Stats Counter Section */
 .stats-section {
-  background-color: var(--bg-secondary);
-  border-bottom: 1px solid var(--border-subtle);
-  padding: 3rem 0;
+  background-color: var(--primary-navy);
+  border-top: 1px solid rgba(198, 160, 82, 0.3);
+  border-bottom: 1px solid rgba(198, 160, 82, 0.3);
+  padding: 3.5rem 0;
+  color: #ffffff;
 }
 
 .stats-grid {
@@ -612,7 +614,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .stat-number {
   font-family: var(--font-serif);
-  font-size: 3rem;
+  font-size: 3.2rem;
   font-weight: 800;
   color: var(--primary-gold);
   line-height: 1;
@@ -620,17 +622,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .stat-label {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  font-weight: 500;
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.stat-lab.why-desc {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  line-height: 1.6;
+  letter-spacing: 1.2px;
 }
 
 /* Customer Reviews / Testimonials Section */
