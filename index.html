@@ -71,10 +71,8 @@
           <li class="nav-dropdown">
             <a href="#projects" class="dropdown-trigger">Projects <i class="fa-solid fa-chevron-down"></i></a>
             <ul class="dropdown-menu">
-              <li><a href="#projects">VVR Adhiran Sancha (Tukkuguda Exit 14)</a></li>
-              <li><a href="#projects">VVR Adhiran Varahi County (Sagar Highway)</a></li>
-              <li><a href="#approvals">HMDA, DTCP, YTDA & RERA Approvals</a></li>
-              <li><a href="#prime-locations">Strategic Location Corridors</a></li>
+              <li><a href="#projects" onclick="filterProjects('sancha', this)">VVR Adhiran Sancha</a></li>
+              <li><a href="#projects" onclick="filterProjects('varahi', this)">VVR Adhiran Varahi County</a></li>
             </ul>
           </li>
 
@@ -94,20 +92,9 @@
     </div>
   </header>
 
-  <!-- Sliding Hero Banner Carousel Section -->
-  <section id="home" class="hero hero-slider">
-    <!-- Slider Track & Slides -->
-    <div class="hero-slides-wrapper">
-      <div class="hero-slide active" style="background-image: url('images/hero_luxury_estate_1786211109106.jpg');"></div>
-      <div class="hero-slide" style="background-image: url('images/varahi_user_aerial.jpg');"></div>
-      <div class="hero-slide" style="background-image: url('images/sancha_aerial_drone.png');"></div>
-    </div>
+  <!-- Clean Static Hero Section -->
+  <section id="home" class="hero" style="background-image: url('images/hero_luxury_estate_1786211109106.jpg');">
     <div class="hero-overlay"></div>
-
-    <!-- Slider Navigation Arrows -->
-    <button class="slider-arrow prev-arrow" onclick="moveHeroSlide(-1)" aria-label="Previous Slide"><i class="fa-solid fa-chevron-left"></i></button>
-    <button class="slider-arrow next-arrow" onclick="moveHeroSlide(1)" aria-label="Next Slide"><i class="fa-solid fa-chevron-right"></i></button>
-
     <div class="container">
       <div class="hero-content">
         <div class="hero-badge">
@@ -146,13 +133,6 @@
         </div>
 
       </div>
-    </div>
-
-    <!-- Slider Dot Indicators -->
-    <div class="slider-dots">
-      <span class="dot active" onclick="setHeroSlide(0)"></span>
-      <span class="dot" onclick="setHeroSlide(1)"></span>
-      <span class="dot" onclick="setHeroSlide(2)"></span>
     </div>
   </section>
 

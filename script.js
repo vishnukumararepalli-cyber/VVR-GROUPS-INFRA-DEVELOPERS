@@ -1,56 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-  initHeroSlider();
   initMobileMenu();
   initEmiCalculator();
   initScrollSpy();
 });
-
-/* Hero Banner Carousel Slider */
-let currentSlide = 0;
-let slideInterval;
-
-function initHeroSlider() {
-  const slides = document.querySelectorAll('.hero-slide');
-  if (!slides.length) return;
-  startHeroAutoSlider();
-}
-
-function showHeroSlide(index) {
-  const slides = document.querySelectorAll('.hero-slide');
-  const dots = document.querySelectorAll('.slider-dots .dot');
-  if (!slides.length) return;
-
-  if (index >= slides.length) currentSlide = 0;
-  else if (index < 0) currentSlide = slides.length - 1;
-  else currentSlide = index;
-
-  slides.forEach((slide, i) => {
-    slide.classList.toggle('active', i === currentSlide);
-  });
-
-  dots.forEach((dot, i) => {
-    dot.classList.toggle('active', i === currentSlide);
-  });
-}
-
-function moveHeroSlide(direction) {
-  clearInterval(slideInterval);
-  showHeroSlide(currentSlide + direction);
-  startHeroAutoSlider();
-}
-
-function setHeroSlide(index) {
-  clearInterval(slideInterval);
-  showHeroSlide(index);
-  startHeroAutoSlider();
-}
-
-function startHeroAutoSlider() {
-  clearInterval(slideInterval);
-  slideInterval = setInterval(() => {
-    showHeroSlide(currentSlide + 1);
-  }, 5000);
-}
 
 /* 2. Mobile Menu Navigation Toggle */
 function initMobileMenu() {
