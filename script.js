@@ -53,17 +53,12 @@ function initMobileMenu() {
   });
 }
 
-/* 3. Hero Search Functionality - Realtime & Multi-Criteria Filtering */
+/* 3. Hero Search Functionality - Project Site Filter */
 function executeHeroSearch(smoothScroll = true) {
-  const categorySelect = document.getElementById('heroSearchCategory');
   const locationSelect = document.getElementById('heroSearchLocation');
-  const budgetSelect = document.getElementById('heroSearchBudget');
+  if (!locationSelect) return;
 
-  if (!categorySelect || !locationSelect || !budgetSelect) return;
-
-  const category = categorySelect.value;
   const location = locationSelect.value;
-  const budget = budgetSelect.value;
 
   if (smoothScroll) {
     const projectsSection = document.getElementById('projects');
@@ -77,25 +72,10 @@ function executeHeroSearch(smoothScroll = true) {
   let visibleProjects = 0;
 
   cards.forEach(card => {
-    const cardCat = card.getAttribute('data-category') || '';
     const cardLoc = (card.getAttribute('data-location') || '') + ' ' + card.innerText;
-    const cardPrice = parseFloat(card.getAttribute('data-price-val') || '0');
-
-    // 1. Category Check
-    const matchCat = (category === 'all' || cardCat.toLowerCase().includes(category.toLowerCase()));
-
-    // 2. Location Check
     const matchLoc = (location === 'all' || cardLoc.toLowerCase().includes(location.toLowerCase()));
 
-    // 3. Budget Check
-    let matchBudget = true;
-    if (budget === '6L-15L') matchBudget = (cardPrice >= 6 && cardPrice <= 15);
-    else if (budget === '15L-30L') matchBudget = (cardPrice >= 15 && cardPrice <= 30);
-    else if (budget === '30L-50L') matchBudget = (cardPrice >= 30 && cardPrice <= 50);
-    else if (budget === '50L-1C') matchBudget = (cardPrice >= 50 && cardPrice <= 100);
-    else if (budget === '1C+') matchBudget = (cardPrice >= 100);
-
-    if (matchCat && matchLoc && matchBudget) {
+    if (matchLoc) {
       card.style.display = 'flex';
       visibleProjects++;
     } else {
@@ -117,19 +97,17 @@ function executeHeroSearch(smoothScroll = true) {
   // Reset tab filter buttons highlight
   document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
 
-  showNotification(`Showing ${visibleProjects} matching project(s) for selected criteria.`);
+  showNotification(`Showing ${visibleProjects} matching project(s) for selected site.`);
 }
 
-// Bind real-time change event listeners for instant filtering when user selects any option
+// Bind real-time change event listeners for instant filtering when user selects any project site option
 document.addEventListener('DOMContentLoaded', () => {
-  ['heroSearchCategory', 'heroSearchLocation', 'heroSearchBudget'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.addEventListener('change', () => {
-        executeHeroSearch(true);
-      });
-    }
-  });
+  const el = document.getElementById('heroSearchLocation');
+  if (el) {
+    el.addEventListener('change', () => {
+      executeHeroSearch(true);
+    });
+  }
 });
 
 /* 4. Project Filters (Status / Category) */
