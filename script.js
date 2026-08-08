@@ -3,7 +3,101 @@ document.addEventListener('DOMContentLoaded', () => {
   initEmiCalculator();
   initScrollSpy();
   initLocationsCarousel();
+  initReviewsCarousel();
+  initScrollReveal();
 });
+
+/* 1c. Reviews Testimonials Auto-Sliding Carousel */
+function initReviewsCarousel() {
+  const track = document.getElementById('reviewsCarouselTrack');
+  const dotsContainer = document.getElementById('reviewsDots');
+  const prevBtn = document.getElementById('reviewPrev');
+  const nextBtn = document.getElementById('reviewNext');
+  if (!track || !dotsContainer) return;
+
+  const slides = Array.from(track.querySelectorAll('.reviews-slide'));
+  const total = slides.length;
+  let current = 0;
+  let interval;
+
+  function getSlidesVisible() {
+    return window.innerWidth <= 768 ? 1 : window.innerWidth <= 1024 ? 2 : 3;
+  }
+
+  function buildDots() {
+    dotsContainer.innerHTML = '';
+    const vis = getSlidesVisible();
+    const count = total - vis + 1;
+    for (let i = 0; i < count; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'reviews-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Review ' + (i + 1));
+      dot.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  function updateDots() {
+    dotsContainer.querySelectorAll('.reviews-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  function goTo(index) {
+    const vis = getSlidesVisible();
+    const max = total - vis;
+    current = Math.max(0, Math.min(index, max));
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    const gap = 24;
+    track.style.transform = `translateX(-${current * (slideWidth + gap)}px)`;
+    updateDots();
+  }
+
+  function next() {
+    const vis = getSlidesVisible();
+    goTo(current >= total - vis ? 0 : current + 1);
+  }
+
+  function prev() {
+    const vis = getSlidesVisible();
+    goTo(current <= 0 ? total - vis : current - 1);
+  }
+
+  function startAuto() { interval = setInterval(next, 4000); }
+  function stopAuto() { clearInterval(interval); }
+
+  if (prevBtn) prevBtn.addEventListener('click', () => { prev(); stopAuto(); startAuto(); });
+  if (nextBtn) nextBtn.addEventListener('click', () => { next(); stopAuto(); startAuto(); });
+
+  buildDots();
+  startAuto();
+  track.addEventListener('mouseenter', stopAuto);
+  track.addEventListener('mouseleave', startAuto);
+
+  let touchStartX = 0;
+  track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; stopAuto(); }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) diff > 0 ? next() : prev();
+    startAuto();
+  });
+  window.addEventListener('resize', () => { buildDots(); goTo(0); });
+}
+
+/* 1d. Scroll-Reveal IntersectionObserver */
+function initScrollReveal() {
+  const revealEls = document.querySelectorAll('.reveal');
+  if (!revealEls.length) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => observer.observe(el));
+}
 
 /* 1b. Location Cards Auto-Sliding Carousel */
 function initLocationsCarousel() {

@@ -154,7 +154,7 @@
 
       <div class="categories-grid">
         <!-- 1. Residential Plots -->
-        <div class="category-card" onclick="filterProjectsByCategory('plots')">
+        <div class="category-card reveal reveal-delay-1" onclick="filterProjectsByCategory('plots')">
           <img src="images/residential_plots_layout_1786211157283.jpg" alt="Residential Plots">
           <div class="category-overlay">
             <div class="category-icon">🏡</div>
@@ -165,7 +165,7 @@
         </div>
 
         <!-- 2. Apartments -->
-        <div class="category-card" onclick="filterProjectsByCategory('apartments')">
+        <div class="category-card reveal reveal-delay-2" onclick="filterProjectsByCategory('apartments')">
           <img src="images/luxury_apartments_tower_1786211178100.jpg" alt="Apartments">
           <div class="category-overlay">
             <div class="category-icon">🏢</div>
@@ -176,7 +176,7 @@
         </div>
 
         <!-- 3. Villas -->
-        <div class="category-card" onclick="filterProjectsByCategory('villas')">
+        <div class="category-card reveal reveal-delay-3" onclick="filterProjectsByCategory('villas')">
           <img src="images/modern_luxury_villa.png" alt="Sovereign Gated Luxury Villas">
           <div class="category-overlay">
             <div class="category-icon">🏠</div>
@@ -187,7 +187,7 @@
         </div>
 
         <!-- 4. Commercial Properties -->
-        <div class="category-card" onclick="filterProjectsByCategory('commercial')">
+        <div class="category-card reveal reveal-delay-4" onclick="filterProjectsByCategory('commercial')">
           <img src="images/commercial_tech_park_1786211223794.jpg" alt="Commercial Properties">
           <div class="category-overlay">
             <div class="category-icon">🏬</div>
@@ -605,55 +605,25 @@
         <p class="section-subtitle">Immerse yourself in our architectural renders, layout photographs, and luxury lifestyle amenities.</p>
       </div>
 
-      <div class="gallery-grid">
-        <div class="gallery-item" onclick="openLightbox('images/sancha_aerial_drone.png', 'VVR Adhiran Sancha - High Resolution Aerial Drone Layout View')">
-          <img src="images/sancha_aerial_drone.png" alt="VVR Adhiran Sancha Aerial Drone View">
-          <div class="gallery-caption">Sancha Township Aerial Drone View</div>
-        </div>
-
-        <div class="gallery-item" onclick="openLightbox('images/modern_luxury_villa.png', 'Sovereign Gated Community Independent Luxury Villa')">
-          <img src="images/modern_luxury_villa.png" alt="Sovereign Luxury Villa">
-          <div class="gallery-caption">Sovereign Gated Luxury Villa</div>
-        </div>
-
-        <div class="gallery-item" onclick="openLightbox('images/sancha_master_layout.jpg', 'VVR Adhiran Sancha - Official HMDA & TG RERA Approved Master Layout Plan Map')">
-          <img src="images/sancha_master_layout.jpg" alt="VVR Adhiran Sancha Master Layout Map">
-          <div class="gallery-caption">Sancha Approved Master Layout Map</div>
-        </div>
-
-        <div class="gallery-item" onclick="openLightbox('images/varahi_master_layout.png', 'VVR Adhiran Varahi County - Official DTCP & TS RERA Approved Master Layout Plan Map')">
-          <img src="images/varahi_master_layout.png" alt="Adhiran Varahi County Master Layout Map">
-          <div class="gallery-caption">Varahi County Approved Layout Map</div>
-        </div>
-
-        <div class="gallery-item" onclick="openLightbox('images/varahi_user_aerial.jpg', 'VVR Adhiran Varahi County - High Resolution Drone Layout View')">
-          <img src="images/varahi_user_aerial.jpg" alt="Adhiran Varahi County Drone Layout">
-          <div class="gallery-caption">Varahi County Plotted Layout Aerial View</div>
-        </div>
-
-        <div class="gallery-item" onclick="openLightbox('images/varahi_drone.jpg', 'Adhiran Varahi County - Aerial Drone View 1')">
-          <img src="images/varahi_drone.jpg" alt="Varahi County Drone 1">
-          <div class="gallery-caption">Aerial Drone Layout View 1</div>
-        </div>
-
-        <div class="gallery-item" onclick="openLightbox('images/varahi_drone2.jpg', 'Adhiran Varahi County - Aerial Drone View 2')">
-          <img src="images/varahi_drone2.jpg" alt="Varahi County Drone 2">
-          <div class="gallery-caption">Aerial Drone Layout View 2</div>
-        </div>
-
-        <div class="gallery-item" onclick="openLightbox('images/varahi_site.jpg', 'Adhiran Varahi County - Site Development & Roads')">
-          <img src="images/varahi_site.jpg" alt="Varahi County Site">
-          <div class="gallery-caption">Site Development & Blacktop Roads</div>
-        </div>
-
-        <div class="gallery-item" onclick="openLightbox('images/exclusive_villas_render_1786211196333.jpg', 'Triplex Sovereign Villa Exterior')">
-          <img src="images/exclusive_villas_render_1786211196333.jpg" alt="Sovereign Villa">
-          <div class="gallery-caption">Triplex Villa Render</div>
-        </div>
-
-        <div class="gallery-item" onclick="openLightbox('images/amenities_clubhouse_1786211251386.jpg', '5-Star Luxury Clubhouse & Pool')">
-          <img src="images/amenities_clubhouse_1786211251386.jpg" alt="Clubhouse & Pool">
-          <div class="gallery-caption">5-Star Clubhouse Lounge</div>
+      <!-- Auto-scrolling Gallery Marquee Strip -->
+      <div class="gallery-marquee-wrapper">
+        <div class="gallery-marquee-track">
+          <div class="gallery-item gm-item" onclick="openLightbox('images/sancha_aerial_drone.png', 'VVR Adhiran Sancha Aerial Drone View')"><img src="images/sancha_aerial_drone.png" alt="Sancha Aerial Drone"><div class="gallery-caption">Sancha Township Aerial View</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/modern_luxury_villa.png', 'Sovereign Gated Luxury Villa')"><img src="images/modern_luxury_villa.png" alt="Luxury Villa"><div class="gallery-caption">Sovereign Gated Luxury Villa</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/sancha_master_layout.jpg', 'Sancha HMDA & TG RERA Approved Master Layout')"><img src="images/sancha_master_layout.jpg" alt="Sancha Master Layout"><div class="gallery-caption">Sancha Approved Master Layout</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/varahi_master_layout.png', 'Varahi County DTCP & TS RERA Approved Master Layout')"><img src="images/varahi_master_layout.png" alt="Varahi Master Layout"><div class="gallery-caption">Varahi County Approved Layout Map</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/varahi_user_aerial.jpg', 'Varahi County Drone Layout View')"><img src="images/varahi_user_aerial.jpg" alt="Varahi Aerial"><div class="gallery-caption">Varahi County Aerial View</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/varahi_drone.jpg', 'Varahi County Drone 1')"><img src="images/varahi_drone.jpg" alt="Varahi Drone 1"><div class="gallery-caption">Aerial Drone View 1</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/varahi_drone2.jpg', 'Varahi County Drone 2')"><img src="images/varahi_drone2.jpg" alt="Varahi Drone 2"><div class="gallery-caption">Aerial Drone View 2</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/varahi_site.jpg', 'Varahi County Site Development & Roads')"><img src="images/varahi_site.jpg" alt="Varahi Site"><div class="gallery-caption">Site Development &amp; Blacktop Roads</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/exclusive_villas_render_1786211196333.jpg', 'Triplex Sovereign Villa Exterior')"><img src="images/exclusive_villas_render_1786211196333.jpg" alt="Sovereign Villa"><div class="gallery-caption">Triplex Villa Render</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/amenities_clubhouse_1786211251386.jpg', '5-Star Luxury Clubhouse & Pool')"><img src="images/amenities_clubhouse_1786211251386.jpg" alt="Clubhouse"><div class="gallery-caption">5-Star Clubhouse Lounge</div></div>
+          <!-- Duplicate for seamless infinite loop -->
+          <div class="gallery-item gm-item" onclick="openLightbox('images/sancha_aerial_drone.png', 'VVR Adhiran Sancha Aerial Drone View')"><img src="images/sancha_aerial_drone.png" alt="Sancha Aerial Drone"><div class="gallery-caption">Sancha Township Aerial View</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/modern_luxury_villa.png', 'Sovereign Gated Luxury Villa')"><img src="images/modern_luxury_villa.png" alt="Luxury Villa"><div class="gallery-caption">Sovereign Gated Luxury Villa</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/sancha_master_layout.jpg', 'Sancha HMDA & TG RERA Approved Master Layout')"><img src="images/sancha_master_layout.jpg" alt="Sancha Master Layout"><div class="gallery-caption">Sancha Approved Master Layout</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/varahi_master_layout.png', 'Varahi County DTCP & TS RERA Approved Master Layout')"><img src="images/varahi_master_layout.png" alt="Varahi Master Layout"><div class="gallery-caption">Varahi County Approved Layout Map</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/varahi_user_aerial.jpg', 'Varahi County Drone Layout View')"><img src="images/varahi_user_aerial.jpg" alt="Varahi Aerial"><div class="gallery-caption">Varahi County Aerial View</div></div>
         </div>
       </div>
   <!-- Customer Reviews & Testimonials Section -->
@@ -665,70 +635,60 @@
         <p class="section-subtitle">Real experiences from plot buyers and investors who chose VVR GROUPS for transparent, high-appreciation real estate investments.</p>
       </div>
 
-      <div class="reviews-grid">
-        <!-- Review Card 1 -->
-        <div class="review-card">
-          <div class="review-header">
-            <div class="reviewer-avatar">RR</div>
-            <div>
-              <h4 class="reviewer-name">Rajeshwar Reddy</h4>
-              <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Owner • VVR Adhiran Sancha</span>
+      <!-- Auto-Sliding Testimonials Carousel -->
+      <div class="reviews-carousel-wrapper">
+        <button class="reviews-arrow reviews-arrow-prev" id="reviewPrev" aria-label="Previous review"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="reviews-carousel-viewport">
+          <div class="reviews-carousel-track" id="reviewsCarouselTrack">
+            <div class="review-card reviews-slide">
+              <div class="review-header">
+                <div class="reviewer-avatar">RR</div>
+                <div>
+                  <h4 class="reviewer-name">Rajeshwar Reddy</h4>
+                  <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Owner • VVR Adhiran Sancha</span>
+                </div>
+              </div>
+              <div class="review-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <p class="review-text">"Buying a plot at VVR Adhiran Sancha in Tukkuguda Exit 14 was smooth and transparent. The location beside EMC, Samsung, and Airport corridor has incredible growth potential. Titles were 100% clear with spot registration!"</p>
+            </div>
+            <div class="review-card reviews-slide">
+              <div class="review-header">
+                <div class="reviewer-avatar">KV</div>
+                <div>
+                  <h4 class="reviewer-name">K. Venkat Rao</h4>
+                  <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Owner • VVR Adhiran Varahi County</span>
+                </div>
+              </div>
+              <div class="review-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <p class="review-text">"VVR GROUPS truly stands by their motto 'WE SELL. WE SECURE.' They provided complete DTCP &amp; RERA documentation for Varahi County near Sagar Highway. Excellent customer service and peaceful investment."</p>
+            </div>
+            <div class="review-card reviews-slide">
+              <div class="review-header">
+                <div class="reviewer-avatar">SC</div>
+                <div>
+                  <h4 class="reviewer-name">Srinivas &amp; Latha Chintala</h4>
+                  <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Owner • VVR Adhiran Sancha</span>
+                </div>
+              </div>
+              <div class="review-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <p class="review-text">"Chairman Vishnu Rao's vision and direct approach gave us total trust. The 33ft blacktop roads, underground drainage, and fast connectivity to ORR Exit 14 are top notch. Highly recommended!"</p>
+            </div>
+            <div class="review-card reviews-slide">
+              <div class="review-header">
+                <div class="reviewer-avatar">MP</div>
+                <div>
+                  <h4 class="reviewer-name">Madhuri Prasad</h4>
+                  <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Owner • VVR Adhiran Varahi County</span>
+                </div>
+              </div>
+              <div class="review-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <p class="review-text">"The entire process from enquiry to registration was hassle-free. VVR's team guided us every step. Sagar Highway location has high future growth and affordable entry pricing. Best investment decision!"</p>
             </div>
           </div>
-          <div class="review-rating">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </div>
-          <p class="review-text">
-            “Buying a plot at VVR Adhiran Sancha in Tukkuguda Exit 14 was smooth and transparent. The location beside EMC, Samsung, and Airport corridor has incredible growth potential. Titles were 100% clear with spot registration!”
-          </p>
         </div>
-
-        <!-- Review Card 2 -->
-        <div class="review-card">
-          <div class="review-header">
-            <div class="reviewer-avatar">KV</div>
-            <div>
-              <h4 class="reviewer-name">K. Venkat Rao</h4>
-              <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Owner • VVR Adhiran Varahi County</span>
-            </div>
-          </div>
-          <div class="review-rating">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </div>
-          <p class="review-text">
-            “VVR GROUPS truly stands by their motto ‘WE SELL. WE SECURE.’ They provided complete DTCP & RERA documentation for Varahi County near Sagar Highway. Excellent customer service and peaceful investment.”
-          </p>
-        </div>
-
-        <!-- Review Card 3 -->
-        <div class="review-card">
-          <div class="review-header">
-            <div class="reviewer-avatar">SC</div>
-            <div>
-              <h4 class="reviewer-name">Srinivas & Latha Chintala</h4>
-              <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Owner • VVR Adhiran Sancha</span>
-            </div>
-          </div>
-          <div class="review-rating">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </div>
-          <p class="review-text">
-            “Chairman Vishnu Rao's vision and direct approach gave us total trust. The 33ft blacktop roads, underground drainage, and fast connectivity to ORR Exit 14 are top notch. Highly recommended!”
-          </p>
-        </div>
+        <button class="reviews-arrow reviews-arrow-next" id="reviewNext" aria-label="Next review"><i class="fa-solid fa-chevron-right"></i></button>
       </div>
+      <div class="reviews-dots" id="reviewsDots" style="margin-top:1.5rem;"></div>
 
       <!-- Write a Review Callout -->
       <div style="margin-top: 2.5rem; text-align: center;">
