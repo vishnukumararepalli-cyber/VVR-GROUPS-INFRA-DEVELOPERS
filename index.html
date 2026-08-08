@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VVR GROUPS INFRA DEVELOPERS | Building Landmarks. Creating Legacies.</title>
+  <meta name="description" content="VVR GROUPS INFRA DEVELOPERS - Premier real-estate development company offering luxury residential plots, apartments, sovereign villas, and commercial properties led by Chairman Vennamaneni Vishnu Rao.">
+  <meta name="keywords" content="VVR Groups, VVR Infra, Real Estate Hyderabad, Vennamaneni Vishnu Rao, Gated Community Plots, Luxury Villas, Apartments, Commercial Properties">
+  
+  <!-- Google Fonts & FontAwesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Info Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-info">
+        <span><i class="fa-solid fa-phone text-gold"></i> <a href="tel:7207128384" style="color: inherit; text-decoration: none;">+91 7207128384</a></span>
+        <span><i class="fa-solid fa-envelope text-gold"></i> <a href="mailto:vishnukumararepalli@gmail.com" style="color: inherit; text-decoration: none;">vishnukumararepalli@gmail.com</a></span>
+        <span><i class="fa-solid fa-clock text-gold"></i> Mon - Sun: 9:00 AM - 7:30 PM</span>
+      </div>
+      <div>
+        <span><i class="fa-solid fa-shield-halved text-gold"></i> RERA Registered Developer</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Sticky Header & Navigation -->
+  <header class="header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="#home" class="brand-logo">
+          <div class="brand-icon">VVR</div>
+          <div class="brand-text">
+            <h1>VVR GROUPS</h1>
+            <span>INFRA DEVELOPERS</span>
+          </div>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About VVR</a></li>
+          <li><a href="#properties">Properties</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#prime-locations">Prime Locations</a></li>
+          <li><a href="#chairman">Chairman's Message</a></li>
+          <li><a href="#why-vvr">Why Choose Us</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="theme-toggle-btn" id="themeToggle" title="Toggle Light/Dark Theme">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+          <button class="btn btn-primary btn-sm" onclick="openModal('site-visit-modal')">
+            <i class="fa-solid fa-calendar-check"></i> Book Site Visit
+          </button>
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero" style="background-image: url('images/hero_luxury_estate_1786211109106.jpg');">
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">Building Landmarks.<br><span>Creating Legacies.</span></h1>
+        <p class="hero-subtitle">
+          Discover sovereign residential plots, sky residences, luxury villas, and Grade-A commercial spaces engineered for timeless value and modern luxury.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">
+            Explore Properties <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="#contact" class="btn btn-glass">
+            Contact Us <i class="fa-solid fa-headset"></i>
+          </a>
+          <button class="btn btn-outline" style="color: #fff; border-color: rgba(255,255,255,0.6);" onclick="openModal('enquiry-modal')">
+            <i class="fa-solid fa-paper-plane"></i> Quick Enquiry
+          </button>
+        </div>
+
+        <!-- Quick Property Search Widget -->
+        <div class="hero-search-box">
+          <div class="search-field">
+            <label><i class="fa-solid fa-building"></i> Property Type</label>
+            <select id="heroSearchCategory">
+              <option value="all">All Category Types</option>
+              <option value="plots">Residential Plots</option>
+              <option value="apartments">Luxury Apartments</option>
+              <option value="villas">Independent Villas</option>
+              <option value="commercial">Commercial Properties</option>
+            </select>
+          </div>
+
+          <div class="search-field">
+            <label><i class="fa-solid fa-map-pin"></i> Prime Location</label>
+            <select id="heroSearchLocation">
+              <option value="all">All Prime Locations</option>
+              <option value="Maheshwaram">Maheshwaram</option>
+              <option value="Tukkuguda">Tukkuguda Exit 14 , Maheshwaram</option>
+              <option value="Amangal">Amangal</option>
+              <option value="Mall Town">Mall Town</option>
+              <option value="Warangal Highway">Warangal Highway</option>
+              <option value="Sagar Highway">Sagar Highway</option>
+              <option value="Srisailam Highway">Srisailam Highway</option>
+              <option value="Alwal">Alwal</option>
+              <option value="Shamirpet">Shamirpet</option>
+            </select>
+          </div>
+
+          <div class="search-field">
+            <label><i class="fa-solid fa-indian-rupee-sign"></i> Budget Range</label>
+            <select id="heroSearchBudget">
+              <option value="all">Any Budget</option>
+              <option value="6L-15L">₹6 Lakhs - ₹15 Lakhs</option>
+              <option value="15L-30L">₹15 Lakhs - ₹30 Lakhs</option>
+              <option value="30L-50L">₹30 Lakhs - ₹50 Lakhs</option>
+              <option value="50L-1C">₹50 Lakhs - ₹1 Crore</option>
+              <option value="1C+">₹1 Crore & Above</option>
+            </select>
+          </div>
+
+          <button class="btn btn-primary" onclick="executeHeroSearch()">
+            <i class="fa-solid fa-magnifying-glass"></i> Search
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Our Property Categories (4 Core Cards) -->
+  <section id="properties" class="section-padding">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag">Our Portfolio</span>
+        <h2 class="section-title">Designed For Living, Investing & Growing</h2>
+        <p class="section-subtitle">Select from our benchmark real-estate verticals tailored for extraordinary lifestyles and high ROI investments.</p>
+      </div>
+
+      <div class="categories-grid">
+        <!-- 1. Residential Plots -->
+        <div class="category-card" onclick="filterProjectsByCategory('plots')">
+          <img src="images/residential_plots_layout_1786211157283.jpg" alt="Residential Plots">
+          <div class="category-overlay">
+            <div class="category-icon">🏡</div>
+            <h3 class="category-title">RESIDENTIAL PLOTS</h3>
+            <p class="category-desc">DTCP & HMDA approved premium gated layouts with underground utilities & lush green parks.</p>
+            <span class="category-link">Explore Plots <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <!-- 2. Apartments -->
+        <div class="category-card" onclick="filterProjectsByCategory('apartments')">
+          <img src="images/luxury_apartments_tower_1786211178100.jpg" alt="Apartments">
+          <div class="category-overlay">
+            <div class="category-icon">🏢</div>
+            <h3 class="category-title">APARTMENTS</h3>
+            <p class="category-desc">Ultra-luxurious 2, 3 & 4 BHK sky residences featuring sky lounges, infinity pools & 5-star clubhouses.</p>
+            <span class="category-link">Explore Apartments <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <!-- 3. Villas -->
+        <div class="category-card" onclick="filterProjectsByCategory('villas')">
+          <img src="images/modern_luxury_villa.png" alt="Sovereign Gated Luxury Villas">
+          <div class="category-overlay">
+            <div class="category-icon">🏠</div>
+            <h3 class="category-title">VILLAS</h3>
+            <p class="category-desc">Sovereign triplex gated villas with private infinity pools, smart home automation & expansive gardens.</p>
+            <span class="category-link">Explore Villas <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <!-- 4. Commercial Properties -->
+        <div class="category-card" onclick="filterProjectsByCategory('commercial')">
+          <img src="images/commercial_tech_park_1786211223794.jpg" alt="Commercial Properties">
+          <div class="category-overlay">
+            <div class="category-icon">🏬</div>
+            <h3 class="category-title">COMMERCIAL</h3>
+            <p class="category-desc">Grade-A IT tech parks, corporate office towers, and high-street retail spaces in prime growth corridors.</p>
+            <span class="category-link">Explore Commercial <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Hub Section -->
+  <section id="projects" class="section-padding" style="background-color: var(--bg-secondary);">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag">Featured Developments</span>
+        <h2 class="section-title">Flagship Real Estate Projects</h2>
+        <p class="section-subtitle">Explore ongoing, completed, and upcoming developments built to the highest architectural standards.</p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="projects-filter-bar">
+        <button class="filter-btn active" onclick="filterProjects('all', this)">All Projects</button>
+        <button class="filter-btn" onclick="filterProjects('ongoing', this)">Ongoing Projects</button>
+        <button class="filter-btn" onclick="filterProjects('completed', this)">Completed Projects</button>
+        <button class="filter-btn" onclick="filterProjects('upcoming', this)">Upcoming Projects</button>
+      </div>
+
+      <!-- Dynamic Projects Grid -->
+      <div class="projects-grid" id="projectsContainer">
+
+        <!-- Project 1: Monarch Residences (Apartments) -->
+        <div class="project-card" data-category="apartments" data-status="ongoing">
+          <div class="project-thumb">
+            <img src="images/luxury_apartments_tower_1786211178100.jpg" alt="VVR Monarch Residences">
+            <span class="project-status-badge status-ongoing">Ongoing</span>
+            <span class="project-type-badge"><i class="fa-solid fa-building"></i> Apartments</span>
+          </div>
+          <div class="project-body">
+        <!-- Project 1: Adhiran Varahi County (Ongoing Plotted Township) -->
+        <div class="project-card" data-category="plots" data-location="Mall Town Sagar Highway Narsaipally" data-price-val="16" data-status="ongoing">
+          <div class="project-thumb">
+            <img src="images/varahi_user_aerial.jpg" alt="VVR Adhiran Varahi County Aerial Layout">
+            <span class="project-status-badge status-ongoing">Ongoing Flagship</span>
+            <span class="project-type-badge"><i class="fa-solid fa-vector-square"></i> Premium Plots</span>
+          </div>
+          <div class="project-body">
+            <div class="project-location"><i class="fa-solid fa-location-dot"></i> Mall Town / Sagar Highway (Narsaipally)</div>
+            <h3 class="project-name">VVR Adhiran Varahi County</h3>
+            <p class="project-desc">HMDA & RERA approved premium plotted township in Mall Town / Sagar Highway (Narsaipally). 5 mins to Amaravathi Expressway, 10 mins to RRR exit & 15 mins to Bharat Future City.</p>
+            <div class="project-meta">
+              <div class="meta-item"><span>Approval</span><strong>HMDA & RERA Approved</strong></div>
+              <div class="meta-item"><span>Location</span><strong>Mall Town / Narsaipally</strong></div>
+              <div class="meta-item"><span>Price</span><strong>₹16 Lakhs Onwards</strong></div>
+            </div>
+            <div class="project-footer">
+              <button class="btn btn-outline btn-sm" onclick="showProjectDetails('monarch')">View Full Specs</button>
+              <a href="images/varahi_master_layout.png" download="Adhiran_Varahi_County_Master_Layout.png" target="_blank" class="btn btn-outline btn-sm" title="Download Master Layout Plan Map"><i class="fa-solid fa-download"></i> Layout Plan</a>
+              <button class="btn btn-primary btn-sm" onclick="openModal('enquiry-modal', 'VVR Adhiran Varahi County')">Enquire Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: VVR Adhiran Sancha (Ongoing Plotted Layout) -->
+        <div class="project-card" data-category="plots" data-location="Maheshwaram Srisailam Highway EMC Tukkuguda" data-price-val="36" data-status="ongoing">
+          <div class="project-thumb">
+            <img src="images/sancha_aerial_drone.png" alt="VVR Adhiran Sancha Plotted Layout Drone View">
+            <span class="project-status-badge status-ongoing">Ongoing Mega Layout</span>
+            <span class="project-type-badge"><i class="fa-solid fa-vector-square"></i> Premium Plots</span>
+          </div>
+          <div class="project-body">
+            <div class="project-location"><i class="fa-solid fa-location-dot"></i> Electronic Manufacturing Cluster (EMC) / Tukkuguda Exit 14</div>
+            <h3 class="project-name">VVR Adhiran Sancha</h3>
+            <p class="project-desc">HMDA & RERA approved premium plotted layout beside EMC, Samsung Electronics, Wipro & Malabar Gold. 15 Mins to ORR Exit 14 & 20 Mins to Airport.</p>
+            <div class="project-meta">
+              <div class="meta-item"><span>Approval</span><strong>HMDA & RERA Approved</strong></div>
+              <div class="meta-item"><span>Zone</span><strong>EMC & Tukkuguda Exit 14</strong></div>
+              <div class="meta-item"><span>Price</span><strong>₹36 Lakhs Onwards</strong></div>
+            </div>
+            <div class="project-footer">
+              <button class="btn btn-outline btn-sm" onclick="showProjectDetails('imperial')">View Full Specs</button>
+              <a href="images/sancha_master_layout.jpg" download="Adhiran_Sancha_Master_Layout.jpg" target="_blank" class="btn btn-outline btn-sm" title="Download Master Layout Plan Map"><i class="fa-solid fa-download"></i> Layout Plan</a>
+              <button class="btn btn-primary btn-sm" onclick="openModal('enquiry-modal', 'VVR Adhiran Sancha')">Enquire Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Emerald Palms Plots -->
+        <div class="project-card" data-category="plots" data-location="Sagar Highway" data-price-val="8" data-status="completed">
+          <div class="project-thumb">
+            <img src="images/residential_plots_layout_1786211157283.jpg" alt="VVR Emerald Palms">
+            <span class="project-status-badge status-completed">Completed</span>
+            <span class="project-type-badge"><i class="fa-solid fa-vector-square"></i> Plots</span>
+          </div>
+          <div class="project-body">
+            <div class="project-location"><i class="fa-solid fa-location-dot"></i> Sagar Highway Belt</div>
+            <h3 class="project-name">VVR Emerald Palms Layout</h3>
+            <p class="project-desc">HMDA & RERA approved 100-acre master-planned gated layout on Sagar Highway with grand clubhouse & 40ft roads.</p>
+            <div class="project-meta">
+              <div class="meta-item"><span>Approval</span><strong>HMDA & RERA</strong></div>
+              <div class="meta-item"><span>Plot Sizes</span><strong>200 - 600 Sq. Yds</strong></div>
+              <div class="meta-item"><span>Price</span><strong>₹8 Lakhs Onwards</strong></div>
+            </div>
+            <div class="project-footer">
+              <button class="btn btn-outline btn-sm" onclick="showProjectDetails('emerald')">View Specs</button>
+              <button class="btn btn-primary btn-sm" onclick="openModal('enquiry-modal', 'VVR Emerald Palms Layout - Sagar Highway')">Enquire Resale</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Pinnacle Tech Park Commercial -->
+        <div class="project-card" data-category="commercial" data-location="Warangal Highway" data-price-val="15" data-status="ongoing">
+          <div class="project-thumb">
+            <img src="images/commercial_tech_park_1786211223794.jpg" alt="VVR Pinnacle Tech Park">
+            <span class="project-status-badge status-ongoing">Ongoing</span>
+            <span class="project-type-badge"><i class="fa-solid fa-building-user"></i> Commercial</span>
+          </div>
+          <div class="project-body">
+            <div class="project-location"><i class="fa-solid fa-location-dot"></i> Warangal Highway Express Corridor</div>
+            <h3 class="project-name">VVR Pinnacle Tech & Commercial Park</h3>
+            <p class="project-desc">Grade-A commercial tech park and high-street commercial hub right on Warangal Highway express belt.</p>
+            <div class="project-meta">
+              <div class="meta-item"><span>Space</span><strong>Commercial Plots/Shops</strong></div>
+              <div class="meta-item"><span>Location</span><strong>Warangal Highway</strong></div>
+              <div class="meta-item"><span>Price</span><strong>₹15 Lakhs Onwards</strong></div>
+            </div>
+            <div class="project-footer">
+              <button class="btn btn-outline btn-sm" onclick="showProjectDetails('pinnacle')">View Specs</button>
+              <button class="btn btn-primary btn-sm" onclick="openModal('enquiry-modal', 'VVR Pinnacle Park - Warangal Highway')">Enquire Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: Royal County Plots -->
+        <div class="project-card" data-category="plots" data-location="Alwal Shamirpet" data-price-val="10" data-status="upcoming">
+          <div class="project-thumb">
+            <img src="images/residential_plots_layout_1786211157283.jpg" alt="VVR Royal County">
+            <span class="project-status-badge status-upcoming">Upcoming</span>
+            <span class="project-type-badge"><i class="fa-solid fa-layer-group"></i> Plots</span>
+          </div>
+          <div class="project-body">
+            <div class="project-location"><i class="fa-solid fa-location-dot"></i> Alwal & Shamirpet Belt</div>
+            <h3 class="project-name">VVR Royal County Enclave</h3>
+            <p class="project-desc">Next-generation smart plotted layout connecting Alwal and Shamirpet biotech corridor with solar LED street lighting & parks.</p>
+            <div class="project-meta">
+              <div class="meta-item"><span>Launch</span><strong>Pre-Launch</strong></div>
+              <div class="meta-item"><span>Plot Sizes</span><strong>167 - 500 Sq. Yds</strong></div>
+              <div class="meta-item"><span>Price</span><strong>₹10 Lakhs Onwards</strong></div>
+            </div>
+            <div class="project-footer">
+              <button class="btn btn-outline btn-sm" onclick="showProjectDetails('royal')">View Specs</button>
+              <button class="btn btn-primary btn-sm" onclick="openModal('enquiry-modal', 'VVR Royal County - Alwal/Shamirpet')">Express Interest</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6: Grand Horizon Mixed Use -->
+        <div class="project-card" data-category="commercial plots" data-location="Amangal Mall Town" data-price-val="6" data-status="completed">
+          <div class="project-thumb">
+            <img src="images/amenities_clubhouse_1786211251386.jpg" alt="VVR Grand Horizon">
+            <span class="project-status-badge status-completed">Completed</span>
+            <span class="project-type-badge"><i class="fa-solid fa-city"></i> Plots & Retail</span>
+          </div>
+          <div class="project-body">
+            <div class="project-location"><i class="fa-solid fa-location-dot"></i> Amangal & Mall Town Corridor</div>
+            <h3 class="project-name">VVR Grand Horizon Township</h3>
+            <p class="project-desc">Premium plotted township and retail commercial arcade located in Amangal & Mall Town high-growth zone.</p>
+            <div class="project-meta">
+              <div class="meta-item"><span>Vertical</span><strong>Plots & Retail</strong></div>
+              <div class="meta-item"><span>Growth</span><strong>High Capital ROI</strong></div>
+              <div class="meta-item"><span>Price</span><strong>₹6 Lakhs Onwards</strong></div>
+            </div>
+            <div class="project-footer">
+              <button class="btn btn-outline btn-sm" onclick="showProjectDetails('horizon')">View Specs</button>
+              <button class="btn btn-primary btn-sm" onclick="openModal('enquiry-modal', 'VVR Grand Horizon - Amangal/Mall Town')">Enquire Plot</button>
+            </div>
+          </div>
+        </div>
+
+  </section>
+
+  <!-- Prime Locations & High Growth Corridors Section -->
+  <section id="prime-locations" class="section-padding" style="background-color: var(--bg-card);">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag">Strategic Growth Belts</span>
+        <h2 class="section-title">Prime Locations & Key Corridors</h2>
+        <p class="section-subtitle">VVR GROUPS INFRA DEVELOPERS offers high-appreciation plotted layouts, luxury villas, and commercial properties across Telangana's most lucrative growth zones.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 2.5rem;">
+        <!-- 1. Maheshwaram -->
+        <div style="background: var(--bg-secondary); padding: 1.8rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); transition: transform 0.3s ease;" class="location-box">
+          <div style="color: var(--primary-gold); font-size: 1.8rem; margin-bottom: 0.8rem;"><i class="fa-solid fa-map-location-dot"></i></div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--text-dark);">Maheshwaram</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1rem;">Adjacent to E-City, FAB City & Hyderabad Pharma City. High ROI gated plot layouts.</p>
+          <a href="#contact" class="btn btn-outline btn-sm" onclick="openModal('enquiry-modal', 'Location Enquiry: Maheshwaram')">Explore Maheshwaram</a>
+        </div>
+
+        <!-- 2. Amangal -->
+        <div style="background: var(--bg-secondary); padding: 1.8rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);" class="location-box">
+          <div style="color: var(--primary-gold); font-size: 1.8rem; margin-bottom: 0.8rem;"><i class="fa-solid fa-road"></i></div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--text-dark);">Amangal</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1rem;">Rapidly growing commercial & residential corridor along the Regional Ring Road (RRR).</p>
+          <a href="#contact" class="btn btn-outline btn-sm" onclick="openModal('enquiry-modal', 'Location Enquiry: Amangal')">Explore Amangal</a>
+        </div>
+
+        <!-- 3. Mall Town -->
+        <div style="background: var(--bg-secondary); padding: 1.8rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);" class="location-box">
+          <div style="color: var(--primary-gold); font-size: 1.8rem; margin-bottom: 0.8rem;"><i class="fa-solid fa-building-circle-arrow-right"></i></div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--text-dark);">Mall Town</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1rem;">Fastest developing residential township zone with premier road connectivity.</p>
+          <a href="#contact" class="btn btn-outline btn-sm" onclick="openModal('enquiry-modal', 'Location Enquiry: Mall Town')">Explore Mall Town</a>
+        </div>
+
+        <!-- 4. Warangal Highway -->
+        <div style="background: var(--bg-secondary); padding: 1.8rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);" class="location-box">
+          <div style="color: var(--primary-gold); font-size: 1.8rem; margin-bottom: 0.8rem;"><i class="fa-solid fa-route"></i></div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--text-dark);">Warangal Highway</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1rem;">Major industrial & commercial growth expressway with AI & tech park developments.</p>
+          <a href="#contact" class="btn btn-outline btn-sm" onclick="openModal('enquiry-modal', 'Location Enquiry: Warangal Highway')">Explore Warangal Highway</a>
+        </div>
+
+        <!-- 5. Sagar Highway -->
+        <div style="background: var(--bg-secondary); padding: 1.8rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);" class="location-box">
+          <div style="color: var(--primary-gold); font-size: 1.8rem; margin-bottom: 0.8rem;"><i class="fa-solid fa-compass"></i></div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--text-dark);">Sagar Highway</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1rem;">Nagarjuna Sagar highway extension zone for master-planned mega plot layouts.</p>
+          <a href="#contact" class="btn btn-outline btn-sm" onclick="openModal('enquiry-modal', 'Location Enquiry: Sagar Highway')">Explore Sagar Highway</a>
+        </div>
+
+        <!-- 6. Srisailam Highway -->
+        <div style="background: var(--bg-secondary); padding: 1.8rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);" class="location-box">
+          <div style="color: var(--primary-gold); font-size: 1.8rem; margin-bottom: 0.8rem;"><i class="fa-solid fa-plane-departure"></i></div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--text-dark);">Srisailam Highway</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1rem;">Aerospace Park & international airport corridor ideal for luxury villas & plots.</p>
+          <a href="#contact" class="btn btn-outline btn-sm" onclick="openModal('enquiry-modal', 'Location Enquiry: Srisailam Highway')">Explore Srisailam Highway</a>
+        </div>
+
+        <!-- 7. Alwal -->
+        <div style="background: var(--bg-secondary); padding: 1.8rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);" class="location-box">
+          <div style="color: var(--primary-gold); font-size: 1.8rem; margin-bottom: 0.8rem;"><i class="fa-solid fa-tree"></i></div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--text-dark);">Alwal</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1rem;">Established Secunderabad residential sanctuary with top schools & hospitals.</p>
+          <a href="#contact" class="btn btn-outline btn-sm" onclick="openModal('enquiry-modal', 'Location Enquiry: Alwal')">Explore Alwal</a>
+        </div>
+
+        <!-- 8. Shamirpet -->
+        <div style="background: var(--bg-secondary); padding: 1.8rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);" class="location-box">
+          <div style="color: var(--primary-gold); font-size: 1.8rem; margin-bottom: 0.8rem;"><i class="fa-solid fa-vial-virus"></i></div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--text-dark);">Shamirpet</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1rem;">Genome Valley biotech hub & ORR Exit 7 zone for premium lifestyle developments.</p>
+          <a href="#contact" class="btn btn-outline btn-sm" onclick="openModal('enquiry-modal', 'Location Enquiry: Shamirpet')">Explore Shamirpet</a>
+        </div>
+
+        <!-- 9. Tukkuguda Exit 14 -->
+        <div style="background: var(--bg-secondary); padding: 1.8rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);" class="location-box">
+          <div style="color: var(--primary-gold); font-size: 1.8rem; margin-bottom: 0.8rem;"><i class="fa-solid fa-layer-group"></i></div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--text-dark);">Tukkuguda Exit 14 , Maheshwaram</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1rem;">Prime ORR Exit 14 & Electronic Manufacturing Cluster (EMC) hub adjacent to Samsung, Wipro & Airport.</p>
+          <a href="#contact" class="btn btn-outline btn-sm" onclick="openModal('enquiry-modal', 'Location Enquiry: Tukkuguda Exit 14 , Maheshwaram')">Explore Tukkuguda Exit 14 , Maheshwaram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chairman's Message Section -->
+  <section id="chairman" class="section-padding chairman-section">
+    <div class="container">
+      <div class="chairman-container">
+        <div class="chairman-image-box">
+          <img src="images/chairman_office_hd.png" alt="Chairman Vennamaneni Vishnu Rao">
+          <div class="chairman-experience-tag">
+            <h4 style="font-size: 1.1rem; margin-bottom: 0.2rem;">VVR GROUPS</h4>
+            <p style="font-size: 0.78rem; font-weight: 600; text-transform: uppercase;">Visionary Leadership</p>
+          </div>
+        </div>
+
+        <div class="chairman-content">
+          <span class="section-tag">Leadership Spotlight</span>
+          <h2 class="section-title">Chairman’s Message</h2>
+          <h3 style="color: var(--primary-gold); margin-bottom: 1.2rem; font-family: var(--font-sans); font-size: 1.4rem; font-weight: 700;">
+            A Vision for Better Living and Lasting Value
+          </h3>
+
+          <p style="color: var(--text-dark); font-size: 1.05rem; line-height: 1.6; margin-bottom: 1.2rem; font-weight: 500;">
+            At <strong>VVR GROUPS INFRA DEVELOPERS</strong>, we believe that real estate is more than developing land and buildings — it is about creating spaces where people can build their future.
+          </p>
+
+          <p style="color: var(--text-muted); line-height: 1.65; margin-bottom: 1.2rem; font-size: 0.95rem;">
+            At the age of <strong>26, I began my journey in the real-estate industry</strong>, driven by a vision to understand the needs of customers and create developments that offer genuine value, quality, and long-term potential. Today, at <strong>30</strong>, that early start has shaped my approach to leadership, business, and development.
+          </p>
+
+          <p style="color: var(--text-muted); line-height: 1.65; margin-bottom: 1.5rem; font-size: 0.95rem;">
+            Our goal at VVR GROUPS INFRA DEVELOPERS is to build a trusted name in real estate through <strong>transparency, quality, strategic development, and customer satisfaction</strong>. Whether it is a residential plot, apartment, villa, or commercial property, every development should represent a meaningful investment and a better opportunity for our customers.
+          </p>
+
+          <!-- Leadership Philosophy Block -->
+          <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: var(--radius-md); border-left: 4px solid var(--primary-gold); margin-bottom: 1.5rem;">
+            <h4 style="color: var(--primary-gold); margin-bottom: 0.5rem; font-size: 1.05rem; text-transform: uppercase; letter-spacing: 0.5px;">Our Leadership Philosophy</h4>
+            <div style="font-size: 1.15rem; font-style: italic; color: var(--text-dark); margin-bottom: 0.8rem; font-weight: 600;">
+              “Think ahead. Build with purpose. Deliver with integrity.”
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; margin-bottom: 1rem;">
+              I believe successful leadership begins with understanding people and ends with delivering on our promises. We focus on building long-term relationships rather than short-term transactions.
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.8rem; margin-top: 1rem;">
+              <div style="background: var(--bg-card); padding: 0.8rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                <strong style="color: var(--primary-gold); font-size: 0.9rem; display: block; margin-bottom: 0.2rem;"><i class="fa-solid fa-shield-halved"></i> Integrity</strong>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">Honest and transparent dealings.</span>
+              </div>
+              <div style="background: var(--bg-card); padding: 0.8rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                <strong style="color: var(--primary-gold); font-size: 0.9rem; display: block; margin-bottom: 0.2rem;"><i class="fa-solid fa-award"></i> Quality</strong>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">High standards of quality and value.</span>
+              </div>
+              <div style="background: var(--bg-card); padding: 0.8rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                <strong style="color: var(--primary-gold); font-size: 0.9rem; display: block; margin-bottom: 0.2rem;"><i class="fa-solid fa-eye"></i> Vision</strong>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">Opportunities for lasting value.</span>
+              </div>
+              <div style="background: var(--bg-card); padding: 0.8rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                <strong style="color: var(--primary-gold); font-size: 0.9rem; display: block; margin-bottom: 0.2rem;"><i class="fa-solid fa-heart"></i> Customer First</strong>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">Customers at the heart of all decisions.</span>
+              </div>
+            </div>
+          </div>
+
+          <p style="color: var(--text-muted); line-height: 1.65; margin-bottom: 1.5rem; font-size: 0.95rem;">
+            With a young and forward-thinking approach, VVR GROUPS INFRA DEVELOPERS is committed to growing responsibly and creating developments that people can be proud to own.
+          </p>
+
+          <div style="border-top: 1px solid var(--border-subtle); padding-top: 1rem;">
+            <h4 style="color: var(--text-dark); font-size: 1.25rem; margin-bottom: 0.2rem; font-family: var(--font-sans); font-weight: 700;">Vennamaneni Vishnu Rao</h4>
+            <p style="color: var(--primary-gold); font-weight: 600; font-size: 0.95rem; margin-bottom: 0.1rem;">Chairman</p>
+            <p style="color: var(--text-muted); font-size: 0.85rem; font-weight: 500;">VVR GROUPS INFRA DEVELOPERS</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About VVR Groups Section -->
+  <section id="about" class="section-padding">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag">About Us</span>
+        <h2 class="section-title">The Benchmark in Real Estate Development</h2>
+        <p class="section-subtitle">Built on a foundation of integrity, innovation, and long-term value creation across South India's prime growth corridors.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+        <div style="background: var(--bg-card); padding: 2rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+          <div style="font-size: 2rem; color: var(--primary-gold); margin-bottom: 1rem;"><i class="fa-solid fa-eye"></i></div>
+          <h3 style="font-size: 1.3rem; margin-bottom: 0.8rem;">Our Vision</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">To be the most trusted real-estate infrastructure developer recognized for iconic architecture, flawless legal transparency, and unparalleled customer delight.</p>
+        </div>
+
+        <div style="background: var(--bg-card); padding: 2rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+          <div style="font-size: 2rem; color: var(--primary-gold); margin-bottom: 1rem;"><i class="fa-solid fa-bullseye"></i></div>
+          <h3 style="font-size: 1.3rem; margin-bottom: 0.8rem;">Our Mission</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">To deliver premier residential plots, luxury sky apartments, sovereign villas, and commercial spaces on schedule with eco-sustainable engineering standards.</p>
+        </div>
+
+        <div style="background: var(--bg-card); padding: 2rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+          <div style="font-size: 2rem; color: var(--primary-gold); margin-bottom: 1rem;"><i class="fa-solid fa-gem"></i></div>
+          <h3 style="font-size: 1.3rem; margin-bottom: 0.8rem;">Core Values</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">Uncompromising legal transparency, structural excellence, customer-centricity, timely execution, and environmental sustainability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why VVR Groups (5 Pillars) -->
+  <section id="why-vvr" class="section-padding" style="background-color: var(--bg-secondary);">
+    <div class="container text-center">
+      <span class="section-tag">The VVR Advantage</span>
+      <h2 class="section-title">Why VVR GROUPS INFRA DEVELOPERS?</h2>
+      <p class="section-subtitle">Five core pillars that make VVR Groups the preferred real estate developer for homebuyers and smart investors.</p>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+          <h3 class="why-title">Trust & Transparency</h3>
+          <p class="why-desc">100% clear legal titles, RERA certification, and transparent paperwork with zero hidden surprises.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+          <h3 class="why-title">Strategic Locations</h3>
+          <p class="why-desc">Carefully selected high-growth corridors offering superior connectivity and exponential capital appreciation.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon"><i class="fa-solid fa-building-circle-check"></i></div>
+          <h3 class="why-title">Quality Development</h3>
+          <p class="why-desc">Top-grade engineering, branded building materials, rigid quality audits, and modern aesthetic design.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon"><i class="fa-solid fa-heart-circle-check"></i></div>
+          <h3 class="why-title">Customer-Focused</h3>
+          <p class="why-desc">Dedicated relationship managers, smooth documentation support, and end-to-end post-handover care.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <h3 class="why-title">Long-Term Value</h3>
+          <p class="why-desc">High asset liquidity, premium rental yield potential, and enduring generational wealth creation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Buyer Tools: EMI & Loan Calculator -->
+  <section class="container">
+    <div class="calculator-section">
+      <div class="text-center">
+        <span class="section-tag" style="color: var(--primary-gold);">Financial Planning</span>
+        <h2 style="color: #ffffff; font-size: 2.2rem;">Home Loan & EMI Calculator</h2>
+        <p style="color: #a3b1c2; font-size: 0.95rem;">Plan your home investment with our real-time EMI estimator tool.</p>
+      </div>
+
+      <div class="calc-grid">
+        <div class="calc-inputs">
+          <div class="input-group">
+            <label>Loan Amount (₹): <span id="amountVal">₹6,00,000</span></label>
+            <input type="range" id="loanAmount" min="600000" max="10000000" step="100000" value="600000">
+          </div>
+
+          <div class="input-group">
+            <label>Interest Rate (% P.A.): <span id="rateVal">8.5%</span></label>
+            <input type="range" id="interestRate" min="6.5" max="14" step="0.1" value="8.5">
+          </div>
+
+          <div class="input-group">
+            <label>Tenure (Years): <span id="tenureVal">20 Years</span></label>
+            <input type="range" id="loanTenure" min="5" max="30" step="1" value="20">
+          </div>
+        </div>
+
+        <div class="calc-result-box">
+          <span style="font-size: 0.85rem; text-transform: uppercase; color: #a3b1c2; letter-spacing: 1px;">Estimated Monthly EMI</span>
+          <div class="emi-amount" id="emiDisplay">₹65,076</div>
+          <p style="font-size: 0.85rem; color: #a3b1c2;" id="totalPayableDisplay">Total Payable: ₹1,56,18,240 (Principal + Interest)</p>
+          <div style="margin-top: 1.5rem;">
+            <button class="btn btn-primary btn-sm" onclick="openModal('enquiry-modal', 'Home Loan Assistance')">
+              <i class="fa-solid fa-hand-holding-dollar"></i> Get Loan Pre-Approval
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="section-padding">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag">Visual Showcase</span>
+        <h2 class="section-title">Property & Lifestyle Gallery</h2>
+        <p class="section-subtitle">Immerse yourself in our architectural renders, layout photographs, and luxury lifestyle amenities.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="openLightbox('images/sancha_aerial_drone.png', 'VVR Adhiran Sancha - High Resolution Aerial Drone Layout View')">
+          <img src="images/sancha_aerial_drone.png" alt="VVR Adhiran Sancha Aerial Drone View">
+          <div class="gallery-caption">Sancha Township Aerial Drone View</div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox('images/modern_luxury_villa.png', 'Sovereign Gated Community Independent Luxury Villa')">
+          <img src="images/modern_luxury_villa.png" alt="Sovereign Luxury Villa">
+          <div class="gallery-caption">Sovereign Gated Luxury Villa</div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox('images/sancha_master_layout.jpg', 'VVR Adhiran Sancha - Official HMDA & TG RERA Approved Master Layout Plan Map')">
+          <img src="images/sancha_master_layout.jpg" alt="VVR Adhiran Sancha Master Layout Map">
+          <div class="gallery-caption">Sancha Approved Master Layout Map</div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox('images/varahi_master_layout.png', 'VVR Adhiran Varahi County - Official DTCP & TS RERA Approved Master Layout Plan Map')">
+          <img src="images/varahi_master_layout.png" alt="Adhiran Varahi County Master Layout Map">
+          <div class="gallery-caption">Varahi County Approved Layout Map</div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox('images/varahi_user_aerial.jpg', 'VVR Adhiran Varahi County - High Resolution Drone Layout View')">
+          <img src="images/varahi_user_aerial.jpg" alt="Adhiran Varahi County Drone Layout">
+          <div class="gallery-caption">Varahi County Plotted Layout Aerial View</div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox('images/varahi_drone.jpg', 'Adhiran Varahi County - Aerial Drone View 1')">
+          <img src="images/varahi_drone.jpg" alt="Varahi County Drone 1">
+          <div class="gallery-caption">Aerial Drone Layout View 1</div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox('images/varahi_drone2.jpg', 'Adhiran Varahi County - Aerial Drone View 2')">
+          <img src="images/varahi_drone2.jpg" alt="Varahi County Drone 2">
+          <div class="gallery-caption">Aerial Drone Layout View 2</div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox('images/varahi_site.jpg', 'Adhiran Varahi County - Site Development & Roads')">
+          <img src="images/varahi_site.jpg" alt="Varahi County Site">
+          <div class="gallery-caption">Site Development & Blacktop Roads</div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox('images/exclusive_villas_render_1786211196333.jpg', 'Triplex Sovereign Villa Exterior')">
+          <img src="images/exclusive_villas_render_1786211196333.jpg" alt="Sovereign Villa">
+          <div class="gallery-caption">Triplex Villa Render</div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox('images/amenities_clubhouse_1786211251386.jpg', '5-Star Luxury Clubhouse & Pool')">
+          <img src="images/amenities_clubhouse_1786211251386.jpg" alt="Clubhouse & Pool">
+          <div class="gallery-caption">5-Star Clubhouse Lounge</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Enquiry Section -->
+  <section id="contact" class="section-padding" style="background-color: var(--bg-secondary);">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Schedule A Consultation Or Site Visit</h2>
+        <p class="section-subtitle">Our executive property advisors are ready to guide you to your ideal property investment.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Information -->
+        <div class="contact-info-card">
+          <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Contact & Helpdesk</h3>
+
+          <div class="info-item">
+            <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+            <div>
+              <strong style="display: block; font-size: 1rem;">Phone Number</strong>
+              <span style="color: var(--text-muted); font-size: 0.95rem;">
+                <a href="tel:7207128384" style="color: var(--primary-gold); font-weight: 700; text-decoration: none; font-size: 1.1rem;">+91 7207128384</a>
+              </span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+              <strong style="display: block; font-size: 1rem;">Email Address</strong>
+              <span style="color: var(--text-muted); font-size: 0.95rem;">
+                <a href="mailto:vishnukumararepalli@gmail.com" style="color: var(--primary-gold); font-weight: 600; text-decoration: none;">vishnukumararepalli@gmail.com</a>
+              </span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
+            <div>
+              <strong style="display: block; font-size: 1rem;">Working Hours</strong>
+              <span style="color: var(--text-muted); font-size: 0.95rem;">
+                Monday - Sunday: 9:00 AM - 7:30 PM
+              </span>
+            </div>
+          </div>
+
+          <div style="margin-top: 2rem;">
+            <a href="https://wa.me/917207128384?text=Hello%20VVR%20Groups%2C%20I%20would%20like%20to%20enquire%20about%20your%20projects." target="_blank" class="btn btn-primary" style="width: 100%; background: #25d366; border-color: #25d366;">
+              <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i> Chat Direct on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Enquiry Form -->
+        <div class="contact-form-card">
+          <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Send Us An Enquiry</h3>
+
+          <form id="contactForm" onsubmit="handleFormSubmit(event)">
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Full Name *</label>
+                <input type="text" class="form-control" placeholder="Enter your name" required>
+              </div>
+
+              <div class="form-group">
+                <label>Phone Number *</label>
+                <input type="tel" class="form-control" placeholder="+91 XXXXX XXXXX" required>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" class="form-control" placeholder="name@example.com">
+              </div>
+
+              <div class="form-group">
+                <label>Interested Vertical *</label>
+                <select class="form-control" required>
+                  <option value="">Select Property Type</option>
+                  <option value="Plots">Residential Plots</option>
+                  <option value="Apartments">Luxury Apartments</option>
+                  <option value="Villas">Independent Villas</option>
+                  <option value="Commercial">Commercial Property</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 1.2rem;">
+              <div class="form-group">
+                <label>Preferred Project Location</label>
+                <select class="form-control">
+                  <option value="Maheshwaram">Maheshwaram</option>
+                  <option value="Amangal">Amangal</option>
+                  <option value="Mall Town">Mall Town</option>
+                  <option value="Warangal Highway">Warangal Highway</option>
+                  <option value="Sagar Highway">Sagar Highway</option>
+                  <option value="Srisailam Highway">Srisailam Highway</option>
+                  <option value="Alwal">Alwal</option>
+                  <option value="Shamirpet">Shamirpet</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+              <label>Your Message / Requirements</label>
+              <textarea class="form-control" rows="4" placeholder="Tell us about your budget, preferred size or investment timeframe..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              <i class="fa-solid fa-paper-plane"></i> Submit Enquiry
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <div class="brand-icon">VVR</div>
+            <div class="brand-text">
+              <h1 style="color: #fff;">VVR GROUPS</h1>
+              <span>INFRA DEVELOPERS</span>
+            </div>
+          </div>
+          <p>
+            VVR GROUPS INFRA DEVELOPERS is South India's premier real-estate conglomerate pioneering benchmark residential plots, luxury sky residences, sovereign villas, and Grade-A commercial spaces.
+          </p>
+          <p style="margin-top: 1rem; color: var(--primary-gold); font-weight: 600;">
+            Chairman: Vennamaneni Vishnu Rao
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Property Types</h4>
+          <ul class="footer-links">
+            <li><a href="#properties" onclick="filterProjectsByCategory('plots')">Residential Plots</a></li>
+            <li><a href="#properties" onclick="filterProjectsByCategory('apartments')">Luxury Sky Apartments</a></li>
+            <li><a href="#properties" onclick="filterProjectsByCategory('villas')">Independent Triplex Villas</a></li>
+            <li><a href="#properties" onclick="filterProjectsByCategory('commercial')">Commercial Tech Parks</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#about">About VVR Groups</a></li>
+            <li><a href="#chairman">Chairman's Message</a></li>
+            <li><a href="#why-vvr">Why Choose VVR</a></li>
+            <li><a href="#projects">Ongoing & Completed Projects</a></li>
+            <li><a href="#gallery">Photo Gallery</a></li>
+            <li><a href="#contact">Contact & Support</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">RERA Compliance</h4>
+          <p style="font-size: 0.85rem; color: #768390; line-height: 1.6;">
+            All VVR Groups projects are registered with respective RERA authorities and strictly adhere to statutory real estate regulation laws.
+          </p>
+          <div style="margin-top: 1rem; color: #ffffff; font-size: 0.85rem;">
+            <i class="fa-solid fa-shield-check text-gold"></i> 100% Bank Approved Projects
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 VVR GROUPS INFRA DEVELOPERS. All Rights Reserved. Designed for Vennamaneni Vishnu Rao.
+        </div>
+        <div>
+          Privacy Policy | Terms & Conditions | RERA Disclaimer
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/917207128384?text=Hello%20VVR%20Groups%2C%20I%20would%20like%20to%20enquire%20about%20your%20real%20estate%20projects." target="_blank" class="whatsapp-float" title="Direct WhatsApp Enquiry">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- ==================== MODALS ==================== -->
+
+  <!-- Modal 1: Quick Enquiry Modal -->
+  <div class="modal-backdrop" id="enquiry-modal">
+    <div class="modal-container">
+      <button class="modal-close" onclick="closeModal('enquiry-modal')">&times;</button>
+      <div class="text-center" style="margin-bottom: 1.5rem;">
+        <span class="section-tag">Express Interest</span>
+        <h3 id="modalProjectTitle" style="font-size: 1.6rem;">Project Enquiry</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Leave your contact details to receive full brochure, price sheet, and floor plan.</p>
+      </div>
+
+      <form onsubmit="handleModalSubmit(event)">
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label>Full Name *</label>
+          <input type="text" class="form-control" placeholder="Your Name" required>
+        </div>
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label>Phone Number *</label>
+          <input type="tel" class="form-control" placeholder="+91 Phone Number" required>
+        </div>
+        <div class="form-group" style="margin-bottom: 1.5rem;">
+          <label>Email Address</label>
+          <input type="email" class="form-control" placeholder="name@domain.com">
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">
+          Send Enquiry & Request Call Back
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal 2: Site Visit Modal -->
+  <div class="modal-backdrop" id="site-visit-modal">
+    <div class="modal-container">
+      <button class="modal-close" onclick="closeModal('site-visit-modal')">&times;</button>
+      <div class="text-center" style="margin-bottom: 1.5rem;">
+        <span class="section-tag">Complimentary Pick & Drop</span>
+        <h3 style="font-size: 1.6rem;">Book Virtual / Physical Site Visit</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Schedule a guided site tour with our senior property expert.</p>
+      </div>
+
+      <form onsubmit="handleSiteVisitSubmit(event)">
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label>Select Project Location</label>
+          <select class="form-control" required>
+            <option value="VVR Sovereign County (Maheshwaram)">VVR Sovereign County (Maheshwaram)</option>
+            <option value="VVR Imperial Crest Villas (Srisailam Highway)">VVR Imperial Crest Villas (Srisailam Highway)</option>
+            <option value="VVR Emerald Palms Layout (Sagar Highway)">VVR Emerald Palms Layout (Sagar Highway)</option>
+            <option value="VVR Pinnacle Tech Park (Warangal Highway)">VVR Pinnacle Tech Park (Warangal Highway)</option>
+            <option value="VVR Royal County Enclave (Alwal / Shamirpet)">VVR Royal County Enclave (Alwal / Shamirpet)</option>
+            <option value="VVR Grand Horizon Township (Amangal / Mall Town)">VVR Grand Horizon Township (Amangal / Mall Town)</option>
+          </select>
+        </div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Preferred Date</label>
+            <input type="date" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label>Time Slot</label>
+            <select class="form-control">
+              <option value="10am">10:00 AM - 12:00 PM</option>
+              <option value="2pm">02:00 PM - 04:00 PM</option>
+              <option value="5pm">05:00 PM - 07:00 PM</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label>Contact Phone Number *</label>
+          <input type="tel" class="form-control" placeholder="+91 XXXXX XXXXX" required>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">
+          Confirm Site Visit Reservation
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal 3: Specs Details Modal -->
+  <div class="modal-backdrop" id="specs-modal">
+    <div class="modal-container" style="max-width: 750px;">
+      <button class="modal-close" onclick="closeModal('specs-modal')">&times;</button>
+      <div id="specsModalBody">
+        <!-- Dynamic Content Injected via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4: Image Customizer Modal (For User Original Images) -->
+  <div class="modal-backdrop" id="customizer-modal">
+    <div class="modal-container" style="max-width: 800px;">
+      <button class="modal-close" onclick="closeModal('customizer-modal')">&times;</button>
+      <div class="text-center" style="margin-bottom: 1rem;">
+        <span class="section-tag">Custom Image Manager</span>
+        <h3 style="font-size: 1.6rem;">Replace Renderings With Your Original Photos</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">You can upload any of your actual project photos below to instantly preview them live on the website!</p>
+      </div>
+
+      <div class="image-customizer-grid">
+        <div class="image-swap-box">
+          <label>Hero Banner Image</label>
+          <input type="file" accept="image/*" onchange="swapImageLocally('hero', event)">
+        </div>
+
+        <div class="image-swap-box">
+          <label>Chairman Portrait</label>
+          <input type="file" accept="image/*" onchange="swapImageLocally('chairman', event)">
+        </div>
+
+        <div class="image-swap-box">
+          <label>Plots Layout</label>
+          <input type="file" accept="image/*" onchange="swapImageLocally('plots', event)">
+        </div>
+
+        <div class="image-swap-box">
+          <label>Apartments Tower</label>
+          <input type="file" accept="image/*" onchange="swapImageLocally('apartments', event)">
+        </div>
+
+        <div class="image-swap-box">
+          <label>Villas Render</label>
+          <input type="file" accept="image/*" onchange="swapImageLocally('villas', event)">
+        </div>
+
+        <div class="image-swap-box">
+          <label>Commercial Tech Park</label>
+          <input type="file" accept="image/*" onchange="swapImageLocally('commercial', event)">
+        </div>
+      </div>
+
+      <div style="margin-top: 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted);">
+        <p>💡 <strong>Permanent Option:</strong> You can also copy your original images directly into the project's <code>/images/</code> directory on your computer!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5: Lightbox Gallery View -->
+  <div class="modal-backdrop" id="lightbox-modal">
+    <div class="modal-container" style="background: transparent; border: none; max-width: 900px; text-align: center; box-shadow: none;">
+      <button class="modal-close" style="background: rgba(255,255,255,0.8);" onclick="closeModal('lightbox-modal')">&times;</button>
+      <img id="lightboxImg" src="" alt="Full View" style="max-height: 80vh; margin: 0 auto; border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+      <p id="lightboxCaption" style="color: #fff; margin-top: 1rem; font-size: 1.1rem; font-weight: 600;"></p>
+    </div>
+  </div>
+
+  <!-- JavaScript Script -->
+  <script src="script.js"></script>
+</body>
+</html>
