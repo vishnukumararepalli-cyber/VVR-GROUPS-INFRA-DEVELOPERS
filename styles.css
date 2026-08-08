@@ -72,9 +72,13 @@
   padding: 0;
 }
 
-html {
+html, body {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  position: relative;
 }
 
 body {
@@ -82,7 +86,6 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-dark);
   line-height: 1.6;
-  overflow-x: hidden;
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
@@ -1572,36 +1575,60 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 768px) {
+  .top-bar {
+    display: none !important;
+  }
+
   .header {
     background-color: #ffffff;
-    border-bottom: 2px solid var(--primary-gold);
+    border-bottom: 2.5px solid var(--primary-gold);
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
   }
   
+  .header .container {
+    padding: 0 1rem;
+    max-width: 100%;
+  }
+
   .navbar {
-    height: 76px;
+    height: 70px;
     padding: 0;
+    gap: 0.5rem;
+    justify-content: space-between;
+  }
+
+  .brand-logo {
     gap: 0.5rem;
   }
 
   .brand-icon {
-    width: 42px;
-    height: 42px;
-    font-size: 1.25rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1.15rem;
     border-radius: 10px;
   }
 
   .brand-text h1 {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
   }
 
   .brand-text span {
-    font-size: 0.5rem;
-    letter-spacing: 1px;
+    font-size: 0.45rem;
+    letter-spacing: 0.8px;
   }
 
+  .nav-actions {
+    gap: 0.4rem;
+    flex-shrink: 0;
+  }
+
+  /* Hide Book Site Visit from top bar on small screens so hamburger icon is 100% visible */
   .btn-nav {
-    padding: 0.5rem 0.9rem;
-    font-size: 0.8rem;
+    display: none !important;
   }
 
   .mobile-menu-btn {
@@ -1612,17 +1639,24 @@ h1, h2, h3, h4, h5, h6 {
     height: 42px;
     background: #0C192E;
     color: var(--primary-gold);
-    border: 1px solid var(--primary-gold);
+    border: 1.5px solid var(--primary-gold);
     border-radius: 10px;
-    font-size: 1.25rem;
+    font-size: 1.3rem;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .mobile-cta-item {
+    display: block;
+    width: 100%;
   }
 
   .nav-links {
     position: fixed;
-    top: 76px;
+    top: 70px;
     left: -100%;
     width: 100%;
-    height: calc(100vh - 76px);
+    height: calc(100vh - 70px);
     background: #0C192E;
     flex-direction: column;
     align-items: flex-start;
@@ -1680,51 +1714,60 @@ h1, h2, h3, h4, h5, h6 {
 
   /* Hero Mobile Layout */
   .hero {
-    min-height: 70vh;
-    padding: 3rem 0;
+    min-height: auto;
+    padding: 2.5rem 0;
+    overflow-x: hidden;
   }
 
   .hero-content {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     text-align: center;
+    width: 100%;
   }
 
   .hero-badge {
-    font-size: 0.75rem;
-    padding: 0.35rem 0.85rem;
-    margin-bottom: 1rem;
+    font-size: 0.72rem;
+    padding: 0.35rem 0.75rem;
+    margin-bottom: 0.85rem;
+    white-space: normal;
   }
 
   .hero-title {
     font-size: 2.1rem;
-    margin-bottom: 1rem;
+    line-height: 1.2;
+    margin-bottom: 0.85rem;
   }
 
   .hero-subtitle {
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    margin-bottom: 1.25rem;
   }
 
   .hero-cta {
     justify-content: center;
-    gap: 0.75rem;
-    margin-bottom: 2rem;
+    flex-direction: column;
+    gap: 0.65rem;
+    margin-bottom: 1.5rem;
   }
 
   .hero-cta .btn {
     width: 100%;
-    padding: 0.75rem 1.25rem;
+    padding: 0.75rem 1rem;
     font-size: 0.9rem;
   }
 
   .hero-search-box {
-    padding: 1.25rem 1rem;
+    padding: 1.15rem 0.85rem;
     border-radius: 16px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .hero-search-input-group {
     flex-direction: column;
+    gap: 0.65rem;
     width: 100%;
   }
 
@@ -1732,6 +1775,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: 48px;
     font-size: 0.85rem;
+    padding: 0 0.85rem;
   }
 
   .hero-search-btn {
@@ -1788,9 +1832,16 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+@media (min-width: 769px) {
+  .mobile-cta-item {
+    display: none !important;
+  }
+}
+
 @media (max-width: 480px) {
   .brand-text span {
-    display: none;
+    font-size: 0.425rem;
+    letter-spacing: 0.5px;
   }
 
   .hero-title {
