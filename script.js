@@ -1,39 +1,55 @@
-/* ==========================================================================
-   VVR GROUPS INFRA DEVELOPERS - MASTER JAVASCRIPT LOGIC
-   Building Landmarks. Creating Legacies.
-   ========================================================================== */
-
 document.addEventListener('DOMContentLoaded', () => {
-  initThemeToggle();
+  initHeroSlider();
   initMobileMenu();
   initEmiCalculator();
   initScrollSpy();
 });
 
-/* 1. Theme Toggle (Light / Dark Mode) */
-function initThemeToggle() {
-  const themeBtn = document.getElementById('themeToggle');
-  const htmlTag = document.documentElement;
+/* Hero Banner Carousel Slider */
+let currentSlide = 0;
+let slideInterval;
 
-  // Saved theme or default to light
-  const savedTheme = localStorage.getItem('vvr_theme') || 'light';
-  htmlTag.setAttribute('data-theme', savedTheme);
-  updateThemeIcon(savedTheme);
+function initHeroSlider() {
+  const slides = document.querySelectorAll('.hero-slide');
+  if (!slides.length) return;
+  startHeroAutoSlider();
+}
 
-  themeBtn.addEventListener('click', () => {
-    const currentTheme = htmlTag.getAttribute('data-theme');
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    htmlTag.setAttribute('data-theme', newTheme);
-    localStorage.setItem('vvr_theme', newTheme);
-    updateThemeIcon(newTheme);
+function showHeroSlide(index) {
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.slider-dots .dot');
+  if (!slides.length) return;
+
+  if (index >= slides.length) currentSlide = 0;
+  else if (index < 0) currentSlide = slides.length - 1;
+  else currentSlide = index;
+
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === currentSlide);
+  });
+
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === currentSlide);
   });
 }
 
-function updateThemeIcon(theme) {
-  const themeBtn = document.getElementById('themeToggle');
-  themeBtn.innerHTML = theme === 'dark' 
-    ? '<i class="fa-solid fa-sun" style="color: #f59e0b;"></i>' 
-    : '<i class="fa-solid fa-moon"></i>';
+function moveHeroSlide(direction) {
+  clearInterval(slideInterval);
+  showHeroSlide(currentSlide + direction);
+  startHeroAutoSlider();
+}
+
+function setHeroSlide(index) {
+  clearInterval(slideInterval);
+  showHeroSlide(index);
+  startHeroAutoSlider();
+}
+
+function startHeroAutoSlider() {
+  clearInterval(slideInterval);
+  slideInterval = setInterval(() => {
+    showHeroSlide(currentSlide + 1);
+  }, 5000);
 }
 
 /* 2. Mobile Menu Navigation Toggle */

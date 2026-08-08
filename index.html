@@ -83,10 +83,7 @@
         </ul>
 
         <div class="nav-actions">
-          <button class="theme-toggle-btn" id="themeToggle" title="Toggle Light/Dark Theme">
-            <i class="fa-solid fa-moon"></i>
-          </button>
-          <button class="btn btn-primary btn-sm" onclick="openModal('site-visit-modal')">
+          <button class="btn btn-primary btn-nav" onclick="openModal('site-visit-modal')">
             <i class="fa-solid fa-calendar-check"></i> Book Site Visit
           </button>
           <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation">
@@ -97,9 +94,20 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero" style="background-image: url('images/hero_luxury_estate_1786211109106.jpg');">
+  <!-- Sliding Hero Banner Carousel Section -->
+  <section id="home" class="hero hero-slider">
+    <!-- Slider Track & Slides -->
+    <div class="hero-slides-wrapper">
+      <div class="hero-slide active" style="background-image: url('images/hero_luxury_estate_1786211109106.jpg');"></div>
+      <div class="hero-slide" style="background-image: url('images/varahi_user_aerial.jpg');"></div>
+      <div class="hero-slide" style="background-image: url('images/sancha_aerial_drone.png');"></div>
+    </div>
     <div class="hero-overlay"></div>
+
+    <!-- Slider Navigation Arrows -->
+    <button class="slider-arrow prev-arrow" onclick="moveHeroSlide(-1)" aria-label="Previous Slide"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="slider-arrow next-arrow" onclick="moveHeroSlide(1)" aria-label="Next Slide"><i class="fa-solid fa-chevron-right"></i></button>
+
     <div class="container">
       <div class="hero-content">
         <div class="hero-badge">
@@ -138,6 +146,13 @@
         </div>
 
       </div>
+    </div>
+
+    <!-- Slider Dot Indicators -->
+    <div class="slider-dots">
+      <span class="dot active" onclick="setHeroSlide(0)"></span>
+      <span class="dot" onclick="setHeroSlide(1)"></span>
+      <span class="dot" onclick="setHeroSlide(2)"></span>
     </div>
   </section>
 
@@ -261,12 +276,11 @@
               <a href="images/sancha_master_layout.jpg" download="Adhiran_Sancha_Master_Layout.jpg" target="_blank" class="btn btn-outline btn-sm" title="Download Master Layout Plan Map"><i class="fa-solid fa-download"></i> Layout Plan</a>
               <button class="btn btn-primary btn-sm" onclick="openModal('enquiry-modal', 'VVR Adhiran Sancha')">Enquire Now</button>
             </div>
-          </div>
         </div>
 
-      </div>div>
-          </div>
-        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Government & Statutory Approvals Section -->
   <section id="approvals" class="section-padding" style="background: var(--bg-card); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
