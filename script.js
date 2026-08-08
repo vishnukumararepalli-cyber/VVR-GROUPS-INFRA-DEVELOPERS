@@ -2,7 +2,87 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initEmiCalculator();
   initScrollSpy();
+  initLocationsCarousel();
 });
+
+/* 1b. Location Cards Auto-Sliding Carousel */
+function initLocationsCarousel() {
+  const track = document.getElementById('locSliderTrack');
+  const dotsContainer = document.getElementById('locSliderDots');
+  if (!track || !dotsContainer) return;
+
+  const slides = Array.from(track.querySelectorAll('.loc-slide'));
+  const total = slides.length;
+  let current = 0;
+  let interval;
+
+  function getSlidesVisible() {
+    const w = window.innerWidth;
+    if (w <= 640) return 1;
+    if (w <= 1024) return 2;
+    return 3;
+  }
+
+  function buildDots() {
+    dotsContainer.innerHTML = '';
+    const vis = getSlidesVisible();
+    const count = total - vis + 1;
+    for (let i = 0; i < count; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'loc-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      dot.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  function updateDots() {
+    dotsContainer.querySelectorAll('.loc-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  function goTo(index) {
+    const vis = getSlidesVisible();
+    const max = total - vis;
+    current = Math.max(0, Math.min(index, max));
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    const gap = 24; // 1.5rem gap
+    track.style.transform = `translateX(-${current * (slideWidth + gap)}px)`;
+    updateDots();
+  }
+
+  function next() {
+    const vis = getSlidesVisible();
+    const max = total - vis;
+    goTo(current >= max ? 0 : current + 1);
+  }
+
+  function startAuto() {
+    interval = setInterval(next, 3000);
+  }
+
+  function stopAuto() {
+    clearInterval(interval);
+  }
+
+  buildDots();
+  startAuto();
+
+  // Pause on hover
+  track.addEventListener('mouseenter', stopAuto);
+  track.addEventListener('mouseleave', startAuto);
+  // Touch swipe support
+  let touchStartX = 0;
+  track.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; stopAuto(); }, { passive: true });
+  track.addEventListener('touchend', (e) => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) diff > 0 ? next() : goTo(current - 1);
+    startAuto();
+  });
+  // Rebuild on resize
+  window.addEventListener('resize', () => { buildDots(); goTo(current); });
+}
 
 /* 2. Mobile Menu Navigation Toggle & Dropdown Handling */
 function initMobileMenu() {

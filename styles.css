@@ -1283,6 +1283,64 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
+/* Location Carousel Slider */
+.loc-slider-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding-bottom: 2rem;
+}
+
+.loc-slider-track {
+  display: flex;
+  gap: 1.5rem;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.loc-slide {
+  flex: 0 0 calc(33.333% - 1rem);
+  min-width: calc(33.333% - 1rem);
+}
+
+@media (max-width: 1024px) {
+  .loc-slide {
+    flex: 0 0 calc(50% - 0.75rem);
+    min-width: calc(50% - 0.75rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .loc-slide {
+    flex: 0 0 calc(100%);
+    min-width: calc(100%);
+  }
+}
+
+.loc-slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.loc-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--border-light);
+  border: 2px solid var(--primary-gold);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0.4;
+}
+
+.loc-dot.active {
+  background: var(--primary-gold);
+  opacity: 1;
+  transform: scale(1.2);
+}
+
 /* Why VVR Groups (Pillars) */
 .why-grid {
   display: grid;
