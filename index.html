@@ -95,18 +95,17 @@
 
         <!-- Quick Property Search Widget -->
         <div class="hero-search-box">
-          <div class="search-field">
-            <label><i class="fa-solid fa-map-pin"></i> Select Project Site</label>
-            <select id="heroSearchLocation">
-              <option value="all">-- Select Your Project Site --</option>
+          <label class="search-label"><i class="fa-solid fa-location-dot"></i> Select Project Site</label>
+          <div class="hero-search-input-group">
+            <select id="heroSearchLocation" class="hero-search-select">
+              <option value="all">-- Select Your Preferred Project Site --</option>
               <option value="Adhiran Sancha">Adhiran Sancha — Tukkuguda Exit 14 , Maheshwaram (₹36 Lakhs Onwards)</option>
               <option value="Varahi County">Varahi County — Mall Town / Sagar Highway - Narsaipally (₹16 Lakhs Onwards)</option>
             </select>
+            <button class="btn btn-primary hero-search-btn" onclick="executeHeroSearch()">
+              <i class="fa-solid fa-magnifying-glass"></i> Search Project
+            </button>
           </div>
-
-          <button class="btn btn-primary" onclick="executeHeroSearch()">
-            <i class="fa-solid fa-magnifying-glass"></i> Search Project
-          </button>
         </div>
 
       </div>
