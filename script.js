@@ -4,21 +4,35 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollSpy();
 });
 
-/* 2. Mobile Menu Navigation Toggle */
+/* 2. Mobile Menu Navigation Toggle & Dropdown Handling */
 function initMobileMenu() {
   const menuBtn = document.getElementById('mobileMenuBtn');
   const navLinks = document.getElementById('navLinks');
 
-  menuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
-
-  // Close menu when a link is clicked
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('active');
+  if (menuBtn && navLinks) {
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navLinks.classList.toggle('active');
     });
-  });
+
+    // Handle dropdown toggles on mobile
+    document.querySelectorAll('.dropdown-trigger').forEach(trigger => {
+      trigger.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          const parent = trigger.parentElement;
+          parent.classList.toggle('open');
+        }
+      });
+    });
+
+    // Close menu when a regular navigation link (not a dropdown trigger) is clicked
+    document.querySelectorAll('.nav-links a:not(.dropdown-trigger)').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+  }
 }
 
 /* 3. Hero Search Functionality - Project Site Filter */
