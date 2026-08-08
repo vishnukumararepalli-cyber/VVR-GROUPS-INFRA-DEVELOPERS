@@ -6,30 +6,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Outfit:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Color Palette - Premium Light Luxury Theme */
-  --primary-gold: #c5a059;
-  --primary-gold-hover: #b38e46;
-  --gold-glow: rgba(197, 160, 89, 0.25);
-  --accent-emerald: #104b38;
+  /* Color Palette - Classic Royal Navy & Metallic Gold Theme */
+  --primary-navy: #0c192e;
+  --primary-navy-hover: #162c4e;
+  --primary-gold: #c6a052;
+  --primary-gold-hover: #b08a3b;
+  --gold-glow: rgba(198, 160, 82, 0.28);
+  --accent-emerald: #0f4c3a;
   
-  --bg-primary: #fcfbf9;
-  --bg-secondary: #f4f0eb;
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
   --bg-card: #ffffff;
   --bg-card-hover: #ffffff;
-  --bg-glass: rgba(255, 255, 255, 0.88);
+  --bg-glass: rgba(255, 255, 255, 0.94);
   
-  --text-dark: #1a1a1a;
-  --text-muted: #5a6065;
-  --text-light: #8c939b;
-  --text-gold: #b38c43;
+  --text-dark: #0f172a;
+  --text-muted: #475569;
+  --text-light: #94a3b8;
+  --text-gold: #b88e36;
 
-  --border-light: rgba(197, 160, 89, 0.2);
-  --border-subtle: #e6e1da;
+  --border-light: rgba(12, 25, 46, 0.12);
+  --border-gold: rgba(198, 160, 82, 0.3);
+  --border-subtle: #e2e8f0;
   
-  --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.12);
-  --shadow-gold: 0 10px 30px rgba(197, 160, 89, 0.25);
+  --shadow-sm: 0 4px 15px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.12);
+  --shadow-gold: 0 10px 30px rgba(198, 160, 82, 0.3);
 
   --radius-sm: 8px;
   --radius-md: 14px;
@@ -44,22 +47,22 @@
 }
 
 [data-theme="dark"] {
-  --bg-primary: #0f1216;
-  --bg-secondary: #161b22;
-  --bg-card: #1c222b;
-  --bg-card-hover: #222a36;
-  --bg-glass: rgba(22, 27, 34, 0.88);
+  --bg-primary: #09111e;
+  --bg-secondary: #101b2d;
+  --bg-card: #152238;
+  --bg-card-hover: #1c2b45;
+  --bg-glass: rgba(16, 27, 45, 0.92);
 
-  --text-dark: #f0f3f6;
-  --text-muted: #a3b1c2;
-  --text-light: #768390;
+  --text-dark: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-light: #64748b;
   
-  --border-light: rgba(197, 160, 89, 0.25);
-  --border-subtle: #2b3340;
+  --border-light: rgba(198, 160, 82, 0.3);
+  --border-subtle: #1e2d42;
 
-  --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.6);
+  --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.7);
 }
 
 /* Reset & Base Styles */
@@ -175,38 +178,44 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary-gold) 0%, #a8813a 100%);
+  background: linear-gradient(135deg, var(--primary-navy) 0%, #172d50 100%);
   color: #ffffff;
-  box-shadow: var(--shadow-gold);
+  border: 1px solid var(--border-gold);
+  box-shadow: 0 8px 25px rgba(12, 25, 46, 0.25);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, var(--primary-gold-hover) 0%, #8e6c2d 100%);
+  background: linear-gradient(135deg, var(--primary-gold) 0%, #a8853b 100%);
+  color: #ffffff;
+  border-color: var(--primary-gold);
   transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(197, 160, 89, 0.4);
+  box-shadow: 0 15px 35px rgba(198, 160, 82, 0.4);
 }
 
 .btn-outline {
   background: transparent;
   border-color: var(--primary-gold);
-  color: var(--text-dark);
+  color: var(--primary-navy);
 }
 
 .btn-outline:hover {
-  background-color: var(--primary-gold);
+  background-color: var(--primary-navy);
   color: #ffffff;
+  border-color: var(--primary-navy);
   transform: translateY(-3px);
 }
 
 .btn-glass {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(12, 25, 46, 0.55);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(198, 160, 82, 0.4);
   color: #ffffff;
 }
 
 .btn-glass:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: var(--primary-gold);
+  color: #ffffff;
+  border-color: var(--primary-gold);
   transform: translateY(-3px);
 }
 
@@ -217,11 +226,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Header & Top Bar */
 .top-bar {
-  background-color: #0b0e11;
-  color: #a3b1c2;
+  background-color: #070e1b;
+  color: #cbd5e1;
   font-size: 0.825rem;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(198, 160, 82, 0.3);
 }
 
 .top-bar-content {
@@ -279,16 +288,17 @@ h1, h2, h3, h4, h5, h6 {
 .brand-icon {
   width: 42px;
   height: 42px;
-  background: linear-gradient(135deg, var(--primary-gold) 0%, #7c5f24 100%);
+  background: linear-gradient(135deg, var(--primary-navy) 0%, #1a3258 100%);
+  border: 1.5px solid var(--primary-gold);
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
+  color: var(--primary-gold);
   font-family: var(--font-serif);
   font-weight: 800;
   font-size: 1.25rem;
-  box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+  box-shadow: 0 4px 15px rgba(12, 25, 46, 0.3);
 }
 
 .brand-text h1 {
@@ -431,7 +441,7 @@ h1, h2, h3, h4, h5, h6 {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(15, 18, 22, 0.75) 0%, rgba(15, 18, 22, 0.88) 100%);
+  background: linear-gradient(180deg, rgba(12, 25, 46, 0.82) 0%, rgba(7, 14, 27, 0.92) 100%);
 }
 
 .hero-content {
@@ -1250,10 +1260,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Footer */
 .footer {
-  background-color: #0b0e11;
-  color: #a3b1c2;
+  background-color: #060d19;
+  color: #cbd5e1;
   padding: 5rem 0 2rem 0;
-  border-top: 1px solid rgba(197, 160, 89, 0.2);
+  border-top: 1px solid rgba(198, 160, 82, 0.3);
 }
 
 .footer-grid {
@@ -1266,7 +1276,7 @@ h1, h2, h3, h4, h5, h6 {
 .footer-brand p {
   margin-top: 1rem;
   font-size: 0.9rem;
-  color: #768390;
+  color: #94a3b8;
 }
 
 .footer-title {
@@ -1289,7 +1299,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-bottom {
-  border-top: 1px solid #1c222b;
+  border-top: 1px solid #111e36;
   padding-top: 2rem;
   display: flex;
   justify-content: space-between;
