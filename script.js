@@ -441,6 +441,17 @@ function openModal(modalId, projectTitle = null) {
     if (projectTitle && modalId === 'enquiry-modal') {
       document.getElementById('modalProjectTitle').textContent = `Enquiry: ${projectTitle}`;
     }
+    if (modalId === 'site-visit-modal' && projectTitle) {
+      const selectEl = document.getElementById('siteVisitProjectSelect');
+      if (selectEl) {
+        for (let i = 0; i < selectEl.options.length; i++) {
+          if (selectEl.options[i].value.toLowerCase().includes(projectTitle.toLowerCase())) {
+            selectEl.selectedIndex = i;
+            break;
+          }
+        }
+      }
+    }
     modal.classList.add('active');
   }
 }
@@ -468,7 +479,9 @@ function handleModalSubmit(event) {
 
 function handleSiteVisitSubmit(event) {
   event.preventDefault();
-  alert("Site Visit Confirmed! A driver and luxury vehicle will be assigned to pick you up at the selected time slot.");
+  const selectEl = document.getElementById('siteVisitProjectSelect');
+  const selectedSite = selectEl ? selectEl.value : 'your selected site';
+  alert(`Site Visit Confirmed for ${selectedSite}!\n\nOur sales representative will contact you to arrange complimentary pick-up & guided site tour.`);
   closeModal('site-visit-modal');
   event.target.reset();
 }

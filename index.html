@@ -107,18 +107,11 @@
           </div>
 
           <div class="search-field">
-            <label><i class="fa-solid fa-map-pin"></i> Prime Location</label>
+            <label><i class="fa-solid fa-map-pin"></i> Select Project Site</label>
             <select id="heroSearchLocation">
-              <option value="all">All Prime Locations</option>
-              <option value="Maheshwaram">Maheshwaram</option>
-              <option value="Tukkuguda">Tukkuguda Exit 14 , Maheshwaram</option>
-              <option value="Amangal">Amangal</option>
-              <option value="Mall Town">Mall Town</option>
-              <option value="Warangal Highway">Warangal Highway</option>
-              <option value="Sagar Highway">Sagar Highway</option>
-              <option value="Srisailam Highway">Srisailam Highway</option>
-              <option value="Alwal">Alwal</option>
-              <option value="Shamirpet">Shamirpet</option>
+              <option value="all">All Project Sites</option>
+              <option value="Adhiran Sancha">Adhiran Sancha (Tukkuguda Exit 14 , Maheshwaram)</option>
+              <option value="Varahi County">Varahi County (Mall Town / Sagar Highway)</option>
             </select>
           </div>
 
@@ -937,14 +930,11 @@
 
       <form onsubmit="handleSiteVisitSubmit(event)">
         <div class="form-group" style="margin-bottom: 1rem;">
-          <label>Select Project Location</label>
-          <select class="form-control" required>
-            <option value="VVR Sovereign County (Maheshwaram)">VVR Sovereign County (Maheshwaram)</option>
-            <option value="VVR Imperial Crest Villas (Srisailam Highway)">VVR Imperial Crest Villas (Srisailam Highway)</option>
-            <option value="VVR Emerald Palms Layout (Sagar Highway)">VVR Emerald Palms Layout (Sagar Highway)</option>
-            <option value="VVR Pinnacle Tech Park (Warangal Highway)">VVR Pinnacle Tech Park (Warangal Highway)</option>
-            <option value="VVR Royal County Enclave (Alwal / Shamirpet)">VVR Royal County Enclave (Alwal / Shamirpet)</option>
-            <option value="VVR Grand Horizon Township (Amangal / Mall Town)">VVR Grand Horizon Township (Amangal / Mall Town)</option>
+          <label>Select Project Site *</label>
+          <select class="form-control" id="siteVisitProjectSelect" required>
+            <option value="" disabled selected>-- Select Your Preferred Project Site --</option>
+            <option value="Adhiran Sancha (Tukkuguda Exit 14, Maheshwaram)">Adhiran Sancha — Tukkuguda Exit 14 , Maheshwaram (₹36 Lakhs Onwards)</option>
+            <option value="Varahi County (Mall Town / Sagar Highway - Narsaipally)">Varahi County — Mall Town / Sagar Highway (Narsaipally) (₹16 Lakhs Onwards)</option>
           </select>
         </div>
         <div class="form-grid">
