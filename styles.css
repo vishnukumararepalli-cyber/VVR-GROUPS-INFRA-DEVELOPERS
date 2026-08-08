@@ -1178,6 +1178,111 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-dark);
 }
 
+/* Executive Prime Location Cards Styling */
+.location-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.location-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border-light);
+  padding: 1.8rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 20px rgba(12, 25, 46, 0.04);
+}
+
+.location-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-navy) 0%, var(--primary-gold) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.location-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--primary-gold);
+  box-shadow: 0 15px 35px rgba(12, 25, 46, 0.12);
+}
+
+.location-card:hover::before {
+  opacity: 1;
+}
+
+.location-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.location-icon-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--primary-navy) 0%, #162c4e 100%);
+  color: var(--primary-gold);
+  border: 1px solid var(--primary-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(12, 25, 46, 0.2);
+}
+
+.location-card-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary-navy);
+  margin: 0;
+}
+
+.location-badge-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  background: rgba(198, 160, 82, 0.12);
+  color: var(--primary-gold);
+  border: 1px solid rgba(198, 160, 82, 0.3);
+  margin-bottom: 0.85rem;
+}
+
+.location-card-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.location-card-footer {
+  margin-top: auto;
+}
+
+.location-card-btn {
+  width: 100%;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
 /* Why VVR Groups (Pillars) */
 .why-grid {
   display: grid;
