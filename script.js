@@ -444,13 +444,13 @@ function closeModal(modalId) {
 /* Form Submit Handlers */
 function handleFormSubmit(event) {
   event.preventDefault();
-  alert("Thank you for contacting VVR GROUPS INFRA DEVELOPERS! Your enquiry has been received. Our sales executive will call you within 30 minutes.");
+  alert("Thank you for contacting VVR GROUPS — Telangana’s No. 1 Marketing Company! Your enquiry has been received. Our sales executive will call you within 30 minutes.");
   event.target.reset();
 }
 
 function handleModalSubmit(event) {
   event.preventDefault();
-  alert("Thank you! Your enquiry for VVR GROUPS INFRA DEVELOPERS has been submitted. Brochure and price sheet will be sent to your phone/email.");
+  alert("Thank you! Your enquiry for VVR GROUPS — Telangana’s No. 1 Marketing Company has been submitted. Brochure and price sheet will be sent to your phone/email.");
   closeModal('enquiry-modal');
   event.target.reset();
 }
