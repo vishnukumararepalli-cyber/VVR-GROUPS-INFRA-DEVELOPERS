@@ -22,6 +22,7 @@
   --primary-gold: #c69b42;
   --primary-gold-hover: #a67c2e;
   --gold-glow: rgba(198, 155, 66, 0.30);
+  --accent-emerald: #10b981;
 
   /* ── Backgrounds — dramatic contrast palette ── */
   --bg-white:      #ffffff;
@@ -2672,4 +2673,636 @@ h1, h2, h3, h4, h5, h6 {
 /* Smooth header scroll shadow */
 .header.scrolled {
   box-shadow: 0 4px 30px rgba(12,29,56,0.12);
+}
+
+/* ──────────────────────────────────────────────────────────
+   COMPONENTS: MISSING UTILITIES & MODAL STYLES
+────────────────────────────────────────────────────────── */
+
+/* Text Gold Helper */
+.text-gold {
+  color: var(--primary-gold) !important;
+}
+
+/* Chairman Section Container */
+.chairman-content {
+  flex: 1;
+}
+
+/* Location Box Helper */
+.location-box {
+  display: block;
+}
+
+/* Reviews Carousel Navigation Arrows */
+.reviews-arrow-prev { left: -10px; }
+.reviews-arrow-next { right: -10px; }
+
+/* Gallery Marquee Infinite Scroll Strip */
+.gallery-marquee-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 1rem 0;
+  margin-top: 1.5rem;
+}
+
+.gallery-marquee-wrapper::before,
+.gallery-marquee-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.gallery-marquee-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, #fdf9f4, rgba(253, 249, 244, 0));
+}
+
+.gallery-marquee-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, #fdf9f4, rgba(253, 249, 244, 0));
+}
+
+.gallery-marquee-track {
+  display: flex;
+  gap: 1.25rem;
+  width: max-content;
+  animation: galleryScroll 35s linear infinite;
+}
+
+.gallery-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.gallery-item, .gm-item {
+  position: relative;
+  width: 280px;
+  height: 190px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
+}
+
+.gallery-item img, .gm-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover, .gm-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.gallery-item:hover img, .gm-item:hover img {
+  transform: scale(1.08);
+}
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  inset-x: 0;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(to top, rgba(6, 14, 28, 0.9), transparent);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.gallery-item:hover .gallery-caption, .gm-item:hover .gallery-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Lightbox Modal */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 14, 28, 0.92);
+  backdrop-filter: blur(8px);
+  z-index: 2500;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.lightbox-overlay.active {
+  display: flex !important;
+  animation: fadeIn 0.3s ease;
+}
+
+.lightbox-box {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-navy);
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.lightbox-caption {
+  margin-top: 1rem;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(12, 29, 56, 0.7);
+  color: var(--primary-gold);
+  border: 1px solid var(--border-gold);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  z-index: 10;
+}
+
+.lightbox-nav:hover {
+  background: var(--primary-gold);
+  color: var(--primary-navy);
+}
+
+.lightbox-prev { left: -22px; }
+.lightbox-next { right: -22px; }
+
+/* General Modal System */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 14, 28, 0.75);
+  backdrop-filter: blur(5px);
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  overflow-y: auto;
+}
+
+.modal-backdrop.active {
+  display: flex !important;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-container {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 550px;
+  padding: 2.25rem;
+  position: relative;
+  box-shadow: var(--shadow-navy);
+  border: 1px solid var(--border-gold);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: var(--bg-secondary);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--text-dark);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+  background: var(--primary-gold);
+  color: #ffffff;
+}
+
+/* Customizer Grid for Uploads */
+.image-customizer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.image-swap-box {
+  background: var(--bg-primary);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+}
+
+.image-swap-box label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.image-swap-box input[type="file"] {
+  font-size: 0.8rem;
+  width: 100%;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   COMPREHENSIVE MOBILE FIXES — Final Layer
+══════════════════════════════════════════════════════════ */
+
+/* Force 1-column categories grid on mobile */
+@media (max-width: 768px) {
+  .categories-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .category-card {
+    height: 260px !important;
+  }
+
+  /* Force 1-column projects grid on mobile */
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+
+  /* Project filter bar wrapping */
+  .projects-filter-bar {
+    gap: 0.5rem !important;
+  }
+
+  .filter-btn {
+    font-size: 0.78rem !important;
+    padding: 0.5rem 0.9rem !important;
+  }
+
+  /* Stats grid responsive */
+  .stats-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .stat-number {
+    font-size: 2.4rem !important;
+  }
+
+  /* Location card grid */
+  .location-card-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Why grid */
+  .why-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1rem !important;
+  }
+
+  /* Calculator section */
+  .calculator-section {
+    padding: 2rem 1.25rem !important;
+    margin: 2rem 1rem !important;
+    border-radius: var(--radius-md) !important;
+  }
+
+  .calc-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Hero search box full width */
+  .hero-search-box {
+    padding: 1rem !important;
+  }
+
+  /* Chairman section mobile */
+  .chairman-container {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  .chairman-image-box img {
+    max-height: 340px;
+    object-fit: cover;
+  }
+
+  /* Gallery marquee mobile sizing */
+  .gm-item {
+    width: 200px !important;
+    height: 140px !important;
+  }
+
+  .gallery-marquee-wrapper {
+    padding: 0.25rem 0 !important;
+  }
+
+  /* Reviews arrows hidden on mobile if tight */
+  .reviews-arrow {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 0.85rem !important;
+  }
+
+  /* Contact grid already handled — backup */
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Modal width fix */
+  .modal-container {
+    max-width: 95vw !important;
+    margin: auto !important;
+  }
+
+  /* Ensure select fields don't overflow */
+  .form-control,
+  select.form-control {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* 1-col categories on very small phones */
+  .categories-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .category-card {
+    height: 220px !important;
+  }
+
+  /* Why grid 1-col on xs */
+  .why-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* Stats 2-col on xs, keep */
+  .stats-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .stat-number {
+    font-size: 2rem !important;
+  }
+
+  .stat-label {
+    font-size: 0.65rem !important;
+  }
+
+  /* Section titles smaller on xs */
+  .section-title {
+    font-size: 1.55rem !important;
+  }
+
+  .section-subtitle {
+    font-size: 0.85rem !important;
+  }
+
+  /* Project meta info wrap properly */
+  .project-meta {
+    flex-wrap: wrap !important;
+    gap: 0.4rem !important;
+  }
+
+  /* Prevent horizontal overflow */
+  body {
+    overflow-x: hidden !important;
+  }
+
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Footer brand on mobile */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+}
+
+/* Fix iOS tap highlight */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Fix for project cards always visible (override reveal default hidden) */
+.project-card {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* ══════════════════════════════════════════════════════════
+   CHAIRMAN BRAND TAG — Premium Styled Overlay
+══════════════════════════════════════════════════════════ */
+
+.chairman-brand-tag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  text-align: center;
+}
+
+.chairman-brand-vvr {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--primary-gold);
+  line-height: 1.1;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+}
+
+.chairman-brand-line {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+  border-radius: 2px;
+  margin: 0.2rem auto;
+}
+
+.chairman-brand-sub {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.88);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+}
+
+/* ══════════════════════════════════════════════════════════
+   PROFESSIONAL ALIGNMENT POLISH — Global Refinements
+══════════════════════════════════════════════════════════ */
+
+/* Consistent section vertical rhythm */
+.section-padding {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+/* Section titles — consistent sizing */
+.section-title {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.section-subtitle {
+  font-size: clamp(0.88rem, 1.5vw, 1rem);
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.65;
+}
+
+/* Text center util */
+.text-center {
+  margin-bottom: 2.5rem;
+}
+
+/* Card universal hover lift */
+.category-card,
+.project-card,
+.review-card,
+.location-card,
+.why-item,
+.stat-card {
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.category-card:hover,
+.project-card:hover,
+.review-card:hover,
+.location-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+}
+
+/* Button consistent radius & spacing */
+.btn {
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+/* Filter bar alignment */
+.projects-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+/* Stats uniform alignment */
+.stats-grid {
+  align-items: stretch;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.8rem 1rem;
+}
+
+/* Consistent container max-width */
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Why-grid items uniform height */
+.why-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.5rem;
+}
+
+/* Lightbox caption better styling */
+#lightboxCaption {
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  text-align: center;
+  padding: 0 1rem;
+  color: rgba(255,255,255,0.85);
+}
+
+/* ── New gallery images — uniform ratio ── */
+.gm-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }

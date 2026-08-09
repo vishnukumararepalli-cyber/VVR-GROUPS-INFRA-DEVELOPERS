@@ -4,24 +4,34 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollSpy();
   initLocationsCarousel();
   initReviewsCarousel();
+  addRevealToProjectCards();
   initScrollReveal();
   initLightbox();
   initHeaderScroll();
-  addRevealToProjectCards();
 });
 
 /* ── Gallery Lightbox ── */
 const galleryImages = [
-  { src: 'images/sancha_aerial_drone.png',       caption: 'VVR Adhiran Sancha — Aerial Drone View' },
+  { src: 'images/gallery_award_2025.jpg',            caption: 'Telangana Business Innovation Award 2025' },
+  { src: 'images/gallery_event_bouquets.jpg',        caption: 'VVR GROUPS Chairman & Team at Corporate Event' },
+  { src: 'images/gallery_team_royals.jpg',           caption: 'Welcome to Team Royals - Sri Vajra Developers' },
+  { src: 'images/gallery_customer_sree_mallika.jpg', caption: 'Welcoming Producer Sree Mallika Reddy Garu' },
+  { src: 'images/gallery_presentation_room.jpg',     caption: 'Corporate Presentation & Briefing Session' },
+  { src: 'images/sancha_drone_1.jpg',            caption: 'VVR Adhiran Sancha — Industrial Aerial Drone View' },
+  { src: 'images/sancha_hoarding.jpg',           caption: 'VVR Adhiran Sancha — Site Hoarding & Development' },
+  { src: 'images/sancha_layout_1.jpg',           caption: 'VVR Adhiran Sancha — Phase 1 Plot Layout' },
+  { src: 'images/sancha_layout_2.jpg',           caption: 'VVR Adhiran Sancha — Internal CC Roads' },
+  { src: 'images/gopanapally_building_1.jpg',    caption: 'VVR Gopanapally Apartments — Construction Progress' },
+  { src: 'images/gopanapally_building_2.jpg',    caption: 'VVR Gopanapally Apartments — Tower View' },
+  { src: 'images/gopanapally_building_3.jpg',    caption: 'VVR Gopanapally Apartments — Premium Towers' },
   { src: 'images/modern_luxury_villa.png',        caption: 'Sovereign Gated Luxury Villa' },
-  { src: 'images/sancha_master_layout.jpg',       caption: 'Sancha HMDA & TG RERA Approved Master Layout' },
+  { src: 'images/varahi_main.jpg',               caption: 'VVR Adhiran Varahi County — Main Site' },
   { src: 'images/varahi_master_layout.png',       caption: 'Varahi County DTCP & TS RERA Approved Layout' },
   { src: 'images/varahi_user_aerial.jpg',         caption: 'Varahi County — Aerial Drone View' },
   { src: 'images/varahi_drone.jpg',               caption: 'Varahi County — Aerial Drone View 1' },
   { src: 'images/varahi_drone2.jpg',              caption: 'Varahi County — Aerial Drone View 2' },
   { src: 'images/varahi_site.jpg',                caption: 'Site Development & Blacktop Roads' },
-  { src: 'images/exclusive_villas_render_1786211196333.jpg', caption: 'Triplex Sovereign Villa Render' },
-  { src: 'images/amenities_clubhouse_1786211251386.jpg',     caption: '5-Star Clubhouse Lounge & Pool' },
+
 ];
 
 let lbCurrent = 0;
@@ -65,8 +75,12 @@ function setLightboxImage(index) {
 }
 
 function openLightbox(src, caption) {
-  const idx = galleryImages.findIndex(g => g.src === src);
-  lbCurrent = idx >= 0 ? idx : 0;
+  let idx = galleryImages.findIndex(g => g.src === src);
+  if (idx === -1) {
+    galleryImages.push({ src: src, caption: caption || 'Property Image' });
+    idx = galleryImages.length - 1;
+  }
+  lbCurrent = idx;
   const overlay = document.getElementById('gallery-lightbox');
   if (!overlay) return;
   overlay.classList.add('active');
@@ -94,7 +108,7 @@ function initHeaderScroll() {
 /* ── Add reveal class to project cards ── */
 function addRevealToProjectCards() {
   document.querySelectorAll('.project-card').forEach((card, i) => {
-    card.classList.add('reveal');
+    card.classList.add('reveal', 'visible');
     if (i % 3 === 1) card.classList.add('reveal-delay-1');
     if (i % 3 === 2) card.classList.add('reveal-delay-2');
   });
@@ -188,8 +202,15 @@ function initScrollReveal() {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-  revealEls.forEach(el => observer.observe(el));
+  }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+  revealEls.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.add('visible');
+    } else {
+      observer.observe(el);
+    }
+  });
 }
 
 /* 1b. Location Cards Auto-Sliding Carousel */
@@ -326,6 +347,7 @@ function executeHeroSearch(smoothScroll = true) {
 
     if (matchLoc) {
       card.style.display = 'flex';
+      card.classList.add('visible');
       visibleProjects++;
     } else {
       card.style.display = 'none';
@@ -373,6 +395,7 @@ function filterProjects(status, btnElement = null) {
     const cardStatus = card.getAttribute('data-status');
     if (status === 'all' || cardStatus === status) {
       card.style.display = 'flex';
+      card.classList.add('visible');
     } else {
       card.style.display = 'none';
     }
@@ -391,6 +414,7 @@ function filterProjectsByCategory(category) {
     const cardCategory = card.getAttribute('data-category') || '';
     if (category === 'all' || cardCategory.includes(category)) {
       card.style.display = 'flex';
+      card.classList.add('visible');
     } else {
       card.style.display = 'none';
     }
@@ -428,8 +452,8 @@ const projectSpecsData = {
     location: "Electronic Manufacturing Cluster (EMC) / Tukkuguda Exit 14",
     type: "HMDA & TG RERA Approved Premium Plotted Township",
     rera: "TG RERA NO. P02400009291 (HMDA: 008970/HMDA/2270/SMD/2024)",
-    image: "images/sancha_aerial_drone.png",
-    layoutMap: "images/sancha_master_layout.jpg",
+    image: "images/sancha_drone_1.jpg",
+    layoutMap: "images/sancha_layout_1.jpg",
     price: "₹36 Lakhs Onwards",
     possession: "Spot Registration Available & Ready for Construction",
     highlights: [
@@ -453,8 +477,8 @@ const projectSpecsData = {
     location: "Near Future City / Amangal Municipality",
     type: "DTCP Approved Layout & 100% Vaastu",
     rera: "TS RERA NO. P02400009827 (DTCP Approval: LP No. 0003/LO/3134/2025)",
-    image: "images/varahi_drone.jpg",
-    layoutMap: "images/varahi_master_layout.png",
+    image: "images/vajra_aerial_layout.jpg",
+    layoutMap: "images/vajra_master_layout.png",
     price: "₹18 Lakhs Onwards",
     possession: "Spot Registration Available & Construction Undertaken",
     highlights: [
@@ -470,6 +494,30 @@ const projectSpecsData = {
       "Amenities: Overhead water tanks, underground drinking water & drainage lines",
       "Landscaping: Beautiful avenue plantation, landscaped parks & children's play area",
       "Security: 24/7 round-the-clock gated community security & street lighting"
+    ]
+  },
+  gopanapally: {
+    title: "VVR Gopanapally Apartments",
+    location: "Adjacent to Wipro, Gopanapally",
+    type: "Ultra-Luxury 2 & 3 BHK Apartments",
+    rera: "TBD",
+    image: "images/luxury_apartments_tower_1786211178100.jpg",
+    layoutMap: "",
+    price: "TBD",
+    possession: "TBD",
+    highlights: [
+      "Spread across a magnificent 6.5-acre premium community",
+      "680 luxury apartments across 8 elegant towers",
+      "Thoughtfully designed 2 BHK & 3 BHK residences",
+      "Adjacent to Wipro, Gopanapally",
+      "Family-Friendly Community Living"
+    ],
+    specs: [
+      "Amenities: Premium Clubhouse & Lifestyle Amenities",
+      "Environment: Landscaped Open & Green Spaces",
+      "Security: Secure Gated Community",
+      "Parking: Dedicated Parking Facilities",
+      "Fitness: Modern Fitness & Recreation Facilities"
     ]
   }
 };
@@ -576,14 +624,8 @@ function initEmiCalculator() {
 }
 
 /* 7. Image Lightbox Modal */
-function openLightbox(imgSrc, captionText) {
-  const lightboxImg = document.getElementById('lightboxImg');
-  const lightboxCaption = document.getElementById('lightboxCaption');
+/* (Handled via openLightbox at line 67) */
 
-  lightboxImg.src = imgSrc;
-  lightboxCaption.textContent = captionText;
-  openModal('lightbox-modal');
-}
 
 /* 8. User Original Image Swap Handler (Live Preview) */
 function swapImageLocally(targetKey, event) {
@@ -732,7 +774,7 @@ function showNotification(msg) {
   notification.style.position = 'fixed';
   notification.style.bottom = '90px';
   notification.style.right = '25px';
-  notification.style.background = 'var(--accent-emerald)';
+  notification.style.background = 'var(--primary-gold)';
   notification.style.color = '#ffffff';
   notification.style.padding = '0.8rem 1.4rem';
   notification.style.borderRadius = 'var(--radius-md)';
@@ -781,11 +823,11 @@ function handleReviewSubmit(event) {
   const project = document.getElementById('reviewProject').value;
   const reviewText = document.getElementById('reviewText').value;
 
-  const grid = document.querySelector('.reviews-grid');
+  const grid = document.querySelector('.reviews-grid') || document.getElementById('reviewsCarouselTrack');
   if (grid) {
     const initials = name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase() || 'VVR';
     const card = document.createElement('div');
-    card.className = 'review-card';
+    card.className = 'review-card reviews-slide';
     card.innerHTML = `
       <div class="review-header">
         <div class="reviewer-avatar">${initials}</div>
@@ -824,3 +866,4 @@ function toggleFaq(btn) {
     faqItem.classList.add('active');
   }
 }
+

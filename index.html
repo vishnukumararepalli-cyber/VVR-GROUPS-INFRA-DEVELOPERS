@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- CSS Stylesheet -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=12">
 </head>
 <body>
 
@@ -73,6 +73,7 @@
             <ul class="dropdown-menu">
               <li><a href="#projects" onclick="filterProjects('sancha', this)">VVR Adhiran Sancha</a></li>
               <li><a href="#projects" onclick="filterProjects('varahi', this)">VVR Adhiran Varahi County</a></li>
+              <li><a href="#projects" onclick="filterProjects('vajra', this)">Vajra Shivam County</a></li>
             </ul>
           </li>
 
@@ -130,6 +131,8 @@
               <option value="all">-- Select Your Preferred Project Site --</option>
               <option value="Adhiran Sancha">Adhiran Sancha — Tukkuguda Exit 14 , Maheshwaram (₹36 Lakhs Onwards)</option>
               <option value="Varahi County">Varahi County — Mall Town / Sagar Highway - Narsaipally (₹16 Lakhs Onwards)</option>
+              <option value="Vajra Shivam">Vajra Shivam County — Future City Corridor / Amangal (₹18 Lakhs Onwards)</option>
+              <option value="Gopanapally Apartments">VVR Gopanapally Apartments — Adjacent to Wipro, Gopanapally (TBD)</option>
             </select>
             <button class="btn btn-primary hero-search-btn" onclick="executeHeroSearch()">
               <i class="fa-solid fa-magnifying-glass"></i> Search Project
@@ -190,7 +193,7 @@
         <div class="category-card reveal reveal-delay-4" onclick="filterProjectsByCategory('commercial')">
           <img src="images/commercial_tech_park_1786211223794.jpg" alt="Commercial Properties">
           <div class="category-overlay">
-            <div class="category-icon">🏬</div>
+            <div class="category-icon">🏭</div>
             <h3 class="category-title">COMMERCIAL</h3>
             <p class="category-desc">Grade-A IT tech parks, corporate office towers, and high-street retail spaces in prime growth corridors.</p>
             <span class="category-link">Explore Commercial <i class="fa-solid fa-arrow-right"></i></span>
@@ -213,6 +216,7 @@
         <button class="filter-btn" onclick="filterProjects('sancha', this)">VVR Adhiran Sancha</button>
         <button class="filter-btn" onclick="filterProjects('varahi', this)">VVR Adhiran Varahi County</button>
         <button class="filter-btn" onclick="filterProjects('vajra', this)">Vajra Shivam County</button>
+        <button class="filter-btn" onclick="filterProjects('gopanapally', this)">VVR Gopanapally Apartments</button>
       </div>
 
       <!-- Dynamic Projects Grid -->
@@ -221,7 +225,7 @@
         <!-- Project 1: VVR Adhiran Varahi County -->
         <div class="project-card" data-category="plots varahi" data-location="Mall Town Sagar Highway Narsaipally" data-price-val="16" data-status="varahi">
           <div class="project-thumb">
-            <img src="images/varahi_user_aerial.jpg" alt="VVR Adhiran Varahi County Aerial Layout">
+            <img src="images/varahi_main.jpg" alt="VVR Adhiran Varahi County Aerial Layout">
             <span class="project-status-badge status-ongoing">Ongoing Flagship</span>
             <span class="project-type-badge"><i class="fa-solid fa-vector-square"></i> Premium Gated Plots</span>
           </div>
@@ -245,7 +249,7 @@
         <!-- Project 2: VVR Adhiran Sancha -->
         <div class="project-card" data-category="plots sancha" data-location="Maheshwaram Srisailam Highway EMC Tukkuguda" data-price-val="36" data-status="sancha">
           <div class="project-thumb">
-            <img src="images/sancha_aerial_drone.png" alt="VVR Adhiran Sancha Plotted Layout Drone View">
+            <img src="images/sancha_hoarding.jpg" alt="VVR Adhiran Sancha Plotted Layout Drone View">
             <span class="project-status-badge status-ongoing">Ongoing Mega Layout</span>
             <span class="project-type-badge"><i class="fa-solid fa-vector-square"></i> Premium Villa Plots</span>
           </div>
@@ -260,7 +264,7 @@
             </div>
             <div class="project-footer">
               <button class="btn btn-outline btn-sm" onclick="showProjectDetails('imperial')">View Full Specs</button>
-              <a href="images/sancha_master_layout.jpg" download="Adhiran_Sancha_Master_Layout.jpg" target="_blank" class="btn btn-outline btn-sm" title="Download Master Layout Plan Map"><i class="fa-solid fa-download"></i> Layout Plan</a>
+              <a href="images/sancha_layout_1.jpg" download="Adhiran_Sancha_Master_Layout.jpg" target="_blank" class="btn btn-outline btn-sm" title="Download Master Layout Plan Map"><i class="fa-solid fa-download"></i> Layout Plan</a>
               <button class="btn btn-primary btn-sm" onclick="openModal('enquiry-modal', 'VVR Adhiran Sancha')">Enquire Now</button>
             </div>
           </div>
@@ -269,7 +273,7 @@
         <!-- Project 3: Vajra Shivam County -->
         <div class="project-card" data-category="plots vajra" data-location="Amangal Future City Sagar Highway RRR" data-price-val="18" data-status="vajra">
           <div class="project-thumb">
-            <img src="images/varahi_drone.jpg" alt="Vajra Shivam County Plotted Layout Drone View">
+            <img src="images/vajra_aerial_layout.jpg" alt="Vajra Shivam County Plotted Layout View">
             <span class="project-status-badge status-ongoing">Ongoing Gated Layout</span>
             <span class="project-type-badge"><i class="fa-solid fa-vector-square"></i> Gated Villa Plots</span>
           </div>
@@ -284,8 +288,31 @@
             </div>
             <div class="project-footer">
               <button class="btn btn-outline btn-sm" onclick="showProjectDetails('vajra')">View Full Specs</button>
-              <a href="images/varahi_master_layout.png" download="Vajra_Shivam_County_Layout_Plan.png" target="_blank" class="btn btn-outline btn-sm" title="Download Layout Plan Map"><i class="fa-solid fa-download"></i> Layout Plan</a>
+              <a href="images/vajra_master_layout.png" download="Vajra_Shivam_County_Layout_Plan.png" target="_blank" class="btn btn-outline btn-sm" title="Download Layout Plan Map"><i class="fa-solid fa-download"></i> Layout Plan</a>
               <button class="btn btn-primary btn-sm" onclick="openModal('enquiry-modal', 'Vajra Shivam County')">Enquire Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: VVR Gopanapally Apartments -->
+        <div class="project-card" data-category="apartments gopanapally" data-location="Adjacent to Wipro Gopanapally" data-price-val="0" data-status="gopanapally">
+          <div class="project-thumb">
+            <img src="images/gopanapally_brochure.jpg" alt="VVR Gopanapally Apartments Tower">
+            <span class="project-status-badge status-upcoming" style="background: var(--primary-navy);">Upcoming Flagship</span>
+            <span class="project-type-badge"><i class="fa-solid fa-building"></i> Luxury Apartments</span>
+          </div>
+          <div class="project-body">
+            <div class="project-location"><i class="fa-solid fa-location-dot"></i> Adjacent to Wipro, Gopanapally</div>
+            <h3 class="project-name">VVR Gopanapally Apartments</h3>
+            <p class="project-desc">Ultra-luxury living in a premium 6.5-acre gated community. Featuring 680 luxury 2 &amp; 3 BHK apartments across 8 elegant towers with a premium clubhouse.</p>
+            <div class="project-meta">
+              <div class="meta-item"><span>RERA No.</span><strong>TBD</strong></div>
+              <div class="meta-item"><span>Zone</span><strong>Wipro, Gopanapally</strong></div>
+              <div class="meta-item"><span>Price</span><strong>TBD</strong></div>
+            </div>
+            <div class="project-footer">
+              <button class="btn btn-outline btn-sm" onclick="showProjectDetails('gopanapally')">View Full Specs</button>
+              <button class="btn btn-primary btn-sm" onclick="openModal('enquiry-modal', 'VVR Gopanapally Apartments (Upcoming)')">Enquire / Notify Me</button>
             </div>
           </div>
         </div>
@@ -442,8 +469,11 @@
         <div class="chairman-image-box">
           <img src="images/chairman_office_hd.png" alt="Chairman Vennamaneni Vishnu Rao">
           <div class="chairman-experience-tag">
-            <h4 style="font-size: 1.1rem; margin-bottom: 0.2rem;">VVR GROUPS</h4>
-            <p style="font-size: 0.78rem; font-weight: 600; text-transform: uppercase;">Visionary Leadership</p>
+            <div class="chairman-brand-tag">
+              <span class="chairman-brand-vvr">VVR GROUPS</span>
+              <span class="chairman-brand-line"></span>
+              <span class="chairman-brand-sub">Visionary Leadership</span>
+            </div>
           </div>
         </div>
 
@@ -635,24 +665,62 @@
       <!-- Auto-scrolling Gallery Marquee Strip -->
       <div class="gallery-marquee-wrapper">
         <div class="gallery-marquee-track">
-          <div class="gallery-item gm-item" onclick="openLightbox('images/sancha_aerial_drone.png', 'VVR Adhiran Sancha Aerial Drone View')"><img src="images/sancha_aerial_drone.png" alt="Sancha Aerial Drone"><div class="gallery-caption">Sancha Township Aerial View</div></div>
-          <div class="gallery-item gm-item" onclick="openLightbox('images/modern_luxury_villa.png', 'Sovereign Gated Luxury Villa')"><img src="images/modern_luxury_villa.png" alt="Luxury Villa"><div class="gallery-caption">Sovereign Gated Luxury Villa</div></div>
-          <div class="gallery-item gm-item" onclick="openLightbox('images/sancha_master_layout.jpg', 'Sancha HMDA & TG RERA Approved Master Layout')"><img src="images/sancha_master_layout.jpg" alt="Sancha Master Layout"><div class="gallery-caption">Sancha Approved Master Layout</div></div>
-          <div class="gallery-item gm-item" onclick="openLightbox('images/varahi_master_layout.png', 'Varahi County DTCP & TS RERA Approved Master Layout')"><img src="images/varahi_master_layout.png" alt="Varahi Master Layout"><div class="gallery-caption">Varahi County Approved Layout Map</div></div>
+          <!-- Events, Awards & Customers -->
+          <div class="gallery-item gm-item" onclick="openLightbox('images/gallery_award_2025.jpg', 'Telangana Business Innovation Award 2025')"><img src="images/gallery_award_2025.jpg" alt="Telangana Business Innovation Award 2025"><div class="gallery-caption">Business Innovation Award</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/gallery_event_bouquets.jpg', 'VVR GROUPS Chairman & Team at Corporate Event')"><img src="images/gallery_event_bouquets.jpg" alt="VVR Team Event"><div class="gallery-caption">Chairman & Team at Corporate Event</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/gallery_team_royals.jpg', 'Welcome to Team Royals - Sri Vajra Developers')"><img src="images/gallery_team_royals.jpg" alt="Welcome Team Royals"><div class="gallery-caption">Welcome to Team Royals</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/gallery_customer_sree_mallika.jpg', 'Welcoming Producer Sree Mallika Reddy Garu')"><img src="images/gallery_customer_sree_mallika.jpg" alt="Welcoming Producer Sree Mallika Reddy"><div class="gallery-caption">Welcoming Producer Sree Mallika</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/gallery_presentation_room.jpg', 'Corporate Presentation & Briefing Session')"><img src="images/gallery_presentation_room.jpg" alt="Corporate Presentation Session"><div class="gallery-caption">Corporate Presentation Session</div></div>
+          <!-- Events, Awards & Customers -->
+          <div class="gallery-item gm-item" onclick="openLightbox('images/gallery_award_2025.jpg', 'Telangana Business Innovation Award 2025')"><img src="images/gallery_award_2025.jpg" alt="Telangana Business Innovation Award 2025"><div class="gallery-caption">Business Innovation Award</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/gallery_event_bouquets.jpg', 'VVR GROUPS Chairman & Team at Corporate Event')"><img src="images/gallery_event_bouquets.jpg" alt="VVR Team Event"><div class="gallery-caption">Chairman & Team at Corporate Event</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/gallery_team_royals.jpg', 'Welcome to Team Royals - Sri Vajra Developers')"><img src="images/gallery_team_royals.jpg" alt="Welcome Team Royals"><div class="gallery-caption">Welcome to Team Royals</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/gallery_customer_sree_mallika.jpg', 'Welcoming Producer Sree Mallika Reddy Garu')"><img src="images/gallery_customer_sree_mallika.jpg" alt="Welcoming Producer Sree Mallika Reddy"><div class="gallery-caption">Welcoming Producer Sree Mallika</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/gallery_presentation_room.jpg', 'Corporate Presentation & Briefing Session')"><img src="images/gallery_presentation_room.jpg" alt="Corporate Presentation Session"><div class="gallery-caption">Corporate Presentation Session</div></div>
+          <!-- Duplicate Sancha Images -->
+          <div class="gallery-item gm-item" onclick="openLightbox('images/sancha_drone_1.jpg', 'VVR Adhiran Sancha — Industrial Aerial Drone View')"><img src="images/sancha_drone_1.jpg" alt="Sancha Drone View"><div class="gallery-caption">Sancha Aerial Drone View</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/sancha_hoarding.jpg', 'VVR Adhiran Sancha — Site Hoarding &amp; Development')"><img src="images/sancha_hoarding.jpg" alt="Sancha Hoarding"><div class="gallery-caption">Sancha Site Hoarding</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/sancha_layout_1.jpg', 'VVR Adhiran Sancha — Phase 1 Plot Layout')"><img src="images/sancha_layout_1.jpg" alt="Sancha Layout 1"><div class="gallery-caption">Sancha Plot Layout View</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/sancha_layout_2.jpg', 'VVR Adhiran Sancha — Internal CC Roads')"><img src="images/sancha_layout_2.jpg" alt="Sancha Layout 2"><div class="gallery-caption">Sancha Internal CC Roads</div></div>
+          <!-- Gopanapally Images -->
+          <div class="gallery-item gm-item" onclick="openLightbox('images/gopanapally_building_1.jpg', 'VVR Gopanapally Apartments — Construction Progress')"><img src="images/gopanapally_building_1.jpg" alt="Gopanapally Construction 1"><div class="gallery-caption">Gopanapally Tower Progress</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/gopanapally_building_2.jpg', 'VVR Gopanapally Apartments — Tower View')"><img src="images/gopanapally_building_2.jpg" alt="Gopanapally Construction 2"><div class="gallery-caption">Gopanapally Apartments Site</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/gopanapally_building_3.jpg', 'VVR Gopanapally Apartments — Premium Towers')"><img src="images/gopanapally_building_3.jpg" alt="Gopanapally Construction 3"><div class="gallery-caption">Premium Apartment Towers</div></div>
+          <!-- Varahi Images -->
+          <div class="gallery-item gm-item" onclick="openLightbox('images/varahi_main.jpg', 'VVR Adhiran Varahi County — Main Site')"><img src="images/varahi_main.jpg" alt="Varahi Main"><div class="gallery-caption">Varahi County Main Site</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/varahi_master_layout.png', 'Varahi County DTCP &amp; TS RERA Approved Master Layout')"><img src="images/varahi_master_layout.png" alt="Varahi Master Layout"><div class="gallery-caption">Varahi County Approved Layout Map</div></div>
           <div class="gallery-item gm-item" onclick="openLightbox('images/varahi_user_aerial.jpg', 'Varahi County Drone Layout View')"><img src="images/varahi_user_aerial.jpg" alt="Varahi Aerial"><div class="gallery-caption">Varahi County Aerial View</div></div>
           <div class="gallery-item gm-item" onclick="openLightbox('images/varahi_drone.jpg', 'Varahi County Drone 1')"><img src="images/varahi_drone.jpg" alt="Varahi Drone 1"><div class="gallery-caption">Aerial Drone View 1</div></div>
           <div class="gallery-item gm-item" onclick="openLightbox('images/varahi_drone2.jpg', 'Varahi County Drone 2')"><img src="images/varahi_drone2.jpg" alt="Varahi Drone 2"><div class="gallery-caption">Aerial Drone View 2</div></div>
-          <div class="gallery-item gm-item" onclick="openLightbox('images/varahi_site.jpg', 'Varahi County Site Development & Roads')"><img src="images/varahi_site.jpg" alt="Varahi Site"><div class="gallery-caption">Site Development &amp; Blacktop Roads</div></div>
-          <div class="gallery-item gm-item" onclick="openLightbox('images/exclusive_villas_render_1786211196333.jpg', 'Triplex Sovereign Villa Exterior')"><img src="images/exclusive_villas_render_1786211196333.jpg" alt="Sovereign Villa"><div class="gallery-caption">Triplex Villa Render</div></div>
-          <div class="gallery-item gm-item" onclick="openLightbox('images/amenities_clubhouse_1786211251386.jpg', '5-Star Luxury Clubhouse & Pool')"><img src="images/amenities_clubhouse_1786211251386.jpg" alt="Clubhouse"><div class="gallery-caption">5-Star Clubhouse Lounge</div></div>
-          <!-- Duplicate for seamless infinite loop -->
-          <div class="gallery-item gm-item" onclick="openLightbox('images/sancha_aerial_drone.png', 'VVR Adhiran Sancha Aerial Drone View')"><img src="images/sancha_aerial_drone.png" alt="Sancha Aerial Drone"><div class="gallery-caption">Sancha Township Aerial View</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/varahi_site.jpg', 'Varahi County Site Development &amp; Roads')"><img src="images/varahi_site.jpg" alt="Varahi Site"><div class="gallery-caption">Site Development &amp; Blacktop Roads</div></div>
+          <!-- Vajra Shivam — New Site Visit Images -->
+          <div class="gallery-item gm-item" onclick="openLightbox('images/vajra_site_visit_team.jpg', 'Vajra Shivam County — Client Site Visit &amp; Presentation')"><img src="images/vajra_site_visit_team.jpg" alt="Vajra Site Visit"><div class="gallery-caption">Vajra Shivam — Client Site Visit</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/vajra_landscape_view.jpg', 'Vajra Shivam County — Scenic Landscape View')"><img src="images/vajra_landscape_view.jpg" alt="Vajra Landscape"><div class="gallery-caption">Vajra Shivam — Scenic View</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/vajra_aerial_layout.jpg', 'Vajra Shivam County — Aerial Layout View')"><img src="images/vajra_aerial_layout.jpg" alt="Vajra Aerial Layout"><div class="gallery-caption">Vajra Shivam — Aerial Layout</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/vajra_construction_roads.jpg', 'Vajra Shivam County — CC Roads Under Construction')"><img src="images/vajra_construction_roads.jpg" alt="Vajra Roads"><div class="gallery-caption">Vajra Shivam — CC Roads in Progress</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/vajra_team_photo.jpg', 'VVR GROUPS Sales Team at Vajra Shivam County')"><img src="images/vajra_team_photo.jpg" alt="VVR Team"><div class="gallery-caption">VVR GROUPS Team at Vajra Shivam</div></div>
+          <!-- Luxury Villa -->
           <div class="gallery-item gm-item" onclick="openLightbox('images/modern_luxury_villa.png', 'Sovereign Gated Luxury Villa')"><img src="images/modern_luxury_villa.png" alt="Luxury Villa"><div class="gallery-caption">Sovereign Gated Luxury Villa</div></div>
-          <div class="gallery-item gm-item" onclick="openLightbox('images/sancha_master_layout.jpg', 'Sancha HMDA & TG RERA Approved Master Layout')"><img src="images/sancha_master_layout.jpg" alt="Sancha Master Layout"><div class="gallery-caption">Sancha Approved Master Layout</div></div>
-          <div class="gallery-item gm-item" onclick="openLightbox('images/varahi_master_layout.png', 'Varahi County DTCP & TS RERA Approved Master Layout')"><img src="images/varahi_master_layout.png" alt="Varahi Master Layout"><div class="gallery-caption">Varahi County Approved Layout Map</div></div>
+          <!-- Duplicate set for seamless infinite scroll loop -->
+          <div class="gallery-item gm-item" onclick="openLightbox('images/sancha_drone_1.jpg', 'VVR Adhiran Sancha — Industrial Aerial Drone View')"><img src="images/sancha_drone_1.jpg" alt="Sancha Drone View"><div class="gallery-caption">Sancha Aerial Drone View</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/sancha_hoarding.jpg', 'VVR Adhiran Sancha — Site Hoarding &amp; Development')"><img src="images/sancha_hoarding.jpg" alt="Sancha Hoarding"><div class="gallery-caption">Sancha Site Hoarding</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/sancha_layout_1.jpg', 'VVR Adhiran Sancha — Phase 1 Plot Layout')"><img src="images/sancha_layout_1.jpg" alt="Sancha Layout 1"><div class="gallery-caption">Sancha Plot Layout View</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/sancha_layout_2.jpg', 'VVR Adhiran Sancha — Internal CC Roads')"><img src="images/sancha_layout_2.jpg" alt="Sancha Layout 2"><div class="gallery-caption">Sancha Internal CC Roads</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/gopanapally_building_1.jpg', 'VVR Gopanapally Apartments — Construction Progress')"><img src="images/gopanapally_building_1.jpg" alt="Gopanapally Construction 1"><div class="gallery-caption">Gopanapally Tower Progress</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/gopanapally_building_2.jpg', 'VVR Gopanapally Apartments — Tower View')"><img src="images/gopanapally_building_2.jpg" alt="Gopanapally Construction 2"><div class="gallery-caption">Gopanapally Apartments Site</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/gopanapally_building_3.jpg', 'VVR Gopanapally Apartments — Premium Towers')"><img src="images/gopanapally_building_3.jpg" alt="Gopanapally Construction 3"><div class="gallery-caption">Premium Apartment Towers</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/varahi_main.jpg', 'VVR Adhiran Varahi County — Main Site')"><img src="images/varahi_main.jpg" alt="Varahi Main"><div class="gallery-caption">Varahi County Main Site</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/vajra_site_visit_team.jpg', 'Vajra Shivam County — Client Site Visit &amp; Presentation')"><img src="images/vajra_site_visit_team.jpg" alt="Vajra Site Visit"><div class="gallery-caption">Vajra Shivam — Client Site Visit</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/vajra_landscape_view.jpg', 'Vajra Shivam County — Scenic Landscape View')"><img src="images/vajra_landscape_view.jpg" alt="Vajra Landscape"><div class="gallery-caption">Vajra Shivam — Scenic View</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/vajra_aerial_layout.jpg', 'Vajra Shivam County — Aerial Layout View')"><img src="images/vajra_aerial_layout.jpg" alt="Vajra Aerial Layout"><div class="gallery-caption">Vajra Shivam — Aerial Layout</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/vajra_construction_roads.jpg', 'Vajra Shivam County — CC Roads Under Construction')"><img src="images/vajra_construction_roads.jpg" alt="Vajra Roads"><div class="gallery-caption">Vajra Shivam — CC Roads in Progress</div></div>
+          <div class="gallery-item gm-item" onclick="openLightbox('images/vajra_team_photo.jpg', 'VVR GROUPS Sales Team at Vajra Shivam County')"><img src="images/vajra_team_photo.jpg" alt="VVR Team"><div class="gallery-caption">VVR GROUPS Team at Vajra Shivam</div></div>
           <div class="gallery-item gm-item" onclick="openLightbox('images/varahi_user_aerial.jpg', 'Varahi County Drone Layout View')"><img src="images/varahi_user_aerial.jpg" alt="Varahi Aerial"><div class="gallery-caption">Varahi County Aerial View</div></div>
         </div>
       </div>
+    </div>
+  </section>
+
   <!-- Customer Reviews & Testimonials Section -->
   <section id="reviews" class="section-padding" style="background:#eef4fb;">
     <div class="container">
@@ -711,6 +779,55 @@
               <div class="review-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
               <p class="review-text">"The entire process from enquiry to registration was hassle-free. VVR's team guided us every step. Sagar Highway location has high future growth and affordable entry pricing. Best investment decision!"</p>
             </div>
+            
+            <!-- Celebrity & VIP Reviews -->
+            <div class="review-card reviews-slide">
+              <div class="review-header">
+                <div class="reviewer-avatar" style="background: var(--primary-gold); color: #fff;">SMR</div>
+                <div>
+                  <h4 class="reviewer-name">Producer Sreemallika Reddy</h4>
+                  <span class="verified-badge"><i class="fa-solid fa-crown text-gold"></i> Celebrity Client • Adhiran Group</span>
+                </div>
+              </div>
+              <div class="review-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <p class="review-text">"We loved the venture and N number of developments as done and moreover it's near Future City Entrance gate & Inside RRR. Thank you Adhiran Group & VVR Vishnu Rao for the genuine property chosen for me."</p>
+            </div>
+            
+            <div class="review-card reviews-slide">
+              <div class="review-header">
+                <div class="reviewer-avatar" style="background: var(--primary-navy); color: #fff;">JV</div>
+                <div>
+                  <h4 class="reviewer-name">Jabardast fame Vinod</h4>
+                  <span class="verified-badge"><i class="fa-solid fa-crown text-gold"></i> Celebrity Client • VVR GROUPS</span>
+                </div>
+              </div>
+              <div class="review-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <p class="review-text">"As an actor, finding the right property for investment is tough. VVR GROUPS made it so simple and transparent. The location growth potential is huge, and I'm very happy with their premium service and trustworthy documentation."</p>
+            </div>
+            
+            <div class="review-card reviews-slide">
+              <div class="review-header">
+                <div class="reviewer-avatar" style="background: var(--primary-gold); color: #fff;">VRC</div>
+                <div>
+                  <h4 class="reviewer-name">Actor Vasudev Rao Chennamaneni</h4>
+                  <span class="verified-badge"><i class="fa-solid fa-crown text-gold"></i> Celebrity Client • VVR GROUPS</span>
+                </div>
+              </div>
+              <div class="review-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <p class="review-text">"The level of professionalism at VVR GROUPS is unmatched in Telangana. Their 'We Sell. We Secure' motto is absolutely true. My plotted investment has seen great appreciation. They are definitely the No.1 marketing company."</p>
+            </div>
+
+            <div class="review-card reviews-slide">
+              <div class="review-header">
+                <div class="reviewer-avatar" style="background: var(--primary-navy); color: #fff;">R</div>
+                <div>
+                  <h4 class="reviewer-name">Businessman Ramky</h4>
+                  <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Investor • VVR GROUPS</span>
+                </div>
+              </div>
+              <div class="review-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <p class="review-text">"From a business perspective, ROI is everything. Chairman Vishnu Rao provides incredible insights into land appreciation around the Future City and RRR corridors. A highly secure and profitable real estate partner."</p>
+            </div>
           </div>
         </div>
         <button class="reviews-arrow reviews-arrow-next" id="reviewNext" aria-label="Next review"><i class="fa-solid fa-chevron-right"></i></button>
@@ -723,6 +840,9 @@
           <i class="fa-solid fa-pen-to-square"></i> Share Your Feedback / Write A Review
         </button>
       </div>
+    </div>
+  </section>
+
   <!-- Frequently Asked Questions (FAQ) Section -->
   <section id="faq" class="section-padding" style="background:#fdf9f4;">
     <div class="container" style="max-width: 860px;">
@@ -1041,6 +1161,7 @@
             <option value="" disabled selected>-- Select Your Preferred Project Site --</option>
             <option value="Adhiran Sancha (Tukkuguda Exit 14, Maheshwaram)">Adhiran Sancha — Tukkuguda Exit 14 , Maheshwaram (₹36 Lakhs Onwards)</option>
             <option value="Varahi County (Mall Town / Sagar Highway - Narsaipally)">Varahi County — Mall Town / Sagar Highway (Narsaipally) (₹16 Lakhs Onwards)</option>
+            <option value="Vajra Shivam County (Future City Corridor / Amangal)">Vajra Shivam County — Future City Corridor / Amangal (₹18 Lakhs Onwards)</option>
           </select>
         </div>
         <div class="form-grid">
@@ -1146,6 +1267,7 @@
           <select id="reviewProject" class="form-control" required>
             <option value="VVR Adhiran Sancha">VVR Adhiran Sancha (Tukkuguda Exit 14 , Maheshwaram)</option>
             <option value="VVR Adhiran Varahi County">VVR Adhiran Varahi County (Mall Town / Sagar Highway - Narsaipally)</option>
+            <option value="Vajra Shivam County">Vajra Shivam County (Future City Corridor / Amangal)</option>
           </select>
         </div>
         <div class="form-group" style="margin-bottom: 1rem;">
@@ -1167,9 +1289,11 @@
   </div>
 
   <!-- JavaScript Script -->
-  <script src="script.js"></script>
+  <script src="script.js?v=8"></script>
 </body>
 </html>
+
+
 
 
 

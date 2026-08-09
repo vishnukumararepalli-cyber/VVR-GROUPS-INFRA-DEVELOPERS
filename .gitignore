@@ -1,0 +1,5 @@
+mingit.zip
+mingit/
+*.py
+bad_strings.txt
+non_ascii*.txt
