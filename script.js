@@ -5,7 +5,100 @@ document.addEventListener('DOMContentLoaded', () => {
   initLocationsCarousel();
   initReviewsCarousel();
   initScrollReveal();
+  initLightbox();
+  initHeaderScroll();
+  addRevealToProjectCards();
 });
+
+/* ── Gallery Lightbox ── */
+const galleryImages = [
+  { src: 'images/sancha_aerial_drone.png',       caption: 'VVR Adhiran Sancha — Aerial Drone View' },
+  { src: 'images/modern_luxury_villa.png',        caption: 'Sovereign Gated Luxury Villa' },
+  { src: 'images/sancha_master_layout.jpg',       caption: 'Sancha HMDA & TG RERA Approved Master Layout' },
+  { src: 'images/varahi_master_layout.png',       caption: 'Varahi County DTCP & TS RERA Approved Layout' },
+  { src: 'images/varahi_user_aerial.jpg',         caption: 'Varahi County — Aerial Drone View' },
+  { src: 'images/varahi_drone.jpg',               caption: 'Varahi County — Aerial Drone View 1' },
+  { src: 'images/varahi_drone2.jpg',              caption: 'Varahi County — Aerial Drone View 2' },
+  { src: 'images/varahi_site.jpg',                caption: 'Site Development & Blacktop Roads' },
+  { src: 'images/exclusive_villas_render_1786211196333.jpg', caption: 'Triplex Sovereign Villa Render' },
+  { src: 'images/amenities_clubhouse_1786211251386.jpg',     caption: '5-Star Clubhouse Lounge & Pool' },
+];
+
+let lbCurrent = 0;
+
+function initLightbox() {
+  const overlay = document.getElementById('gallery-lightbox');
+  if (!overlay) return;
+
+  document.getElementById('lightboxPrev').addEventListener('click', (e) => {
+    e.stopPropagation();
+    lbCurrent = (lbCurrent - 1 + galleryImages.length) % galleryImages.length;
+    setLightboxImage(lbCurrent);
+  });
+
+  document.getElementById('lightboxNext').addEventListener('click', (e) => {
+    e.stopPropagation();
+    lbCurrent = (lbCurrent + 1) % galleryImages.length;
+    setLightboxImage(lbCurrent);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (!overlay || overlay.style.display === 'none') return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft')  { lbCurrent = (lbCurrent - 1 + galleryImages.length) % galleryImages.length; setLightboxImage(lbCurrent); }
+    if (e.key === 'ArrowRight') { lbCurrent = (lbCurrent + 1) % galleryImages.length; setLightboxImage(lbCurrent); }
+  });
+}
+
+function setLightboxImage(index) {
+  const img = document.getElementById('lightboxImg');
+  const cap = document.getElementById('lightboxCaption');
+  if (!img) return;
+  img.style.opacity = '0';
+  setTimeout(() => {
+    img.src = galleryImages[index].src;
+    img.alt = galleryImages[index].caption;
+    if (cap) cap.textContent = galleryImages[index].caption;
+    img.style.transition = 'opacity 0.25s ease';
+    img.style.opacity = '1';
+  }, 120);
+}
+
+function openLightbox(src, caption) {
+  const idx = galleryImages.findIndex(g => g.src === src);
+  lbCurrent = idx >= 0 ? idx : 0;
+  const overlay = document.getElementById('gallery-lightbox');
+  if (!overlay) return;
+  overlay.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  setLightboxImage(lbCurrent);
+}
+
+function closeLightbox(event) {
+  // Close if called directly, or if clicked on the dark overlay itself
+  if (event && event.target.closest('.lightbox-box')) return;
+  const overlay = document.getElementById('gallery-lightbox');
+  if (overlay) overlay.style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+/* ── Header shadow on scroll ── */
+function initHeaderScroll() {
+  const header = document.querySelector('.header');
+  if (!header) return;
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+}
+
+/* ── Add reveal class to project cards ── */
+function addRevealToProjectCards() {
+  document.querySelectorAll('.project-card').forEach((card, i) => {
+    card.classList.add('reveal');
+    if (i % 3 === 1) card.classList.add('reveal-delay-1');
+    if (i % 3 === 2) card.classList.add('reveal-delay-2');
+  });
+}
 
 /* 1c. Reviews Testimonials Auto-Sliding Carousel */
 function initReviewsCarousel() {

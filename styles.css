@@ -2334,4 +2334,226 @@ h1, h2, h3, h4, h5, h6 {
 /* ── Contact section buttons ── */
 #contact { background: #f0f7f4; }
 
+/* ══════════════════════════════════════════════════════════
+   GALLERY LIGHTBOX
+══════════════════════════════════════════════════════════ */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(5, 10, 22, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: lbFadeIn 0.3s var(--ease-out);
+}
 
+@keyframes lbFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.lightbox-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 92vw;
+  max-height: 92vh;
+  animation: lbZoomIn 0.35s var(--ease-out);
+}
+
+@keyframes lbZoomIn {
+  from { transform: scale(0.88); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+.lightbox-img {
+  max-width: min(90vw, 1100px);
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  display: block;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -48px;
+  right: -4px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  border: 1.5px solid rgba(255,255,255,0.2);
+  color: #ffffff;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  z-index: 10;
+}
+
+.lightbox-close:hover {
+  background: var(--primary-gold);
+  border-color: var(--primary-gold);
+  transform: rotate(90deg);
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  border: 1.5px solid rgba(255,255,255,0.2);
+  color: #ffffff;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  z-index: 10;
+}
+
+.lightbox-nav:hover {
+  background: var(--primary-gold);
+  border-color: var(--primary-gold);
+}
+
+.lightbox-prev { left: -64px; }
+.lightbox-next { right: -64px; }
+
+.lightbox-caption {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255,255,255,0.6);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+}
+
+/* Gallery item cursor upgrade */
+.gallery-item.gm-item {
+  cursor: zoom-in;
+}
+
+/* ══════════════════════════════════════════════════════════
+   REFINED FAQ — PLUS/MINUS TOGGLE
+══════════════════════════════════════════════════════════ */
+.faq-icon {
+  transition: transform 0.35s var(--ease-out), color 0.2s ease;
+  color: var(--primary-gold);
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-item {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+  transition: var(--transition-fast);
+  box-shadow: var(--shadow-xs);
+}
+
+.faq-item:hover {
+  border-color: var(--border-gold);
+  box-shadow: var(--shadow-sm);
+}
+
+.faq-item.active {
+  border-color: rgba(198,155,66,0.45);
+  box-shadow: 0 6px 24px rgba(12,29,56,0.09);
+}
+
+.faq-question {
+  padding: 1.2rem 1.5rem;
+  font-size: 0.975rem;
+}
+
+/* ══════════════════════════════════════════════════════════
+   EXTRA ANIMATIONS
+══════════════════════════════════════════════════════════ */
+
+/* Float up on hover for stat cards */
+.stat-card {
+  transition: transform 0.3s var(--ease-out);
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Pulse glow on WhatsApp float */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.45); }
+  50%       { box-shadow: 0 4px 36px rgba(37,211,102,0.75), 0 0 0 10px rgba(37,211,102,0.08); }
+}
+
+.whatsapp-float {
+  animation: pulseGlow 2.8s ease-in-out infinite !important;
+}
+
+/* Fade-slide in for hero badge */
+@keyframes slideInDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-badge {
+  animation: slideInDown 0.6s var(--ease-out) both;
+}
+
+/* Hero title fade up */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-title  { animation: fadeSlideUp 0.7s 0.15s var(--ease-out) both; }
+.hero-subtitle { animation: fadeSlideUp 0.7s 0.28s var(--ease-out) both; }
+.hero-cta      { animation: fadeSlideUp 0.7s 0.40s var(--ease-out) both; }
+
+/* Shimmer on section titles */
+@keyframes shimmerGold {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Gentle scale-in for project cards entering view */
+@keyframes cardPop {
+  from { opacity: 0; transform: scale(0.96) translateY(18px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.project-card.reveal.visible {
+  animation: cardPop 0.5s var(--ease-out) both;
+}
+
+/* Bouncy underline on nav hover */
+.nav-links a::after {
+  transition: width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Smooth header scroll shadow */
+.header.scrolled {
+  box-shadow: 0 4px 30px rgba(12,29,56,0.12);
+}
