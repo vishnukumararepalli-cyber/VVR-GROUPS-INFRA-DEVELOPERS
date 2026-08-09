@@ -2344,11 +2344,15 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(5, 10, 22, 0.92);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  display: flex !important;
+  display: none;
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
   animation: lbFadeIn 0.3s var(--ease-out);
+}
+
+.lightbox-overlay.active {
+  display: flex;
 }
 
 @keyframes lbFadeIn {

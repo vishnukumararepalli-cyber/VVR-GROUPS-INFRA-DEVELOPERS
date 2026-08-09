@@ -69,7 +69,7 @@ function openLightbox(src, caption) {
   lbCurrent = idx >= 0 ? idx : 0;
   const overlay = document.getElementById('gallery-lightbox');
   if (!overlay) return;
-  overlay.style.display = 'flex';
+  overlay.classList.add('active');
   document.body.style.overflow = 'hidden';
   setLightboxImage(lbCurrent);
 }
@@ -78,7 +78,7 @@ function closeLightbox(event) {
   // Close if called directly, or if clicked on the dark overlay itself
   if (event && event.target.closest('.lightbox-box')) return;
   const overlay = document.getElementById('gallery-lightbox');
-  if (overlay) overlay.style.display = 'none';
+  if (overlay) overlay.classList.remove('active');
   document.body.style.overflow = '';
 }
 
