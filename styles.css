@@ -1222,9 +1222,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .chairman-experience-tag h4 {
-  font-size: 1.8rem;
-  color: var(--primary-gold);
-  line-height: 1;
+  font-size: 1.25rem;
+  color: var(--primary-navy);
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .chairman-experience-tag p {
@@ -2169,12 +2170,76 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
   }
 
+  /* Testimonials viewport and overflow container alignment fixes */
+  .reviews-carousel-viewport {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .reviews-carousel-track {
+    display: flex;
+    width: 100%;
+  }
+
+  .reviews-slide {
+    flex: 0 0 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  /* Chairman Section Photo Overlay Text styling */
+  .chairman-experience-tag {
+    bottom: 1rem;
+    right: 1rem;
+    left: 1rem;
+    padding: 0.8rem 1rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .chairman-experience-tag h4 {
+    font-size: 1.1rem !important;
+    font-family: var(--font-sans) !important;
+    font-weight: 700 !important;
+  }
+
+  .chairman-experience-tag p {
+    font-size: 0.68rem !important;
+    letter-spacing: 0.5px !important;
+  }
+
+  /* FAQ button alignment and layout wrap */
+  .faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    text-align: left;
+    width: 100%;
+    padding: 1rem 1.25rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .faq-icon {
+    font-size: 0.75rem;
+  }
+
   .form-grid {
     grid-template-columns: 1fr;
   }
 
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
   .contact-info-card, .contact-form-card {
     padding: 1.5rem 1.25rem;
+    width: 100% !important;
+    box-sizing: border-box;
   }
 
   .footer-grid {
