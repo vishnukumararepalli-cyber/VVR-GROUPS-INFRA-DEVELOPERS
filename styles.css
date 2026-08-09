@@ -1035,22 +1035,22 @@ h1, h2, h3, h4, h5, h6 {
 .filter-btn {
   padding: 0.6rem 1.4rem;
   border-radius: var(--radius-full);
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.2);
-  color: rgba(255,255,255,0.75);
-  font-size: 0.875rem;
+  background: #ffffff;
+  border: 1.5px solid var(--border-subtle);
+  color: var(--text-body);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
   font-weight: 500;
   cursor: pointer;
   transition: var(--transition-fast);
-  backdrop-filter: blur(4px);
 }
 
 .filter-btn.active,
 .filter-btn:hover {
-  background: var(--primary-gold);
+  background: var(--primary-navy);
   color: #ffffff;
-  border-color: var(--primary-gold);
-  box-shadow: var(--shadow-gold);
+  border-color: var(--primary-navy);
+  box-shadow: var(--shadow-sm);
 }
 
 .projects-grid {
@@ -1417,45 +1417,45 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .why-card {
-  background: rgba(255,255,255,0.05);
+  background: #ffffff;
   padding: 2rem 1.5rem;
   border-radius: var(--radius-md);
-  border: 1px solid rgba(198,155,66,0.20);
+  border: 1px solid var(--border-subtle);
   transition: var(--transition-normal);
   text-align: center;
+  box-shadow: var(--shadow-xs);
 }
 
 .why-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--primary-gold);
-  background: rgba(255,255,255,0.08);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+  transform: translateY(-5px);
+  border-color: var(--border-gold);
+  box-shadow: var(--shadow-md);
 }
 
 .why-icon {
-  width: 64px;
-  height: 64px;
+  width: 60px;
+  height: 60px;
   border-radius: var(--radius-md);
-  background: rgba(198,155,66,0.12);
-  color: var(--primary-gold);
-  font-size: 1.6rem;
+  background: linear-gradient(135deg, #eef4fb 0%, #e8f0fb 100%);
+  color: var(--primary-navy);
+  font-size: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 1.2rem auto;
-  border: 1px solid rgba(198,155,66,0.30);
+  border: 1px solid rgba(12,29,56,0.10);
 }
 
 .why-title {
-  font-size: 1.05rem;
-  margin-bottom: 0.6rem;
-  color: #ffffff;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
   font-family: var(--font-serif);
 }
 
 .why-desc {
   font-size: 0.875rem;
-  color: rgba(255,255,255,0.55);
+  color: var(--text-muted);
   line-height: 1.65;
 }
 
@@ -2221,130 +2221,88 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ══════════════════════════════════════════════════════════
-   DARK SECTION OVERRIDES
-   For sections with navy/dark background
+   LIGHT PASTEL SECTION SYSTEM
+   Harmonious, consistent pastel palette across all sections
 ══════════════════════════════════════════════════════════ */
 
-/* Dark section — section tag */
-#projects .section-tag,
-#why-vvr .section-tag,
-#prime-locations .section-tag,
-#reviews .section-tag {
-  color: var(--primary-gold);
-}
+/* Universal — all section titles and tags use dark text */
+.section-title  { color: var(--text-dark); }
+.section-subtitle { color: var(--text-muted); }
+.section-tag    { color: var(--primary-gold); }
+.section-tag::before,
+.section-tag::after { background: var(--primary-gold); opacity: 0.6; }
 
-/* Dark section — section title */
-#projects .section-title,
-#why-vvr .section-title,
-#prime-locations .section-title,
-#reviews .section-title {
-  color: #ffffff;
-}
-
-/* Dark section — section subtitle */
-#projects .section-subtitle,
-#why-vvr .section-subtitle,
-#prime-locations .section-subtitle,
-#reviews .section-subtitle {
-  color: rgba(255,255,255,0.55);
-}
-
-/* Dark section — section-tag divider lines */
-#projects .section-tag::before,
-#projects .section-tag::after,
-#why-vvr .section-tag::before,
-#why-vvr .section-tag::after,
-#prime-locations .section-tag::before,
-#prime-locations .section-tag::after,
-#reviews .section-tag::before,
-#reviews .section-tag::after {
-  background: var(--primary-gold);
-  opacity: 0.5;
-}
-
-/* Project cards on dark background */
+/* ── Project cards on sky-blue pastel bg ── */
 #projects .project-card {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.10);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  background: #ffffff;
+  border: 1px solid #dde8f5;
+  box-shadow: 0 4px 18px rgba(12,29,80,0.07);
 }
 
 #projects .project-card:hover {
-  background: rgba(255,255,255,0.09);
-  border-color: rgba(198,155,66,0.40);
-  box-shadow: 0 16px 48px rgba(0,0,0,0.45);
+  border-color: var(--primary-gold);
+  box-shadow: 0 10px 32px rgba(12,29,80,0.13);
+  transform: translateY(-5px);
 }
 
-#projects .project-name,
-#projects .project-meta strong {
-  color: #e8edf5;
+#projects .filter-btn {
+  background: #ffffff;
+  border: 1.5px solid #dde8f5;
+  color: var(--text-body);
 }
 
-#projects .project-location {
-  color: var(--primary-gold);
+#projects .filter-btn.active,
+#projects .filter-btn:hover {
+  background: var(--primary-navy);
+  color: #ffffff;
+  border-color: var(--primary-navy);
 }
 
-#projects .project-desc {
-  color: rgba(255,255,255,0.55);
-}
-
-#projects .project-meta span {
-  color: rgba(255,255,255,0.4);
-}
-
-#projects .project-footer {
-  border-top: 1px solid rgba(255,255,255,0.08);
-}
-
-/* Reviews on dark */
+/* ── Reviews on sky-blue pastel bg ── */
 .reviews-carousel-wrapper .review-card {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.10);
+  background: #ffffff;
+  border: 1px solid #dde8f5;
+  box-shadow: 0 4px 18px rgba(12,29,80,0.07);
 }
 
 .reviews-carousel-wrapper .review-card:hover {
-  background: rgba(255,255,255,0.09);
-  border-color: rgba(198,155,66,0.4);
+  border-color: var(--border-gold);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
 }
 
-.reviews-carousel-wrapper .reviewer-name {
-  color: #e8edf5;
+.reviews-carousel-wrapper .reviewer-name { color: var(--text-dark); }
+.reviews-carousel-wrapper .review-text   { color: var(--text-muted); }
+
+/* ── Why VVR on lavender pastel bg ── */
+#why-vvr .why-icon {
+  background: linear-gradient(135deg, #ede9ff 0%, #e4dfff 100%);
+  color: #5b47c4;
+  border: 1px solid rgba(91,71,196,0.12);
 }
 
-.reviews-carousel-wrapper .review-text {
-  color: rgba(255,255,255,0.60);
+/* ── Prime Locations on sage pastel bg ── */
+#prime-locations .loc-slide {
+  background: #ffffff;
+  border: 1px solid #cde5d9;
+  color: var(--text-dark);
+  box-shadow: 0 4px 18px rgba(10,50,35,0.07);
 }
 
-.reviews-carousel-wrapper .review-card::before {
-  opacity: 0.25;
-  color: var(--primary-gold);
-}
+#prime-locations .loc-slide-city   { color: var(--primary-navy); }
+#prime-locations .loc-slide-region { color: var(--text-muted); }
+#prime-locations .loc-slide-distance,
+#prime-locations .loc-slide-note   { color: var(--text-muted); }
 
-/* About section — cards on warm cream */
-#about [style*="background: var(--bg-card)"],
-#about div[style] {
-  box-shadow: var(--shadow-sm);
-}
-
-/* Gold accent horizontal divider between sections */
-.section-divider-gold {
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, transparent 0%, var(--primary-gold) 30%, var(--gold-bright) 50%, var(--primary-gold) 70%, transparent 100%);
-  opacity: 0.6;
-}
-
-/* Stats section — more dramatic */
+/* ── Stats section — keep navy for strong contrast ── */
 .stats-section {
-  background: linear-gradient(135deg, #060e1c 0%, #0a1628 50%, #0c1d38 100%) !important;
-  border-top: 1px solid rgba(198,155,66,0.3);
-  border-bottom: 1px solid rgba(198,155,66,0.3);
-}
-
-.stat-card {
+  background: linear-gradient(135deg, #0a1628 0%, #0c1d38 100%) !important;
+  border-top: 1px solid rgba(198,155,66,0.25);
+  border-bottom: 1px solid rgba(198,155,66,0.25);
   position: relative;
 }
 
+.stat-card { position: relative; }
 .stat-card + .stat-card::before {
   content: '';
   position: absolute;
@@ -2352,59 +2310,28 @@ h1, h2, h3, h4, h5, h6 {
   top: 50%;
   transform: translateY(-50%);
   width: 1px;
-  height: 60%;
-  background: rgba(198,155,66,0.25);
+  height: 55%;
+  background: rgba(198,155,66,0.22);
 }
 
-/* Warm section — about and gallery enhancement */
-#about .section-title,
-#properties .section-title,
-#gallery .section-title,
-#approvals .section-title,
-#contact .section-title {
-  color: var(--text-dark);
+/* ── Approvals section inline cards ── */
+#approvals [style*="background: #ffffff"],
+#approvals div[style] {
+  box-shadow: 0 4px 14px rgba(10,15,30,0.06);
 }
 
-/* Gold shimmer line at top of dark sections */
-#projects,
-#why-vvr,
-#prime-locations,
-#reviews {
-  border-top: 2px solid rgba(198,155,66,0.35);
-}
+/* ── Section borders — subtle top lines for gentle separation ── */
+#projects  { border-top: 2px solid #dde8f5; }
+#why-vvr   { border-top: 2px solid #ece9ff; }
+#prime-locations { border-top: 2px solid #cde5d9; }
+#reviews   { border-top: 2px solid #dde8f5; }
+#gallery   { border-top: 2px solid #ece5d0; }
+#about     { border-top: 2px solid #ffe8d5; }
 
-/* Loc-slide cards on dark bg */
-#prime-locations .loc-slide {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(198,155,66,0.25);
-  color: #ffffff;
-}
+/* ── Footer stays dark ── */
+.footer { background: #060e1c !important; }
 
-#prime-locations .loc-slide-city {
-  color: var(--primary-gold);
-}
+/* ── Contact section buttons ── */
+#contact { background: #f0f7f4; }
 
-#prime-locations .loc-slide-region {
-  color: rgba(255,255,255,0.5);
-}
 
-#prime-locations .loc-slide-distance,
-#prime-locations .loc-slide-note {
-  color: rgba(255,255,255,0.6);
-}
-
-/* Cream/warm section card enhancement */
-#properties .section-title,
-#properties .section-subtitle {
-  color: var(--text-dark);
-}
-
-/* Contact on cream */
-#contact {
-  background: #f5f1e8;
-}
-
-/* Footer stays dark */
-.footer {
-  background: #060e1c !important;
-}
