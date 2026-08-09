@@ -1,52 +1,62 @@
 /* ==========================================================================
    VVR GROUPS INFRA DEVELOPERS — MASTER STYLESHEET
    Building Landmarks. Creating Legacies.
-   Classic · Professional · Premium
+   Bold · Rich · Timeless · Premium
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* ── Refined Classic Palette ── */
-  --navy-900: #0a1628;
-  --navy-800: #0d1e35;
-  --navy-700: #122540;
+  /* ── Rich Navy & Gold Palette ── */
+  --navy-deepest: #060e1c;
+  --navy-deep:    #0a1628;
+  --navy-dark:    #0c1d38;
+  --navy-mid:     #112241;
+  --navy-light:   #1a3260;
   --primary-navy: #0c1d38;
-  --primary-navy-hover: #142b52;
 
-  --gold-400: #d4aa5f;
-  --gold-500: #c69b42;
-  --gold-600: #a67c2e;
+  --gold-bright:  #e8c76a;
+  --gold-main:    #c69b42;
+  --gold-warm:    #b88830;
+  --gold-deep:    #9a7028;
   --primary-gold: #c69b42;
   --primary-gold-hover: #a67c2e;
-  --gold-glow: rgba(198, 155, 66, 0.22);
+  --gold-glow: rgba(198, 155, 66, 0.30);
 
-  /* ── Backgrounds — warm ivory/cream tones ── */
-  --bg-primary:    #faf9f7;
-  --bg-secondary:  #f4f2ee;
-  --bg-tertiary:   #eceae4;
-  --bg-card:       #ffffff;
+  /* ── Backgrounds — dramatic contrast palette ── */
+  --bg-white:      #ffffff;
+  --bg-cream:      #faf8f4;
+  --bg-warm:       #f5f1e8;
+  --bg-navy-dark:  #060e1c;
   --bg-navy:       #0c1d38;
+  --bg-navy-soft:  #112241;
+  --bg-card:       #ffffff;
+  --bg-primary:    #faf8f4;
+  --bg-secondary:  #f0ece0;
 
   /* ── Text ── */
-  --text-dark:    #0f172a;
-  --text-body:    #374151;
-  --text-muted:   #6b7280;
-  --text-light:   #9ca3af;
-  --text-gold:    #a67c2e;
+  --text-dark:    #0a0f1e;
+  --text-body:    #2d3748;
+  --text-muted:   #64748b;
+  --text-light:   #94a3b8;
+  --text-on-navy: #e8edf5;
+  --text-gold:    #c69b42;
 
   /* ── Borders ── */
+  --border-cream:  rgba(180, 160, 110, 0.25);
+  --border-gold:   rgba(198, 155, 66, 0.40);
+  --border-navy:   rgba(10, 22, 40, 0.15);
+  --border-subtle: #e8e4d8;
   --border-light:  rgba(12, 29, 56, 0.10);
-  --border-subtle: #e5e1d8;
-  --border-gold:   rgba(198, 155, 66, 0.35);
-  --border-strong: rgba(12, 29, 56, 0.20);
+  --border-strong: rgba(12, 29, 56, 0.22);
 
   /* ── Shadows ── */
-  --shadow-xs: 0 1px 4px rgba(15, 23, 42, 0.04);
-  --shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.06);
-  --shadow-md: 0 8px 28px rgba(15, 23, 42, 0.09);
-  --shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.12);
-  --shadow-gold: 0 8px 28px rgba(198, 155, 66, 0.25);
+  --shadow-xs:   0 1px 4px rgba(10, 15, 30, 0.06);
+  --shadow-sm:   0 4px 14px rgba(10, 15, 30, 0.08);
+  --shadow-md:   0 10px 32px rgba(10, 15, 30, 0.12);
+  --shadow-lg:   0 24px 60px rgba(10, 15, 30, 0.18);
+  --shadow-gold: 0 8px 30px rgba(198, 155, 66, 0.35);
+  --shadow-navy: 0 10px 40px rgba(6, 14, 28, 0.50);
 
   /* ── Radii ── */
   --radius-xs:   4px;
@@ -1025,13 +1035,14 @@ h1, h2, h3, h4, h5, h6 {
 .filter-btn {
   padding: 0.6rem 1.4rem;
   border-radius: var(--radius-full);
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-dark);
-  font-size: 0.9rem;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.75);
+  font-size: 0.875rem;
   font-weight: 500;
   cursor: pointer;
   transition: var(--transition-fast);
+  backdrop-filter: blur(4px);
 }
 
 .filter-btn.active,
@@ -1400,47 +1411,52 @@ h1, h2, h3, h4, h5, h6 {
 /* Why VVR Groups (Pillars) */
 .why-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
   margin-top: 3rem;
 }
 
 .why-card {
-  background: var(--bg-card);
-  padding: 2.2rem 1.5rem;
+  background: rgba(255,255,255,0.05);
+  padding: 2rem 1.5rem;
   border-radius: var(--radius-md);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid rgba(198,155,66,0.20);
   transition: var(--transition-normal);
+  text-align: center;
 }
 
 .why-card:hover {
   transform: translateY(-6px);
   border-color: var(--primary-gold);
-  box-shadow: var(--shadow-md);
+  background: rgba(255,255,255,0.08);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35);
 }
 
 .why-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: var(--radius-sm);
-  background: var(--bg-secondary);
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-md);
+  background: rgba(198,155,66,0.12);
   color: var(--primary-gold);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.2rem;
-  border: 1px solid var(--border-light);
+  margin: 0 auto 1.2rem auto;
+  border: 1px solid rgba(198,155,66,0.30);
 }
 
 .why-title {
-  font-size: 1.2rem;
+  font-size: 1.05rem;
   margin-bottom: 0.6rem;
+  color: #ffffff;
+  font-family: var(--font-serif);
 }
 
 .why-desc {
-  font-size: 0.9rem;
-  color: var(--text-muted);
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.65;
 }
 
 /* Calculator Section */
@@ -2202,4 +2218,193 @@ h1, h2, h3, h4, h5, h6 {
     bottom: 18px;
     right: 18px;
   }
+}
+
+/* ══════════════════════════════════════════════════════════
+   DARK SECTION OVERRIDES
+   For sections with navy/dark background
+══════════════════════════════════════════════════════════ */
+
+/* Dark section — section tag */
+#projects .section-tag,
+#why-vvr .section-tag,
+#prime-locations .section-tag,
+#reviews .section-tag {
+  color: var(--primary-gold);
+}
+
+/* Dark section — section title */
+#projects .section-title,
+#why-vvr .section-title,
+#prime-locations .section-title,
+#reviews .section-title {
+  color: #ffffff;
+}
+
+/* Dark section — section subtitle */
+#projects .section-subtitle,
+#why-vvr .section-subtitle,
+#prime-locations .section-subtitle,
+#reviews .section-subtitle {
+  color: rgba(255,255,255,0.55);
+}
+
+/* Dark section — section-tag divider lines */
+#projects .section-tag::before,
+#projects .section-tag::after,
+#why-vvr .section-tag::before,
+#why-vvr .section-tag::after,
+#prime-locations .section-tag::before,
+#prime-locations .section-tag::after,
+#reviews .section-tag::before,
+#reviews .section-tag::after {
+  background: var(--primary-gold);
+  opacity: 0.5;
+}
+
+/* Project cards on dark background */
+#projects .project-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+#projects .project-card:hover {
+  background: rgba(255,255,255,0.09);
+  border-color: rgba(198,155,66,0.40);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.45);
+}
+
+#projects .project-name,
+#projects .project-meta strong {
+  color: #e8edf5;
+}
+
+#projects .project-location {
+  color: var(--primary-gold);
+}
+
+#projects .project-desc {
+  color: rgba(255,255,255,0.55);
+}
+
+#projects .project-meta span {
+  color: rgba(255,255,255,0.4);
+}
+
+#projects .project-footer {
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Reviews on dark */
+.reviews-carousel-wrapper .review-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+}
+
+.reviews-carousel-wrapper .review-card:hover {
+  background: rgba(255,255,255,0.09);
+  border-color: rgba(198,155,66,0.4);
+}
+
+.reviews-carousel-wrapper .reviewer-name {
+  color: #e8edf5;
+}
+
+.reviews-carousel-wrapper .review-text {
+  color: rgba(255,255,255,0.60);
+}
+
+.reviews-carousel-wrapper .review-card::before {
+  opacity: 0.25;
+  color: var(--primary-gold);
+}
+
+/* About section — cards on warm cream */
+#about [style*="background: var(--bg-card)"],
+#about div[style] {
+  box-shadow: var(--shadow-sm);
+}
+
+/* Gold accent horizontal divider between sections */
+.section-divider-gold {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, var(--primary-gold) 30%, var(--gold-bright) 50%, var(--primary-gold) 70%, transparent 100%);
+  opacity: 0.6;
+}
+
+/* Stats section — more dramatic */
+.stats-section {
+  background: linear-gradient(135deg, #060e1c 0%, #0a1628 50%, #0c1d38 100%) !important;
+  border-top: 1px solid rgba(198,155,66,0.3);
+  border-bottom: 1px solid rgba(198,155,66,0.3);
+}
+
+.stat-card {
+  position: relative;
+}
+
+.stat-card + .stat-card::before {
+  content: '';
+  position: absolute;
+  left: -1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 60%;
+  background: rgba(198,155,66,0.25);
+}
+
+/* Warm section — about and gallery enhancement */
+#about .section-title,
+#properties .section-title,
+#gallery .section-title,
+#approvals .section-title,
+#contact .section-title {
+  color: var(--text-dark);
+}
+
+/* Gold shimmer line at top of dark sections */
+#projects,
+#why-vvr,
+#prime-locations,
+#reviews {
+  border-top: 2px solid rgba(198,155,66,0.35);
+}
+
+/* Loc-slide cards on dark bg */
+#prime-locations .loc-slide {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(198,155,66,0.25);
+  color: #ffffff;
+}
+
+#prime-locations .loc-slide-city {
+  color: var(--primary-gold);
+}
+
+#prime-locations .loc-slide-region {
+  color: rgba(255,255,255,0.5);
+}
+
+#prime-locations .loc-slide-distance,
+#prime-locations .loc-slide-note {
+  color: rgba(255,255,255,0.6);
+}
+
+/* Cream/warm section card enhancement */
+#properties .section-title,
+#properties .section-subtitle {
+  color: var(--text-dark);
+}
+
+/* Contact on cream */
+#contact {
+  background: #f5f1e8;
+}
+
+/* Footer stays dark */
+.footer {
+  background: #060e1c !important;
 }
