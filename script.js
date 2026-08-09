@@ -447,6 +447,30 @@ const projectSpecsData = {
       "Plot Pricing Extras: North-East Corner +₹750/sq.yd, East Facing +₹500/sq.yd, Any Corner +₹500/sq.yd",
       "Security: 24/7 CCTV surveillance, compound wall & spot registration ready"
     ]
+  },
+  vajra: {
+    title: "Vajra Shivam County Premium Villa Plots",
+    location: "Near Future City / Amangal Municipality",
+    type: "DTCP Approved Layout & 100% Vaastu",
+    rera: "TS RERA NO. P02400009827 (DTCP Approval: LP No. 0003/LO/3134/2025)",
+    image: "images/varahi_drone.jpg",
+    layoutMap: "images/varahi_master_layout.png",
+    price: "₹18 Lakhs Onwards",
+    possession: "Spot Registration Available & Construction Undertaken",
+    highlights: [
+      "DTCP Approved Layout & 100% Vaastu | Under HMDA Limits",
+      "TS RERA NO. P02400009827 | DTCP Approval: LP No. 0003/LO/3134/2025",
+      "Located near 4th City, Future City, and Amazon Data Center",
+      "Near proposed Regional Ring Road (RRR) & Srisailam National Highway",
+      "Approx. 40 minutes from Rajiv Gandhi International Airport",
+      "Close to Skill University, Fab City, and Maisigandi Maisamma Temple"
+    ],
+    specs: [
+      "Roads: Premium gated community with 33 ft & 30 ft concrete CC roads",
+      "Amenities: Overhead water tanks, underground drinking water & drainage lines",
+      "Landscaping: Beautiful avenue plantation, landscaped parks & children's play area",
+      "Security: 24/7 round-the-clock gated community security & street lighting"
+    ]
   }
 };
 

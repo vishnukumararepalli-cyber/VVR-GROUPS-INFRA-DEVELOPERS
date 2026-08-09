@@ -206,11 +206,13 @@
       <div class="text-center">
         <span class="section-tag">Featured Developments</span>
         <h2 class="section-title">Flagship Real Estate Projects</h2>
-        <p class="section-subtitle">Explore ongoing, completed, and upcoming developments built to the highest architectural s      <!-- Filter Tabs -->
+        <p class="section-subtitle">Explore ongoing, completed, and upcoming developments built to the highest architectural standards.</p>
+      </div>
       <div class="projects-filter-bar">
         <button class="filter-btn active" onclick="filterProjects('all', this)">All Flagship Projects</button>
         <button class="filter-btn" onclick="filterProjects('sancha', this)">VVR Adhiran Sancha</button>
         <button class="filter-btn" onclick="filterProjects('varahi', this)">VVR Adhiran Varahi County</button>
+        <button class="filter-btn" onclick="filterProjects('vajra', this)">Vajra Shivam County</button>
       </div>
 
       <!-- Dynamic Projects Grid -->
@@ -261,6 +263,31 @@
               <a href="images/sancha_master_layout.jpg" download="Adhiran_Sancha_Master_Layout.jpg" target="_blank" class="btn btn-outline btn-sm" title="Download Master Layout Plan Map"><i class="fa-solid fa-download"></i> Layout Plan</a>
               <button class="btn btn-primary btn-sm" onclick="openModal('enquiry-modal', 'VVR Adhiran Sancha')">Enquire Now</button>
             </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Vajra Shivam County -->
+        <div class="project-card" data-category="plots vajra" data-location="Amangal Future City Sagar Highway RRR" data-price-val="18" data-status="vajra">
+          <div class="project-thumb">
+            <img src="images/varahi_drone.jpg" alt="Vajra Shivam County Plotted Layout Drone View">
+            <span class="project-status-badge status-ongoing">Ongoing Gated Layout</span>
+            <span class="project-type-badge"><i class="fa-solid fa-vector-square"></i> Gated Villa Plots</span>
+          </div>
+          <div class="project-body">
+            <div class="project-location"><i class="fa-solid fa-location-dot"></i> Near Future City / Amangal Municipality (RR District)</div>
+            <h3 class="project-name">Vajra Shivam County</h3>
+            <p class="project-desc">DTCP approved premium gated community villa plots in Amangal near 4th City/Future City & Amazon Data Center. 33ft/30ft CC roads, avenue plantation & overhead water tank.</p>
+            <div class="project-meta">
+              <div class="meta-item"><span>RERA No.</span><strong>P02400009827</strong></div>
+              <div class="meta-item"><span>Zone</span><strong>Future City Corridor / Amangal</strong></div>
+              <div class="meta-item"><span>Price</span><strong>₹18 Lakhs Onwards</strong></div>
+            </div>
+            <div class="project-footer">
+              <button class="btn btn-outline btn-sm" onclick="showProjectDetails('vajra')">View Full Specs</button>
+              <a href="images/varahi_master_layout.png" download="Vajra_Shivam_County_Layout_Plan.png" target="_blank" class="btn btn-outline btn-sm" title="Download Layout Plan Map"><i class="fa-solid fa-download"></i> Layout Plan</a>
+              <button class="btn btn-primary btn-sm" onclick="openModal('enquiry-modal', 'Vajra Shivam County')">Enquire Now</button>
+            </div>
+          </div>
         </div>
 
       </div>
