@@ -296,11 +296,21 @@ function initLocationsCarousel() {
 function initMobileMenu() {
   const menuBtn = document.getElementById('mobileMenuBtn');
   const navLinks = document.getElementById('navLinks');
+  const menuIcon = menuBtn ? menuBtn.querySelector('i') : null;
 
   if (menuBtn && navLinks) {
     menuBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       navLinks.classList.toggle('active');
+      if (menuIcon) {
+        if (navLinks.classList.contains('active')) {
+          menuIcon.classList.remove('fa-bars');
+          menuIcon.classList.add('fa-xmark');
+        } else {
+          menuIcon.classList.remove('fa-xmark');
+          menuIcon.classList.add('fa-bars');
+        }
+      }
     });
 
     // Handle dropdown toggles on mobile
@@ -318,6 +328,10 @@ function initMobileMenu() {
     document.querySelectorAll('.nav-links a:not(.dropdown-trigger)').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('active');
+        if (menuIcon) {
+          menuIcon.classList.remove('fa-xmark');
+          menuIcon.classList.add('fa-bars');
+        }
       });
     });
   }

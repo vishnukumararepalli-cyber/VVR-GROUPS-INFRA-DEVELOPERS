@@ -156,6 +156,26 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
 }
 
+/* Premium Flagship Title with Golden Shine Animation */
+.section-title.flagship-title {
+  background: linear-gradient(90deg, var(--primary-navy) 0%, var(--primary-gold) 50%, var(--primary-navy) 100%);
+  background-size: 200% auto;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: flagship-shine 4s linear infinite;
+  font-weight: 800;
+  display: inline-block;
+  padding-bottom: 0.1em;
+}
+
+@keyframes flagship-shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
 .section-subtitle {
   font-size: 1rem;
   color: var(--text-muted);
@@ -1159,7 +1179,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .project-meta {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 0.5rem;
   padding: 0.8rem 0;
   border-top: 1px solid var(--border-subtle);
   border-bottom: 1px solid var(--border-subtle);
@@ -1167,21 +1188,37 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.85rem;
 }
 
+.meta-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
 .meta-item span {
-  display: block;
   font-size: 0.75rem;
   color: var(--text-light);
   text-transform: uppercase;
+  flex-shrink: 0;
 }
 
 .meta-item strong {
+  text-align: right;
   color: var(--text-dark);
 }
 
 .project-footer {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.8rem;
   margin-top: auto;
+}
+
+.project-footer .btn {
+  flex: 1 1 auto;
+  text-align: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 /* Chairman Section */
@@ -1980,11 +2017,11 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .brand-text h1 {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
   }
 
   .brand-text span {
-    font-size: 0.45rem;
+    font-size: 0.5rem;
     letter-spacing: 0.8px;
   }
 
@@ -2026,8 +2063,8 @@ h1, h2, h3, h4, h5, h6 {
     height: calc(100vh - 70px);
     background: #0C192E;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 1.5rem 1.5rem 3rem 1.5rem;
+    align-items: center;
+    padding: 2rem 1.5rem;
     transition: left 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     overflow-y: auto;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
@@ -2041,12 +2078,13 @@ h1, h2, h3, h4, h5, h6 {
   .nav-links li {
     width: 100%;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
   }
 
   .nav-links a {
     color: #ffffff;
-    font-size: 1.05rem;
-    padding: 0.85rem 0;
+    font-size: 1.15rem;
+    padding: 1rem 0;
     display: block;
     width: 100%;
   }
@@ -2066,17 +2104,17 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0.4rem 0 0.8rem 0;
     min-width: 100%;
     border-radius: 8px;
+    text-align: center;
   }
 
   .dropdown-menu a {
     color: #d1d5db;
-    font-size: 0.9rem;
-    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
+    padding: 0.75rem 1rem;
   }
 
   .dropdown-menu a:hover {
     color: var(--primary-gold);
-    padding-left: 1.2rem;
   }
 
   /* Hero Mobile Layout */
@@ -2359,16 +2397,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #projects .filter-btn {
-  background: #ffffff;
-  border: 1.5px solid #dde8f5;
-  color: var(--text-body);
+  background: rgba(255, 255, 255, 0.6);
+  border: 1.5px solid rgba(198, 155, 66, 0.25);
+  color: var(--text-muted);
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
-#projects .filter-btn.active,
 #projects .filter-btn:hover {
-  background: var(--primary-navy);
+  background: rgba(198, 155, 66, 0.08);
+  border-color: var(--primary-gold);
+  color: var(--primary-navy);
+}
+
+#projects .filter-btn.active {
+  background: var(--primary-gold);
   color: #ffffff;
-  border-color: var(--primary-navy);
+  border-color: var(--primary-gold);
+  box-shadow: 0 4px 15px rgba(198, 155, 66, 0.35);
 }
 
 /* ── Reviews on sky-blue pastel bg ── */
@@ -3119,8 +3166,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   /* Project meta info wrap properly */
+  /* Project meta info wrap properly */
   .project-meta {
-    flex-wrap: wrap !important;
     gap: 0.4rem !important;
   }
 
@@ -3146,11 +3193,7 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Fix for project cards always visible (override reveal default hidden) */
-.project-card {
-  opacity: 1 !important;
-  transform: none !important;
-}
+/* Restored normal entrance animation for project cards */
 
 /* ══════════════════════════════════════════════════════════
    CHAIRMAN BRAND TAG — Premium Styled Overlay
